@@ -7,8 +7,7 @@ using 公司管理系统Model;
 
 namespace 公司管理系统DAL
 {
-   public class ActionService:BaseDAL<action>
+    public  class ImageBLL:BaseDAL<Leave>
     {
-
     }
 }
