@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,8 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionService.cs" />
+    <Compile Include="ActionTypeService.cs" />
+    <Compile Include="AdminService.cs" />
+    <Compile Include="ADTypeService.cs" />
     <Compile Include="BaseDAL.cs" />
+    <Compile Include="ClassService.cs" />
+    <Compile Include="CultureService.cs" />
+    <Compile Include="DetailService.cs" />
+    <Compile Include="ImageService.cs" />
+    <Compile Include="LeaveService.cs" />
+    <Compile Include="MoneyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplayService.cs" />
+    <Compile Include="ReplayTypeService.cs" />
+    <Compile Include="ScoreService.cs" />
+    <Compile Include="SystemService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="WebService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\公司管理系统Model\公司管理系统Model.csproj">
