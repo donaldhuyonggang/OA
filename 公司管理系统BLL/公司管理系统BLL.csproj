@@ -40,8 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionManager.cs" />
+    <Compile Include="ActionTypeManager.cs" />
+    <Compile Include="AdminManager.cs" />
+    <Compile Include="ADTypeManager.cs" />
     <Compile Include="BaseBLL.cs" />
+    <Compile Include="ClassManager.cs" />
+    <Compile Include="CultureManager.cs" />
+    <Compile Include="DetailManager.cs" />
+    <Compile Include="ImageManager.cs" />
+    <Compile Include="LeaveManager.cs" />
+    <Compile Include="MoneyManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplayManager.cs" />
+    <Compile Include="ReplayTypeManager.cs" />
+    <Compile Include="ScoreManager.cs" />
+    <Compile Include="SystemManager.cs" />
+    <Compile Include="UserManager.cs" />
+    <Compile Include="WebManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\公司管理系统DAL\公司管理系统DAL.csproj">
