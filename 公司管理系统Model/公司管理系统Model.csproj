@@ -30,8 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +51,98 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="action.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="actionType.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ADType.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="class.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Company.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Company.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Company.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="culture.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="detail.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Image.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Leave.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="money.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Replay.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReplayType.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="score.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="system.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="web.cs">
+      <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Company.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Company.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="Company.edmx.diagram">
+      <DependentUpon>Company.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Company.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Company.edmx</DependentUpon>
+      <LastGenOutput>Company.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Company.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Company.edmx</DependentUpon>
+      <LastGenOutput>Company.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

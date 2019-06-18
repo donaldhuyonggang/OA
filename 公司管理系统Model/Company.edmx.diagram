@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5ba2da03796c4259bea4864fe0814816" Name="Diagram1">
+        <EntityTypeShape EntityType="CompanyModel.action" Width="1.5" PointX="7.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.actionType" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.Admin" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.ADType" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.class" Width="1.5" PointX="7.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.culture" Width="1.5" PointX="10.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.detail" Width="1.5" PointX="7.5" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.Image" Width="1.5" PointX="8.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.Leave" Width="1.5" PointX="10.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.money" Width="1.5" PointX="7" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.Replay" Width="1.5" PointX="10.5" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.ReplayType" Width="1.5" PointX="11.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.score" Width="1.5" PointX="7.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.system" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.User" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CompanyModel.web" Width="1.5" PointX="13.5" PointY="13.5" IsExpanded="true" />
+        <AssociationConnector Association="CompanyModel.FK__action__actionTy__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__action__UserId__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__Admin__ADTypeId__0519C6AF" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__User__AdminId__09DE7BCC" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__class__UserId__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__class__UserIde__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__culture__imgID__1367E606" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__culture__UserId__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__detail__UserId__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__Leave__systemId__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__Leave__UserId__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__Replay__UserId__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__Replay__webId__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__web__ReplayTypeI__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__score__systemId__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__score__UserId__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="CompanyModel.FK__web__UserId__4316F928" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

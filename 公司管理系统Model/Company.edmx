@@ -1,0 +1,1152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CompanyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="action">
+          <Key>
+            <PropertyRef Name="actionId" />
+          </Key>
+          <Property Name="actionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="actionTypeID" Type="int" />
+          <Property Name="actionhead" Type="varchar" MaxLength="50" />
+          <Property Name="actionresult" Type="varchar" MaxLength="500" />
+          <Property Name="actiontime" Type="datetime" />
+          <Property Name="actionneedmoney" Type="int" />
+          <Property Name="actionfactmoney" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="actiontype" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="actionType">
+          <Key>
+            <PropertyRef Name="actionTypeID" />
+          </Key>
+          <Property Name="actionTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminName" Type="varchar" MaxLength="50" />
+          <Property Name="ADTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="ADType">
+          <Key>
+            <PropertyRef Name="ADTypeId" />
+          </Key>
+          <Property Name="ADTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="class">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Morning" Type="varchar" MaxLength="20" />
+          <Property Name="Afertnoon" Type="varchar" MaxLength="20" />
+          <Property Name="UserIde" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DataTime" Type="datetime" />
+          <Property Name="require" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="culture">
+          <Key>
+            <PropertyRef Name="CurlterId" />
+          </Key>
+          <Property Name="CurlterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="img" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Curlter" Type="varchar" MaxLength="200" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="imgID" Type="int" />
+          <Property Name="CurlterHead" Type="varchar" MaxLength="50" />
+          <Property Name="ReleaseTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="detail">
+          <Key>
+            <PropertyRef Name="MonryId" />
+          </Key>
+          <Property Name="MonryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MonryResult" Type="varchar" MaxLength="20" />
+          <Property Name="sum" Type="int" />
+          <Property Name="MoneyTime" Type="datetime" />
+          <Property Name="UserId" Type="int" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="imgID" />
+          </Key>
+          <Property Name="imgID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="img" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Leave">
+          <Key>
+            <PropertyRef Name="LeaveId" />
+          </Key>
+          <Property Name="LeaveId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LeaveTime" Type="datetime" />
+          <Property Name="LeaveResult" Type="datetime" />
+          <Property Name="systemId" Type="int" />
+          <Property Name="LeaveType" Type="varchar" MaxLength="20" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="LeaveOver" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="money">
+          <Key>
+            <PropertyRef Name="sunId" />
+          </Key>
+          <Property Name="sunId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="overmoney" Type="int" />
+          <Property Name="openmoney" Type="int" />
+        </EntityType>
+        <EntityType Name="Replay">
+          <Key>
+            <PropertyRef Name="ReplayId" />
+          </Key>
+          <Property Name="ReplayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="webId" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="ReplayResult" Type="varchar" MaxLength="500" />
+          <Property Name="ReplayTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ReplayType">
+          <Key>
+            <PropertyRef Name="ReplayTypeID" />
+          </Key>
+          <Property Name="ReplayTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ReplayTypeName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="score">
+          <Key>
+            <PropertyRef Name="PointId" />
+          </Key>
+          <Property Name="PointId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PointTime" Type="datetime" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="systemId" Type="int" />
+        </EntityType>
+        <EntityType Name="system">
+          <Key>
+            <PropertyRef Name="systemId" />
+          </Key>
+          <Property Name="systemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="systemName" Type="varchar" MaxLength="50" />
+          <Property Name="systemPoint" Type="int" Nullable="false" />
+          <Property Name="status" Type="char" MaxLength="4" />
+          <Property Name="audat" Type="char" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminId" Type="int" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPwd" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Userimg" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="Sex" Type="char" MaxLength="4" />
+          <Property Name="Adderss" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Birth" Type="datetime" />
+        </EntityType>
+        <EntityType Name="web">
+          <Key>
+            <PropertyRef Name="webId" />
+          </Key>
+          <Property Name="webId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="webHead" Type="varchar" MaxLength="50" />
+          <Property Name="webResult" Type="varchar" MaxLength="50" />
+          <Property Name="webtime" Type="datetime" />
+          <Property Name="like" Type="int" />
+          <Property Name="ReplayTypeID" Type="int" />
+        </EntityType>
+        <Association Name="FK__action__actionTy__2B3F6F97">
+          <End Role="actionType" Type="Self.actionType" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="actionType">
+              <PropertyRef Name="actionTypeID" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="actionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__action__UserId__2C3393D0">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Admin__ADTypeId__0519C6AF">
+          <End Role="ADType" Type="Self.ADType" Multiplicity="0..1" />
+          <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADType">
+              <PropertyRef Name="ADTypeId" />
+            </Principal>
+            <Dependent Role="Admin">
+              <PropertyRef Name="ADTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__class__UserId__3A81B327">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="class" Type="Self.class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="class">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__class__UserIde__398D8EEE">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="class" Type="Self.class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="class">
+              <PropertyRef Name="UserIde" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__culture__imgID__1367E606">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="culture" Type="Self.culture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="imgID" />
+            </Principal>
+            <Dependent Role="culture">
+              <PropertyRef Name="imgID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__culture__UserId__1273C1CD">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="culture" Type="Self.culture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="culture">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detail__UserId__34C8D9D1">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="detail" Type="Self.detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="detail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__systemId__21B6055D">
+          <End Role="system" Type="Self.system" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="system">
+              <PropertyRef Name="systemId" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="systemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__UserId__22AA2996">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Replay__UserId__49C3F6B7">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Replay" Type="Self.Replay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Replay">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Replay__webId__48CFD27E">
+          <End Role="web" Type="Self.web" Multiplicity="0..1" />
+          <End Role="Replay" Type="Self.Replay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="web">
+              <PropertyRef Name="webId" />
+            </Principal>
+            <Dependent Role="Replay">
+              <PropertyRef Name="webId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__score__systemId__1CF15040">
+          <End Role="system" Type="Self.system" Multiplicity="0..1" />
+          <End Role="score" Type="Self.score" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="system">
+              <PropertyRef Name="systemId" />
+            </Principal>
+            <Dependent Role="score">
+              <PropertyRef Name="systemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__score__UserId__1BFD2C07">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="score" Type="Self.score" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="score">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__AdminId__09DE7BCC">
+          <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="AdminId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="AdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__web__ReplayTypeI__440B1D61">
+          <End Role="ReplayType" Type="Self.ReplayType" Multiplicity="0..1" />
+          <End Role="web" Type="Self.web" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReplayType">
+              <PropertyRef Name="ReplayTypeID" />
+            </Principal>
+            <Dependent Role="web">
+              <PropertyRef Name="ReplayTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__web__UserId__4316F928">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="web" Type="Self.web" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="web">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CompanyModelStoreContainer">
+          <EntitySet Name="action" EntityType="Self.action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="actionType" EntityType="Self.actionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADType" EntityType="Self.ADType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="class" EntityType="Self.class" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="culture" EntityType="Self.culture" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="detail" EntityType="Self.detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Leave" EntityType="Self.Leave" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="money" EntityType="Self.money" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Replay" EntityType="Self.Replay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReplayType" EntityType="Self.ReplayType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="score" EntityType="Self.score" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="system" EntityType="Self.system" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="web" EntityType="Self.web" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__action__actionTy__2B3F6F97" Association="Self.FK__action__actionTy__2B3F6F97">
+            <End Role="actionType" EntitySet="actionType" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__action__UserId__2C3393D0" Association="Self.FK__action__UserId__2C3393D0">
+            <End Role="User" EntitySet="User" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Admin__ADTypeId__0519C6AF" Association="Self.FK__Admin__ADTypeId__0519C6AF">
+            <End Role="ADType" EntitySet="ADType" />
+            <End Role="Admin" EntitySet="Admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__class__UserId__3A81B327" Association="Self.FK__class__UserId__3A81B327">
+            <End Role="User" EntitySet="User" />
+            <End Role="class" EntitySet="class" />
+          </AssociationSet>
+          <AssociationSet Name="FK__class__UserIde__398D8EEE" Association="Self.FK__class__UserIde__398D8EEE">
+            <End Role="User" EntitySet="User" />
+            <End Role="class" EntitySet="class" />
+          </AssociationSet>
+          <AssociationSet Name="FK__culture__imgID__1367E606" Association="Self.FK__culture__imgID__1367E606">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="culture" EntitySet="culture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__culture__UserId__1273C1CD" Association="Self.FK__culture__UserId__1273C1CD">
+            <End Role="User" EntitySet="User" />
+            <End Role="culture" EntitySet="culture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detail__UserId__34C8D9D1" Association="Self.FK__detail__UserId__34C8D9D1">
+            <End Role="User" EntitySet="User" />
+            <End Role="detail" EntitySet="detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__systemId__21B6055D" Association="Self.FK__Leave__systemId__21B6055D">
+            <End Role="system" EntitySet="system" />
+            <End Role="Leave" EntitySet="Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__UserId__22AA2996" Association="Self.FK__Leave__UserId__22AA2996">
+            <End Role="User" EntitySet="User" />
+            <End Role="Leave" EntitySet="Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Replay__UserId__49C3F6B7" Association="Self.FK__Replay__UserId__49C3F6B7">
+            <End Role="User" EntitySet="User" />
+            <End Role="Replay" EntitySet="Replay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Replay__webId__48CFD27E" Association="Self.FK__Replay__webId__48CFD27E">
+            <End Role="web" EntitySet="web" />
+            <End Role="Replay" EntitySet="Replay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__score__systemId__1CF15040" Association="Self.FK__score__systemId__1CF15040">
+            <End Role="system" EntitySet="system" />
+            <End Role="score" EntitySet="score" />
+          </AssociationSet>
+          <AssociationSet Name="FK__score__UserId__1BFD2C07" Association="Self.FK__score__UserId__1BFD2C07">
+            <End Role="User" EntitySet="User" />
+            <End Role="score" EntitySet="score" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__AdminId__09DE7BCC" Association="Self.FK__User__AdminId__09DE7BCC">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__web__ReplayTypeI__440B1D61" Association="Self.FK__web__ReplayTypeI__440B1D61">
+            <End Role="ReplayType" EntitySet="ReplayType" />
+            <End Role="web" EntitySet="web" />
+          </AssociationSet>
+          <AssociationSet Name="FK__web__UserId__4316F928" Association="Self.FK__web__UserId__4316F928">
+            <End Role="User" EntitySet="User" />
+            <End Role="web" EntitySet="web" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CompanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="action">
+          <Key>
+            <PropertyRef Name="actionId" />
+          </Key>
+          <Property Name="actionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="actionTypeID" Type="Int32" />
+          <Property Name="actionhead" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="actionresult" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="actiontime" Type="DateTime" Precision="3" />
+          <Property Name="actionneedmoney" Type="Int32" />
+          <Property Name="actionfactmoney" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="actiontype" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="actionType1" Relationship="Self.FK__action__actionTy__2B3F6F97" FromRole="action" ToRole="actionType" />
+          <NavigationProperty Name="User" Relationship="Self.FK__action__UserId__2C3393D0" FromRole="action" ToRole="User" />
+        </EntityType>
+        <EntityType Name="actionType">
+          <Key>
+            <PropertyRef Name="actionTypeID" />
+          </Key>
+          <Property Name="actionTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="action" Relationship="Self.FK__action__actionTy__2B3F6F97" FromRole="actionType" ToRole="action" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADTypeId" Type="Int32" />
+          <NavigationProperty Name="ADType" Relationship="Self.FK__Admin__ADTypeId__0519C6AF" FromRole="Admin" ToRole="ADType" />
+          <NavigationProperty Name="User" Relationship="Self.FK__User__AdminId__09DE7BCC" FromRole="Admin" ToRole="User" />
+        </EntityType>
+        <EntityType Name="ADType">
+          <Key>
+            <PropertyRef Name="ADTypeId" />
+          </Key>
+          <Property Name="ADTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Admin" Relationship="Self.FK__Admin__ADTypeId__0519C6AF" FromRole="ADType" ToRole="Admin" />
+        </EntityType>
+        <EntityType Name="class">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ClassId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Morning" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Afertnoon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserIde" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DataTime" Type="DateTime" Precision="3" />
+          <Property Name="require" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__class__UserId__3A81B327" FromRole="class" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Self.FK__class__UserIde__398D8EEE" FromRole="class" ToRole="User" />
+        </EntityType>
+        <EntityType Name="culture">
+          <Key>
+            <PropertyRef Name="CurlterId" />
+          </Key>
+          <Property Name="CurlterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Curlter" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="imgID" Type="Int32" />
+          <Property Name="CurlterHead" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReleaseTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Image" Relationship="Self.FK__culture__imgID__1367E606" FromRole="culture" ToRole="Image" />
+          <NavigationProperty Name="User" Relationship="Self.FK__culture__UserId__1273C1CD" FromRole="culture" ToRole="User" />
+        </EntityType>
+        <EntityType Name="detail">
+          <Key>
+            <PropertyRef Name="MonryId" />
+          </Key>
+          <Property Name="MonryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MonryResult" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sum" Type="Int32" />
+          <Property Name="MoneyTime" Type="DateTime" Precision="3" />
+          <Property Name="UserId" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.FK__detail__UserId__34C8D9D1" FromRole="detail" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="imgID" />
+          </Key>
+          <Property Name="imgID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="culture" Relationship="Self.FK__culture__imgID__1367E606" FromRole="Image" ToRole="culture" />
+        </EntityType>
+        <EntityType Name="Leave">
+          <Key>
+            <PropertyRef Name="LeaveId" />
+          </Key>
+          <Property Name="LeaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LeaveTime" Type="DateTime" Precision="3" />
+          <Property Name="LeaveResult" Type="DateTime" Precision="3" />
+          <Property Name="systemId" Type="Int32" />
+          <Property Name="LeaveType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="LeaveOver" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="system" Relationship="Self.FK__Leave__systemId__21B6055D" FromRole="Leave" ToRole="system" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Leave__UserId__22AA2996" FromRole="Leave" ToRole="User" />
+        </EntityType>
+        <EntityType Name="money">
+          <Key>
+            <PropertyRef Name="sunId" />
+          </Key>
+          <Property Name="sunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="overmoney" Type="Int32" />
+          <Property Name="openmoney" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Replay">
+          <Key>
+            <PropertyRef Name="ReplayId" />
+          </Key>
+          <Property Name="ReplayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="webId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="ReplayResult" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ReplayTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Replay__UserId__49C3F6B7" FromRole="Replay" ToRole="User" />
+          <NavigationProperty Name="web" Relationship="Self.FK__Replay__webId__48CFD27E" FromRole="Replay" ToRole="web" />
+        </EntityType>
+        <EntityType Name="ReplayType">
+          <Key>
+            <PropertyRef Name="ReplayTypeID" />
+          </Key>
+          <Property Name="ReplayTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ReplayTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="web" Relationship="Self.FK__web__ReplayTypeI__440B1D61" FromRole="ReplayType" ToRole="web" />
+        </EntityType>
+        <EntityType Name="score">
+          <Key>
+            <PropertyRef Name="PointId" />
+          </Key>
+          <Property Name="PointId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PointTime" Type="DateTime" Precision="3" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="systemId" Type="Int32" />
+          <NavigationProperty Name="system" Relationship="Self.FK__score__systemId__1CF15040" FromRole="score" ToRole="system" />
+          <NavigationProperty Name="User" Relationship="Self.FK__score__UserId__1BFD2C07" FromRole="score" ToRole="User" />
+        </EntityType>
+        <EntityType Name="system">
+          <Key>
+            <PropertyRef Name="systemId" />
+          </Key>
+          <Property Name="systemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="systemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="systemPoint" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="audat" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Leave" Relationship="Self.FK__Leave__systemId__21B6055D" FromRole="system" ToRole="Leave" />
+          <NavigationProperty Name="score" Relationship="Self.FK__score__systemId__1CF15040" FromRole="system" ToRole="score" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminId" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserPwd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Userimg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Sex" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="Adderss" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Birth" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="action" Relationship="Self.FK__action__UserId__2C3393D0" FromRole="User" ToRole="action" />
+          <NavigationProperty Name="Admin" Relationship="Self.FK__User__AdminId__09DE7BCC" FromRole="User" ToRole="Admin" />
+          <NavigationProperty Name="class" Relationship="Self.FK__class__UserId__3A81B327" FromRole="User" ToRole="class" />
+          <NavigationProperty Name="class1" Relationship="Self.FK__class__UserIde__398D8EEE" FromRole="User" ToRole="class" />
+          <NavigationProperty Name="culture" Relationship="Self.FK__culture__UserId__1273C1CD" FromRole="User" ToRole="culture" />
+          <NavigationProperty Name="detail" Relationship="Self.FK__detail__UserId__34C8D9D1" FromRole="User" ToRole="detail" />
+          <NavigationProperty Name="Leave" Relationship="Self.FK__Leave__UserId__22AA2996" FromRole="User" ToRole="Leave" />
+          <NavigationProperty Name="Replay" Relationship="Self.FK__Replay__UserId__49C3F6B7" FromRole="User" ToRole="Replay" />
+          <NavigationProperty Name="score" Relationship="Self.FK__score__UserId__1BFD2C07" FromRole="User" ToRole="score" />
+          <NavigationProperty Name="web" Relationship="Self.FK__web__UserId__4316F928" FromRole="User" ToRole="web" />
+        </EntityType>
+        <EntityType Name="web">
+          <Key>
+            <PropertyRef Name="webId" />
+          </Key>
+          <Property Name="webId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="webHead" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="webResult" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="webtime" Type="DateTime" Precision="3" />
+          <Property Name="like" Type="Int32" />
+          <Property Name="ReplayTypeID" Type="Int32" />
+          <NavigationProperty Name="Replay" Relationship="Self.FK__Replay__webId__48CFD27E" FromRole="web" ToRole="Replay" />
+          <NavigationProperty Name="ReplayType" Relationship="Self.FK__web__ReplayTypeI__440B1D61" FromRole="web" ToRole="ReplayType" />
+          <NavigationProperty Name="User" Relationship="Self.FK__web__UserId__4316F928" FromRole="web" ToRole="User" />
+        </EntityType>
+        <Association Name="FK__action__actionTy__2B3F6F97">
+          <End Role="actionType" Type="Self.actionType" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="actionType">
+              <PropertyRef Name="actionTypeID" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="actionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__action__UserId__2C3393D0">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="action" Type="Self.action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="action">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Admin__ADTypeId__0519C6AF">
+          <End Role="ADType" Type="Self.ADType" Multiplicity="0..1" />
+          <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADType">
+              <PropertyRef Name="ADTypeId" />
+            </Principal>
+            <Dependent Role="Admin">
+              <PropertyRef Name="ADTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User__AdminId__09DE7BCC">
+          <End Role="Admin" Type="Self.Admin" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="AdminId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="AdminId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__class__UserId__3A81B327">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="class" Type="Self.class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="class">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__class__UserIde__398D8EEE">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="class" Type="Self.class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="class">
+              <PropertyRef Name="UserIde" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__culture__imgID__1367E606">
+          <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+          <End Role="culture" Type="Self.culture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Image">
+              <PropertyRef Name="imgID" />
+            </Principal>
+            <Dependent Role="culture">
+              <PropertyRef Name="imgID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__culture__UserId__1273C1CD">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="culture" Type="Self.culture" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="culture">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__detail__UserId__34C8D9D1">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="detail" Type="Self.detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="detail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__systemId__21B6055D">
+          <End Role="system" Type="Self.system" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="system">
+              <PropertyRef Name="systemId" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="systemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Leave__UserId__22AA2996">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Leave" Type="Self.Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Leave">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Replay__UserId__49C3F6B7">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Replay" Type="Self.Replay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Replay">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Replay__webId__48CFD27E">
+          <End Role="web" Type="Self.web" Multiplicity="0..1" />
+          <End Role="Replay" Type="Self.Replay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="web">
+              <PropertyRef Name="webId" />
+            </Principal>
+            <Dependent Role="Replay">
+              <PropertyRef Name="webId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__web__ReplayTypeI__440B1D61">
+          <End Role="ReplayType" Type="Self.ReplayType" Multiplicity="0..1" />
+          <End Role="web" Type="Self.web" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReplayType">
+              <PropertyRef Name="ReplayTypeID" />
+            </Principal>
+            <Dependent Role="web">
+              <PropertyRef Name="ReplayTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__score__systemId__1CF15040">
+          <End Role="system" Type="Self.system" Multiplicity="0..1" />
+          <End Role="score" Type="Self.score" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="system">
+              <PropertyRef Name="systemId" />
+            </Principal>
+            <Dependent Role="score">
+              <PropertyRef Name="systemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__score__UserId__1BFD2C07">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="score" Type="Self.score" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="score">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__web__UserId__4316F928">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="web" Type="Self.web" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="web">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CompanyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="action" EntityType="Self.action" />
+          <EntitySet Name="actionType" EntityType="Self.actionType" />
+          <EntitySet Name="Admin" EntityType="Self.Admin" />
+          <EntitySet Name="ADType" EntityType="Self.ADType" />
+          <EntitySet Name="class" EntityType="Self.class" />
+          <EntitySet Name="culture" EntityType="Self.culture" />
+          <EntitySet Name="detail" EntityType="Self.detail" />
+          <EntitySet Name="Image" EntityType="Self.Image" />
+          <EntitySet Name="Leave" EntityType="Self.Leave" />
+          <EntitySet Name="money" EntityType="Self.money" />
+          <EntitySet Name="Replay" EntityType="Self.Replay" />
+          <EntitySet Name="ReplayType" EntityType="Self.ReplayType" />
+          <EntitySet Name="score" EntityType="Self.score" />
+          <EntitySet Name="system" EntityType="Self.system" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="web" EntityType="Self.web" />
+          <AssociationSet Name="FK__action__actionTy__2B3F6F97" Association="Self.FK__action__actionTy__2B3F6F97">
+            <End Role="actionType" EntitySet="actionType" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__action__UserId__2C3393D0" Association="Self.FK__action__UserId__2C3393D0">
+            <End Role="User" EntitySet="User" />
+            <End Role="action" EntitySet="action" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Admin__ADTypeId__0519C6AF" Association="Self.FK__Admin__ADTypeId__0519C6AF">
+            <End Role="ADType" EntitySet="ADType" />
+            <End Role="Admin" EntitySet="Admin" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User__AdminId__09DE7BCC" Association="Self.FK__User__AdminId__09DE7BCC">
+            <End Role="Admin" EntitySet="Admin" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__class__UserId__3A81B327" Association="Self.FK__class__UserId__3A81B327">
+            <End Role="User" EntitySet="User" />
+            <End Role="class" EntitySet="class" />
+          </AssociationSet>
+          <AssociationSet Name="FK__class__UserIde__398D8EEE" Association="Self.FK__class__UserIde__398D8EEE">
+            <End Role="User" EntitySet="User" />
+            <End Role="class" EntitySet="class" />
+          </AssociationSet>
+          <AssociationSet Name="FK__culture__imgID__1367E606" Association="Self.FK__culture__imgID__1367E606">
+            <End Role="Image" EntitySet="Image" />
+            <End Role="culture" EntitySet="culture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__culture__UserId__1273C1CD" Association="Self.FK__culture__UserId__1273C1CD">
+            <End Role="User" EntitySet="User" />
+            <End Role="culture" EntitySet="culture" />
+          </AssociationSet>
+          <AssociationSet Name="FK__detail__UserId__34C8D9D1" Association="Self.FK__detail__UserId__34C8D9D1">
+            <End Role="User" EntitySet="User" />
+            <End Role="detail" EntitySet="detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__systemId__21B6055D" Association="Self.FK__Leave__systemId__21B6055D">
+            <End Role="system" EntitySet="system" />
+            <End Role="Leave" EntitySet="Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Leave__UserId__22AA2996" Association="Self.FK__Leave__UserId__22AA2996">
+            <End Role="User" EntitySet="User" />
+            <End Role="Leave" EntitySet="Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Replay__UserId__49C3F6B7" Association="Self.FK__Replay__UserId__49C3F6B7">
+            <End Role="User" EntitySet="User" />
+            <End Role="Replay" EntitySet="Replay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Replay__webId__48CFD27E" Association="Self.FK__Replay__webId__48CFD27E">
+            <End Role="web" EntitySet="web" />
+            <End Role="Replay" EntitySet="Replay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__web__ReplayTypeI__440B1D61" Association="Self.FK__web__ReplayTypeI__440B1D61">
+            <End Role="ReplayType" EntitySet="ReplayType" />
+            <End Role="web" EntitySet="web" />
+          </AssociationSet>
+          <AssociationSet Name="FK__score__systemId__1CF15040" Association="Self.FK__score__systemId__1CF15040">
+            <End Role="system" EntitySet="system" />
+            <End Role="score" EntitySet="score" />
+          </AssociationSet>
+          <AssociationSet Name="FK__score__UserId__1BFD2C07" Association="Self.FK__score__UserId__1BFD2C07">
+            <End Role="User" EntitySet="User" />
+            <End Role="score" EntitySet="score" />
+          </AssociationSet>
+          <AssociationSet Name="FK__web__UserId__4316F928" Association="Self.FK__web__UserId__4316F928">
+            <End Role="User" EntitySet="User" />
+            <End Role="web" EntitySet="web" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CompanyModelStoreContainer" CdmEntityContainer="CompanyEntities">
+          <EntitySetMapping Name="action">
+            <EntityTypeMapping TypeName="CompanyModel.action">
+              <MappingFragment StoreEntitySet="action">
+                <ScalarProperty Name="actionId" ColumnName="actionId" />
+                <ScalarProperty Name="actionTypeID" ColumnName="actionTypeID" />
+                <ScalarProperty Name="actionhead" ColumnName="actionhead" />
+                <ScalarProperty Name="actionresult" ColumnName="actionresult" />
+                <ScalarProperty Name="actiontime" ColumnName="actiontime" />
+                <ScalarProperty Name="actionneedmoney" ColumnName="actionneedmoney" />
+                <ScalarProperty Name="actionfactmoney" ColumnName="actionfactmoney" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="actiontype" ColumnName="actiontype" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="actionType">
+            <EntityTypeMapping TypeName="CompanyModel.actionType">
+              <MappingFragment StoreEntitySet="actionType">
+                <ScalarProperty Name="actionTypeID" ColumnName="actionTypeID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admin">
+            <EntityTypeMapping TypeName="CompanyModel.Admin">
+              <MappingFragment StoreEntitySet="Admin">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="ADTypeId" ColumnName="ADTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADType">
+            <EntityTypeMapping TypeName="CompanyModel.ADType">
+              <MappingFragment StoreEntitySet="ADType">
+                <ScalarProperty Name="ADTypeId" ColumnName="ADTypeId" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="class">
+            <EntityTypeMapping TypeName="CompanyModel.class">
+              <MappingFragment StoreEntitySet="class">
+                <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+                <ScalarProperty Name="Morning" ColumnName="Morning" />
+                <ScalarProperty Name="Afertnoon" ColumnName="Afertnoon" />
+                <ScalarProperty Name="UserIde" ColumnName="UserIde" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DataTime" ColumnName="DataTime" />
+                <ScalarProperty Name="require" ColumnName="require" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="culture">
+            <EntityTypeMapping TypeName="CompanyModel.culture">
+              <MappingFragment StoreEntitySet="culture">
+                <ScalarProperty Name="CurlterId" ColumnName="CurlterId" />
+                <ScalarProperty Name="img" ColumnName="img" />
+                <ScalarProperty Name="Curlter" ColumnName="Curlter" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="imgID" ColumnName="imgID" />
+                <ScalarProperty Name="CurlterHead" ColumnName="CurlterHead" />
+                <ScalarProperty Name="ReleaseTime" ColumnName="ReleaseTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="detail">
+            <EntityTypeMapping TypeName="CompanyModel.detail">
+              <MappingFragment StoreEntitySet="detail">
+                <ScalarProperty Name="MonryId" ColumnName="MonryId" />
+                <ScalarProperty Name="MonryResult" ColumnName="MonryResult" />
+                <ScalarProperty Name="sum" ColumnName="sum" />
+                <ScalarProperty Name="MoneyTime" ColumnName="MoneyTime" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Image">
+            <EntityTypeMapping TypeName="CompanyModel.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="imgID" ColumnName="imgID" />
+                <ScalarProperty Name="img" ColumnName="img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leave">
+            <EntityTypeMapping TypeName="CompanyModel.Leave">
+              <MappingFragment StoreEntitySet="Leave">
+                <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
+                <ScalarProperty Name="LeaveTime" ColumnName="LeaveTime" />
+                <ScalarProperty Name="LeaveResult" ColumnName="LeaveResult" />
+                <ScalarProperty Name="systemId" ColumnName="systemId" />
+                <ScalarProperty Name="LeaveType" ColumnName="LeaveType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LeaveOver" ColumnName="LeaveOver" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="money">
+            <EntityTypeMapping TypeName="CompanyModel.money">
+              <MappingFragment StoreEntitySet="money">
+                <ScalarProperty Name="sunId" ColumnName="sunId" />
+                <ScalarProperty Name="overmoney" ColumnName="overmoney" />
+                <ScalarProperty Name="openmoney" ColumnName="openmoney" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Replay">
+            <EntityTypeMapping TypeName="CompanyModel.Replay">
+              <MappingFragment StoreEntitySet="Replay">
+                <ScalarProperty Name="ReplayId" ColumnName="ReplayId" />
+                <ScalarProperty Name="webId" ColumnName="webId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ReplayResult" ColumnName="ReplayResult" />
+                <ScalarProperty Name="ReplayTime" ColumnName="ReplayTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReplayType">
+            <EntityTypeMapping TypeName="CompanyModel.ReplayType">
+              <MappingFragment StoreEntitySet="ReplayType">
+                <ScalarProperty Name="ReplayTypeID" ColumnName="ReplayTypeID" />
+                <ScalarProperty Name="ReplayTypeName" ColumnName="ReplayTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="score">
+            <EntityTypeMapping TypeName="CompanyModel.score">
+              <MappingFragment StoreEntitySet="score">
+                <ScalarProperty Name="PointId" ColumnName="PointId" />
+                <ScalarProperty Name="PointTime" ColumnName="PointTime" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="systemId" ColumnName="systemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="system">
+            <EntityTypeMapping TypeName="CompanyModel.system">
+              <MappingFragment StoreEntitySet="system">
+                <ScalarProperty Name="systemId" ColumnName="systemId" />
+                <ScalarProperty Name="systemName" ColumnName="systemName" />
+                <ScalarProperty Name="systemPoint" ColumnName="systemPoint" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="audat" ColumnName="audat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="CompanyModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="Userimg" ColumnName="Userimg" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Adderss" ColumnName="Adderss" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Birth" ColumnName="Birth" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="web">
+            <EntityTypeMapping TypeName="CompanyModel.web">
+              <MappingFragment StoreEntitySet="web">
+                <ScalarProperty Name="webId" ColumnName="webId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="webHead" ColumnName="webHead" />
+                <ScalarProperty Name="webResult" ColumnName="webResult" />
+                <ScalarProperty Name="webtime" ColumnName="webtime" />
+                <ScalarProperty Name="like" ColumnName="like" />
+                <ScalarProperty Name="ReplayTypeID" ColumnName="ReplayTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
