@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace 公司管理系统Document.设计
+namespace 公司管理系统Document.发布
 {
-    class 设计文件
+   public class Class1
     {
-         
     }
 }
