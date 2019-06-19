@@ -8,7 +8,7 @@ using 公司管理系统Model;
 
 namespace 公司管理系统BLL
 {
-    class SystemManager : BaseBLL<system>
+    class SystemManager : BaseBLL<Systems>
     {
         public SystemManager():
             base(new SystemService())
