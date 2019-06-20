@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace 公司管理系统UI.Controllers
+namespace 公司管理系统UI.Areas.郑亮.Controllers
 {
-    public class UserController : Controller
+    public class HomeController : Controller
     {
-        // GET: User
-        public ActionResult Index()
+        // GET: 郑亮/Home
+        public ActionResult Finance()
         {
             return View();
         }

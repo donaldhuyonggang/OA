@@ -144,9 +144,9 @@
     <Compile Include="Areas\唐凯\唐凯AreaRegistration.cs" />
     <Compile Include="Areas\廖蔚莹\廖蔚莹AreaRegistration.cs" />
     <Compile Include="Areas\罗威\罗威AreaRegistration.cs" />
+    <Compile Include="Areas\郑亮\Controllers\FinanceController.cs" />
     <Compile Include="Areas\郑亮\郑亮AreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -168,6 +168,7 @@
     <Content Include="Areas\唐凯\Views\web.config" />
     <Content Include="Areas\刘鑫鹏\Views\web.config" />
     <Content Include="Areas\罗威\Views\web.config" />
+    <Content Include="Areas\郑亮\Views\Finance\Show.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -372,7 +373,6 @@
     <Folder Include="Areas\罗威\Controllers\" />
     <Folder Include="Areas\罗威\Models\" />
     <Folder Include="Areas\罗威\Views\Shared\" />
-    <Folder Include="Areas\郑亮\Controllers\" />
     <Folder Include="Areas\郑亮\Models\" />
     <Folder Include="Areas\郑亮\Views\Shared\" />
     <Folder Include="Models\" />
