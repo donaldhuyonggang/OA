@@ -17,6 +17,7 @@ namespace 公司管理系统UI
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                
             );
         }
     }
