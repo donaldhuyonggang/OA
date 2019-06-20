@@ -1,22 +1,22 @@
 ﻿using System.Web.Mvc;
 
-namespace 公司管理系统.Areas.唐凯
+namespace 公司管理系统UI.Areas.LuoWei
 {
-    public class 唐凯AreaRegistration : AreaRegistration 
+    public class LuoWeiAreaRegistration : AreaRegistration 
     {
         public override string AreaName 
         {
             get 
             {
-                return "唐凯";
+                return "LuoWei";
             }
         }
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "唐凯_default",
-                "唐凯/{controller}/{action}/{id}",
+                "LuoWei_default",
+                "LuoWei/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
         }
