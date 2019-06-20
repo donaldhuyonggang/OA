@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        .head {
+            background-color: black;
+            background: rgba(0,0,0,0.3) none repeat scroll 0 0;
+            margin-bottom: 0;
+            border-bottom: 0;
+            padding: 20px;
+            transition: .3s all;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+        }
+
+            .head > ul {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                padding: 0 0%;
+                list-style: none;
+            }
+
+                .head > ul > li > a {
+                    color: aliceblue;
+                    text-decoration: none;
+                    margin-left: 25px;
+                    margin-right: 15px;
+                }
+
+            .head img {
+                width: 100px;
+                height: 80px;
+            }
+
+        body {
+            background-color: black;
+        }
+
+        .head > ul > li > a:hover {
+            color: gold;
+            text-decoration: solid;
+        }
+
+        .foot > p {
+            text-align: center;
+        }
+
+            .foot > p > a {
+                color: aliceblue;
+                text-decoration: none;
+                margin-left: 25px;
+                margin-right: 15px;
+                margin-top: 5px;
+            }
+
+                .foot > p > a:hover {
+                    color: gold;
+                }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <a href="/唐凯/Home/Index"><img src="~/Areas/唐凯/image/logo.jpg" /></a>
+        <ul class="bit">
+            <li><a href="/唐凯/Home/Index">首页</a></li>
+            <li><a href="#">班级人员显示</a></li>
+            <li><a href="#">作业完成情况</a></li>
+            <li><a href="#">班费使用情况</a></li>
+            <li><a href="#">个人分数情况</a></li>
+            <li><a href="/唐凯/Home/System">班级规章制度</a></li>
+            <li><a href="/唐凯/Home/classtable">课表</a></li>
+            <li><a href="/唐凯/Home/Result">分数公布</a></li>
+            <li><a href="#">学习论坛</a></li>
+            <li><a href="#">请假情况</a></li>
+
+        </ul>
+        <ul>
+            @*<li><input type="text" name="name" placeholder="请输入要搜索的内容" /></li>
+                <li><input type="submit" name="name" value="搜索" style="border-radius:2px;background:#ffffff;border:1px solid #ffffff;vertical-align:middle" /></li>
+                <li><a href="#">登陆</a></li>
+                                <li><a href="#">注册</a></li>
+                <li style="color:aliceblue">当前时间 @DateTime.Now</li>*@
+            <li style="color:aliceblue">欢迎您:   唐凯</li>
+        </ul>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <div class="foot">
+        <p style="border-top:solid aliceblue;">
+            <a href="#">联系我们</a>
+            <a href="#">支持我们</a>
+            <a href="#">新手帮助</a>
+            <a href="#">常见问题</a>
+            <a href="#">关于我们</a>
+            <a href="#">意见反馈</a>
+
+        </p>
+        <p style=" color:aliceblue; text-align:center;">&copy;2018-2019保留所有权利。</p>
+        <p style="text-align:center; color:aliceblue">设计与开发/北大青鸟-.NET30</p>
+    </div>
+</body>
+</html>

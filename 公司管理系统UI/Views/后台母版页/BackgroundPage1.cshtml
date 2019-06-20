@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @RenderSection("style", required: false)
+    <link rel="shortcut icon" href="~/Views/后台母版页/images/Logo.jpg" />
+    <link rel="bookmark" href="~/Views/后台母版页/images/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="~/Views/后台母版页/css/base.css">
+    @*<link rel="stylesheet" type="text/css" href="~/css/iconfont.css">*@
+    <script type="text/javascript" src="~/Views/后台母版页/framework/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Views/后台母版页/layui/css/layui.css">
+
+    <script type="text/javascript" src="~/Views/后台母版页/layui/layui.js"></script>
+    <!-- 滚动条插件 -->
+    <link rel="stylesheet" type="text/css" href="~/Views/后台母版页/css/jquery.mCustomScrollbar.css">
+    <script src="~/Views/后台母版页/framework/jquery-ui-1.10.4.min.js"></script>
+    <script src="~/Views/后台母版页/framework/jquery.mousewheel.min.js"></script>
+    <script src="~/Views/后台母版页/framework/jquery.mCustomScrollbar.min.js"></script>
+    <script src="~/Views/后台母版页/framework/cframe.js"></script><!-- 仅供所有子页面使用 -->
+    <!-- 公共样式 结束 -->
+
+    <link rel="stylesheet" type="text/css" href="~/Views/后台母版页/css/frameStyle.css">
+    <script type="text/javascript" src="~/Views/后台母版页/framework/frame.js"></script>
+</head>
+<body>
+    <div class="frameMenu">
+        <div class="logo">
+            <img src="~/Views/后台母版页/images/Logo.jpg" />
+            <div class="logoText">
+                <h1>甲壳虫</h1>
+                <p>甲壳虫科技有限公司</p>
+            </div>
+        </div>
+        <!--请注意！a标签里面的文字要改成活的-->
+        <div class="menu">
+            <ul>
+                <li>
+                    <a class="menuFA" href="#" onclick="menuCAClick('', this)">首页</a>
+                </li>
+
+                <li>
+                    <a class="menuFA" href="#">公司人员管理</a>
+                    <dl>
+                        <!--onclick请不要修改!-->
+                        <dt><a href="#" onclick="menuCAClick('', this)">人员分管</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('',this)">人员状态</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('',this)">人员信息管理</a></dt>
+                    </dl>
+                </li>
+                <li>
+                    <a class="menuFA" href="#">员工请假管理</a>
+                    <dl>
+                        <!--onclick请不要修改!-->
+                        <dt><a href="#" onclick="menuCAClick('', this)">查看请假员工</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">审通请假要求</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">批准请假要求</a></dt>
+                    </dl>
+                </li>
+                <li>
+                    <a class="menuFA" href="#">公司规章制度</a>
+                    <dl>
+                        <!--onclick请不要修改!-->
+                        <dt><a href="#" onclick="menuCAClick('/Home/cancas', this)">发布规章制度</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">批阅规章制度</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">扣分管理</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">扣分记录</a></dt>
+                        @*<dt><a href="#" onclick="menuCAClick('', this)">页签切换Table</a></dt>
+                            <dt><a href="#" onclick="menuCAClick('', this)">维护中页面</a></dt>*@
+                    </dl>
+                </li>
+                <li>
+                    <a class="menuFA" href="#">公司文化管理</a>
+                    <dl>
+                        <!--onclick请不要修改!-->
+                        <dt><a href="#" onclick="menuCAClick('', this)">添加公司文化</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">批准公司文化</a></dt>
+                    </dl>
+                </li>
+                @*<li>
+                        <a class="menuFA" href="#" onclick="menuCAClick('', this)">财务管理</a>
+                    </li>*@
+                <li>
+                    <a class="menuFA" href="#">财务管理</a>
+                    <dl>
+                        <!--onclick请不要修改!-->
+                        <dt><a href="#" onclick="menuCAClick('', this)">策划公司活动</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">添加员工缴费</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">修改员工缴费</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">管理消费记录</a></dt>
+                        <dt><a href="#" onclick="menuCAClick('', this)">新增消费记录</a></dt>
+                    </dl>
+                </li>
+                <li>
+                    <a class="menuFA" href="#">论坛管理</a>
+                    <dl>
+                        <!--onclick请不要修改!-->
+                        <dt><a href="#" onclick="menuCAClick('', this)">管理论坛</a></dt>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 左侧菜单 - 结束 -->
+
+    <div class="main">
+        <!-- 头部栏 - 开始 -->
+        <div class="frameTop">
+            <img class="jt" src="~/Views/后台母版页/images/top_jt.png" />
+            <div class="topMenu">
+                <ul>
+                    <!--onclick请不要修改!-->
+                    <li><a href="#" onclick="menuCAClick('', this)"><i class="iconfont icon-yonghu1"></i>管理员</a></li>
+                    <li><a href="#" onclick="menuCAClick('', this)"><i class="iconfont icon-xiugaimima"></i>修改密码</a></li>
+                    <li><a href="/Home/cancas">注销</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 头部栏 - 结束 -->
+        <!-- 核心区域 - 开始 -->
+        <div class="frameMain">
+            <div class="title" id="frameMainTitle">
+                <span>后台首页</span><!--span标签里面的文字是活的，你点击的文字就写在这个里面-->
+            </div>
+            @*<div class="con">
+                    <iframe id="mainIframe" src="~/tgls/qdAPI.html" scrolling="no"></iframe>
+
+                </div>*@
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+        <!-- 核心区域 - 结束 -->
+    </div>
+</body>
+</html>
