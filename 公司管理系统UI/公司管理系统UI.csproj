@@ -137,7 +137,9 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RightAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\LiaoWeiYing\Controllers\HomeController.cs" />
     <Compile Include="Areas\LiaoWeiYing\LiaoWeiYingAreaRegistration.cs" />
     <Compile Include="Areas\LiuXinPeng\LiuXinPengAreaRegistration.cs" />
     <Compile Include="Areas\LiuXin\LiuXinAreaRegistration.cs" />
@@ -167,6 +169,7 @@
     <Content Include="Areas\LuoWei\Views\web.config" />
     <Content Include="Areas\LiuXinPeng\Views\web.config" />
     <Content Include="Areas\TangKai\Views\web.config" />
+    <Content Include="Areas\LiaoWeiYing\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -353,7 +356,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\LiaoWeiYing\Controllers\" />
     <Folder Include="Areas\LiaoWeiYing\Models\" />
     <Folder Include="Areas\LiaoWeiYing\Views\Shared\" />
     <Folder Include="Areas\LiuXinPeng\Controllers\" />
