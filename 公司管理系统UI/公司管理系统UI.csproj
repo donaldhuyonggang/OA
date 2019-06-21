@@ -137,14 +137,14 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RightAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\LiaoWeiYing\Controllers\HomeController.cs" />
     <Compile Include="Areas\LiaoWeiYing\LiaoWeiYingAreaRegistration.cs" />
     <Compile Include="Areas\LiuXinPeng\LiuXinPengAreaRegistration.cs" />
     <Compile Include="Areas\LiuXin\LiuXinAreaRegistration.cs" />
     <Compile Include="Areas\LiuYi\LiuYiAreaRegistration.cs" />
     <Compile Include="Areas\LuoWei\LuoWeiAreaRegistration.cs" />
-    <Compile Include="Areas\TangKai\Controllers\HomeController.cs" />
-    <Compile Include="Areas\TangKai\Controllers\LoginController.cs" />
     <Compile Include="Areas\TangKai\TangKaiAreaRegistration.cs" />
     <Compile Include="Areas\ZhengLiang\ZhengLiangAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -155,11 +155,6 @@
     <Compile Include="Views\后台母版页\Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\TangKai\css\style.css" />
-    <Content Include="Areas\TangKai\image\bbb.jpg" />
-    <Content Include="Areas\TangKai\image\group.png" />
-    <Content Include="Areas\TangKai\image\l.png" />
-    <Content Include="Areas\TangKai\image\m.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -174,8 +169,7 @@
     <Content Include="Areas\LuoWei\Views\web.config" />
     <Content Include="Areas\LiuXinPeng\Views\web.config" />
     <Content Include="Areas\TangKai\Views\web.config" />
-    <Content Include="Areas\TangKai\Views\Login\Index.cshtml" />
-    <Content Include="Areas\TangKai\Views\Home\Index.cshtml" />
+    <Content Include="Areas\LiaoWeiYing\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -188,19 +182,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\前台母版页\image\1.jpg" />
-    <Content Include="Views\前台母版页\image\2.jpg" />
-    <Content Include="Views\前台母版页\image\3.jpg" />
-    <Content Include="Views\前台母版页\image\3.mp4" />
-    <Content Include="Views\前台母版页\image\4-1.jpg" />
-    <Content Include="Views\前台母版页\image\4.jpg" />
-    <Content Include="Views\前台母版页\image\5.jpg" />
-    <Content Include="Views\前台母版页\image\6-1.jpg" />
-    <Content Include="Views\前台母版页\image\6.jpg" />
-    <Content Include="Views\前台母版页\image\7-1.jpg" />
-    <Content Include="Views\前台母版页\image\7.jpg" />
-    <Content Include="Views\前台母版页\image\8.jpg" />
-    <Content Include="Views\前台母版页\image\logo.jpg" />
+    <Content Include="Views\前台母版页\imgae\Logo.jpg" />
     <Content Include="Views\后台母版页\css\base.css" />
     <Content Include="Views\后台母版页\css\dropSort.css" />
     <Content Include="Views\后台母版页\css\errorPage.css" />
@@ -375,7 +357,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\LiaoWeiYing\Controllers\" />
     <Folder Include="Areas\LiaoWeiYing\Models\" />
     <Folder Include="Areas\LiaoWeiYing\Views\Shared\" />
     <Folder Include="Areas\LiuXinPeng\Controllers\" />
@@ -390,7 +371,7 @@
     <Folder Include="Areas\LuoWei\Controllers\" />
     <Folder Include="Areas\LuoWei\Models\" />
     <Folder Include="Areas\LuoWei\Views\Shared\" />
-    <Folder Include="Areas\TangKai\js\" />
+    <Folder Include="Areas\TangKai\Controllers\" />
     <Folder Include="Areas\TangKai\Models\" />
     <Folder Include="Areas\TangKai\Views\Shared\" />
     <Folder Include="Areas\ZhengLiang\Controllers\" />
