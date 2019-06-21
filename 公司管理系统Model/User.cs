@@ -12,20 +12,24 @@ namespace 公司管理系统Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            Action = new HashSet<Action>();
-            ClassTable = new HashSet<ClassTable>();
-            ClassTable1 = new HashSet<ClassTable>();
-            Culture = new HashSet<Culture>();
-            Detail = new HashSet<Detail>();
+            action = new HashSet<action>();
+            _class = new HashSet<_class>();
+            class1 = new HashSet<_class>();
+            culture = new HashSet<culture>();
+            detail = new HashSet<detail>();
             Leave = new HashSet<Leave>();
             Replay = new HashSet<Replay>();
-            Score = new HashSet<Score>();
-            Web = new HashSet<Web>();
+            score = new HashSet<score>();
+            Sys_UserRole = new HashSet<Sys_UserRole>();
+            web = new HashSet<web>();
         }
 
         public int UserId { get; set; }
 
-        public int? AdminId { get; set; }
+        public int DepartmentId { get; set; }
+
+        [StringLength(50)]
+        public string AdminId { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -54,22 +58,24 @@ namespace 公司管理系统Model
 
         public DateTime? Birth { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Action> Action { get; set; }
-
-        public virtual Admin Admin { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClassTable> ClassTable { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string User_Condition { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClassTable> ClassTable1 { get; set; }
+        public virtual ICollection<action> action { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Culture> Culture { get; set; }
+        public virtual ICollection<_class> _class { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Detail> Detail { get; set; }
+        public virtual ICollection<_class> class1 { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<culture> culture { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detail> detail { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Leave> Leave { get; set; }
@@ -78,9 +84,14 @@ namespace 公司管理系统Model
         public virtual ICollection<Replay> Replay { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Score> Score { get; set; }
+        public virtual ICollection<score> score { get; set; }
+
+        public virtual Sys_Department Sys_Department { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Web> Web { get; set; }
+        public virtual ICollection<Sys_UserRole> Sys_UserRole { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<web> web { get; set; }
     }
 }

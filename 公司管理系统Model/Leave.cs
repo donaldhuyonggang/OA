@@ -25,7 +25,11 @@ namespace 公司管理系统Model
         [StringLength(20)]
         public string LeaveOver { get; set; }
 
-        public virtual Systems Systems { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Leave_Condition { get; set; }
+
+        public virtual system system { get; set; }
 
         public virtual User User { get; set; }
     }

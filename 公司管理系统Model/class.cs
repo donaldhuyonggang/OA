@@ -6,10 +6,9 @@ namespace 公司管理系统Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ClassTable")]
-    public partial class ClassTable
+    [Table("class")]
+    public partial class _class
     {
-        [Key]
         public int ClassId { get; set; }
 
         [StringLength(20)]
@@ -26,6 +25,10 @@ namespace 公司管理系统Model
 
         [StringLength(50)]
         public string require { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string class_Condition { get; set; }
 
         public virtual User User { get; set; }
 

@@ -12,7 +12,7 @@ namespace 公司管理系统Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ReplayType()
         {
-            Web = new HashSet<Web>();
+            web = new HashSet<web>();
         }
 
         public int ReplayTypeID { get; set; }
@@ -21,6 +21,6 @@ namespace 公司管理系统Model
         public string ReplayTypeName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Web> Web { get; set; }
+        public virtual ICollection<web> web { get; set; }
     }
 }

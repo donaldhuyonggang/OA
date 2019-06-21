@@ -6,8 +6,8 @@ namespace 公司管理系统Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Score")]
-    public partial class Score
+    [Table("score")]
+    public partial class score
     {
         [Key]
         public int PointId { get; set; }
@@ -18,7 +18,11 @@ namespace 公司管理系统Model
 
         public int? systemId { get; set; }
 
-        public virtual Systems Systems { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string score_Condition { get; set; }
+
+        public virtual system system { get; set; }
 
         public virtual User User { get; set; }
     }

@@ -6,8 +6,8 @@ namespace 公司管理系统Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Money")]
-    public partial class Money
+    [Table("money")]
+    public partial class money
     {
         [Key]
         public int sunId { get; set; }
