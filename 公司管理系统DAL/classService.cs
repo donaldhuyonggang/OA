@@ -8,7 +8,7 @@ using 公司管理系统Model;
 
 namespace 公司管理系统DAL
 {
-    public class ClassService : BaseDAL<ClassTable>
+    public class ClassService : BaseDAL<_classTable>
     {
     }
 }

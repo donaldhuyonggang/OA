@@ -6,8 +6,8 @@ namespace 公司管理系统Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Culture")]
-    public partial class Culture
+    [Table("culture")]
+    public partial class culture
     {
         [Key]
         public int CurlterId { get; set; }
@@ -26,7 +26,9 @@ namespace 公司管理系统Model
         [StringLength(50)]
         public string CurlterHead { get; set; }
 
-        public DateTime? ReleaseTime { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string culture_Condition { get; set; }
 
         public virtual Image Image { get; set; }
 

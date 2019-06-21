@@ -6,11 +6,11 @@ namespace 公司管理系统Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Web")]
-    public partial class Web
+    [Table("web")]
+    public partial class web
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Web()
+        public web()
         {
             Replay = new HashSet<Replay>();
         }
@@ -30,6 +30,10 @@ namespace 公司管理系统Model
         public int? like { get; set; }
 
         public int? ReplayTypeID { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string web_Condition { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Replay> Replay { get; set; }

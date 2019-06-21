@@ -7,7 +7,7 @@ using 公司管理系统DAL;
 using 公司管理系统Model;
 namespace 公司管理系统BLL
 {
-   public class CultureManager:BaseBLL<Culture>
+   public class CultureManager:BaseBLL<culture>
     {
         public CultureManager():
             base(new CultureService())

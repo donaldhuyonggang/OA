@@ -20,8 +20,12 @@ namespace 公司管理系统Model
 
         public DateTime? ReplayTime { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        public string Replay_Condition { get; set; }
+
         public virtual User User { get; set; }
 
-        public virtual Web Web { get; set; }
+        public virtual web web { get; set; }
     }
 }

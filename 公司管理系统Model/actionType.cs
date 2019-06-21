@@ -6,13 +6,13 @@ namespace 公司管理系统Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("ActionType")]
-    public partial class ActionType
+    [Table("actionType")]
+    public partial class actionType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ActionType()
+        public actionType()
         {
-            Action = new HashSet<Action>();
+            action = new HashSet<action>();
         }
 
         public int actionTypeID { get; set; }
@@ -21,6 +21,6 @@ namespace 公司管理系统Model
         public string TypeName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Action> Action { get; set; }
+        public virtual ICollection<action> action { get; set; }
     }
 }

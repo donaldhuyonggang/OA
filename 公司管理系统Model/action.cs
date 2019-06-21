@@ -6,8 +6,8 @@ namespace 公司管理系统Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Action")]
-    public partial class Action
+    [Table("action")]
+    public partial class action
     {
         public int actionId { get; set; }
 
@@ -30,7 +30,11 @@ namespace 公司管理系统Model
         [StringLength(20)]
         public string actiontype { get; set; }
 
-        public virtual ActionType ActionType1 { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string action_Condition { get; set; }
+
+        public virtual actionType actionType1 { get; set; }
 
         public virtual User User { get; set; }
     }

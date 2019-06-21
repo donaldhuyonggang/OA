@@ -6,8 +6,8 @@ namespace 公司管理系统Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Detail")]
-    public partial class Detail
+    [Table("detail")]
+    public partial class detail
     {
         [Key]
         public int MonryId { get; set; }
@@ -20,6 +20,10 @@ namespace 公司管理系统Model
         public DateTime? MoneyTime { get; set; }
 
         public int? UserId { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string detail_Condition { get; set; }
 
         public virtual User User { get; set; }
     }

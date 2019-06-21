@@ -8,13 +8,12 @@ using 公司管理系统Model;
 
 namespace 公司管理系统BLL
 {
-   public class WebManager:BaseBLL<web>
+  public  class Sys_MenuManager:BaseBLL<Sys_Menu>
     {
-        public WebManager():
-            base(new WebService())
+        public Sys_MenuManager():
+            base(new Sys_MenuServer())
         {
 
         }
     }
 }
-
