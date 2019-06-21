@@ -175,6 +175,7 @@
     <Content Include="Areas\LiuXinPeng\Views\web.config" />
     <Content Include="Areas\TangKai\Views\web.config" />
     <Content Include="Areas\TangKai\Views\Login\Index.cshtml" />
+    <Content Include="Areas\TangKai\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -391,7 +392,6 @@
     <Folder Include="Areas\LuoWei\Views\Shared\" />
     <Folder Include="Areas\TangKai\js\" />
     <Folder Include="Areas\TangKai\Models\" />
-    <Folder Include="Areas\TangKai\Views\Home\" />
     <Folder Include="Areas\TangKai\Views\Shared\" />
     <Folder Include="Areas\ZhengLiang\Controllers\" />
     <Folder Include="Areas\ZhengLiang\Models\" />
