@@ -8,7 +8,7 @@ using 公司管理系统Model;
 
 namespace 公司管理系统BLL
 {
-   public class ScoreManager:BaseBLL<Score>
+   public class ScoreManager:BaseBLL<score>
     {
         public ScoreManager():
             base(new ScoreService())

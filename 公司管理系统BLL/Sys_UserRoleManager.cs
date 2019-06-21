@@ -8,13 +8,12 @@ using 公司管理系统Model;
 
 namespace 公司管理系统BLL
 {
-   public class WebManager:BaseBLL<web>
+  public  class Sys_UserRoleManager:BaseBLL<Sys_UserRole>
     {
-        public WebManager():
-            base(new WebService())
+        public Sys_UserRoleManager():
+            base(new Sys_UserRoleServer())
         {
 
         }
     }
 }
-

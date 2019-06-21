@@ -8,12 +8,7 @@ using 公司管理系统Model;
 
 namespace 公司管理系统BLL
 {
-    public class ADTypeManager:BaseBLL<ADType>
+    public class ADTypeManager
     {
-        public ADTypeManager():
-            base(new ADTypeService())
-        {
-
-        }
     }
 }

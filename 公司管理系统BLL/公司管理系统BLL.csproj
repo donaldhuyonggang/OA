@@ -56,6 +56,11 @@
     <Compile Include="ReplayTypeManager.cs" />
     <Compile Include="ScoreManager.cs" />
     <Compile Include="SystemManager.cs" />
+    <Compile Include="Sys_DepartmentManager.cs" />
+    <Compile Include="Sys_MenuManager.cs" />
+    <Compile Include="Sys_RightManager.cs" />
+    <Compile Include="Sys_RoleManager.cs" />
+    <Compile Include="Sys_UserRoleManager.cs" />
     <Compile Include="UserManager.cs" />
     <Compile Include="WebManager.cs" />
   </ItemGroup>
