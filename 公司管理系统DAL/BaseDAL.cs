@@ -11,7 +11,7 @@ namespace 公司管理系统DAL
 
     public class BaseDAL<T> where T : class
     {
-        company db = new company();
+        Model1 db = new Model1();
         public virtual List<T> GetAll()
         {
            

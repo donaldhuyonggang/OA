@@ -47,9 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionService.cs" />
-    <Compile Include="ActionTypeService.cs" />
+    <Compile Include="ActionTypeServer.cs" />
     <Compile Include="AdminService.cs" />
-    <Compile Include="ADTypeService.cs" />
     <Compile Include="BaseDAL.cs" />
     <Compile Include="ClassService.cs" />
     <Compile Include="CultureService.cs" />
@@ -62,6 +61,11 @@
     <Compile Include="ReplayTypeService.cs" />
     <Compile Include="ScoreService.cs" />
     <Compile Include="SystemService.cs" />
+    <Compile Include="Sys_DepartmentServer.cs" />
+    <Compile Include="Sys_MenuServer.cs" />
+    <Compile Include="Sys_RightServer.cs" />
+    <Compile Include="Sys_RoleServer.cs" />
+    <Compile Include="Sys_UserRoleServer.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="WebService.cs" />
   </ItemGroup>
