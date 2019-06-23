@@ -12,7 +12,7 @@ namespace 公司管理系统Model
         public Sys_Menu()
         {
             Sys_Menu1 = new HashSet<Sys_Menu>();
-            Sys_Right = new HashSet<Sys_Right>();
+            Sys_Role = new HashSet<Sys_Role>();
         }
 
         [Key]
@@ -35,6 +35,6 @@ namespace 公司管理系统Model
         public virtual Sys_Menu Sys_Menu2 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sys_Right> Sys_Right { get; set; }
+        public virtual ICollection<Sys_Role> Sys_Role { get; set; }
     }
 }

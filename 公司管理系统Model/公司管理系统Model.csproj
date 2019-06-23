@@ -69,9 +69,7 @@
     <Compile Include="system.cs" />
     <Compile Include="Sys_Department.cs" />
     <Compile Include="Sys_Menu.cs" />
-    <Compile Include="Sys_Right.cs" />
     <Compile Include="Sys_Role.cs" />
-    <Compile Include="Sys_UserRole.cs" />
     <Compile Include="User.cs" />
     <Compile Include="web.cs" />
   </ItemGroup>

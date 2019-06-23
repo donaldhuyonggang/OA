@@ -11,8 +11,8 @@ namespace 公司管理系统Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sys_Role()
         {
-            Sys_Right = new HashSet<Sys_Right>();
-            Sys_UserRole = new HashSet<Sys_UserRole>();
+            Sys_Menu = new HashSet<Sys_Menu>();
+            User = new HashSet<User>();
         }
 
         [Key]
@@ -23,9 +23,9 @@ namespace 公司管理系统Model
         public string RoleName { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sys_Right> Sys_Right { get; set; }
+        public virtual ICollection<Sys_Menu> Sys_Menu { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sys_UserRole> Sys_UserRole { get; set; }
+        public virtual ICollection<User> User { get; set; }
     }
 }

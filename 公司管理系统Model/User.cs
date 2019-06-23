@@ -20,8 +20,8 @@ namespace 公司管理系统Model
             Leave = new HashSet<Leave>();
             Replay = new HashSet<Replay>();
             score = new HashSet<score>();
-            Sys_UserRole = new HashSet<Sys_UserRole>();
             web = new HashSet<web>();
+            Sys_Role = new HashSet<Sys_Role>();
         }
 
         public int UserId { get; set; }
@@ -89,9 +89,9 @@ namespace 公司管理系统Model
         public virtual Sys_Department Sys_Department { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sys_UserRole> Sys_UserRole { get; set; }
+        public virtual ICollection<web> web { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<web> web { get; set; }
+        public virtual ICollection<Sys_Role> Sys_Role { get; set; }
     }
 }

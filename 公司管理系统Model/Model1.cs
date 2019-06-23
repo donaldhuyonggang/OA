@@ -27,9 +27,7 @@
         public virtual DbSet<score> score { get; set; }
         public virtual DbSet<Sys_Department> Sys_Department { get; set; }
         public virtual DbSet<Sys_Menu> Sys_Menu { get; set; }
-        public virtual DbSet<Sys_Right> Sys_Right { get; set; }
         public virtual DbSet<Sys_Role> Sys_Role { get; set; }
-        public virtual DbSet<Sys_UserRole> Sys_UserRole { get; set; }
         public virtual DbSet<system> system { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<web> web { get; set; }
@@ -152,27 +150,14 @@
                 .HasForeignKey(e => e.ParentId);
 
             modelBuilder.Entity<Sys_Menu>()
-                .HasMany(e => e.Sys_Right)
-                .WithRequired(e => e.Sys_Menu)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Sys_Right>()
-                .Property(e => e.Sys_Right_Condition)
-                .IsUnicode(false);
+                .HasMany(e => e.Sys_Role)
+                .WithMany(e => e.Sys_Menu)
+                .Map(m => m.ToTable("Sys_Right").MapLeftKey("MenuId").MapRightKey("RoleId"));
 
             modelBuilder.Entity<Sys_Role>()
-                .HasMany(e => e.Sys_Right)
-                .WithRequired(e => e.Sys_Role)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Sys_Role>()
-                .HasMany(e => e.Sys_UserRole)
-                .WithRequired(e => e.Sys_Role)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Sys_UserRole>()
-                .Property(e => e.Sys_UserRole_Condition)
-                .IsUnicode(false);
+                .HasMany(e => e.User)
+                .WithMany(e => e.Sys_Role)
+                .Map(m => m.ToTable("Sys_UserRole").MapLeftKey("RoleId").MapRightKey("UserId"));
 
             modelBuilder.Entity<system>()
                 .Property(e => e.systemName)
@@ -239,11 +224,6 @@
                 .HasMany(e => e.class1)
                 .WithOptional(e => e.User1)
                 .HasForeignKey(e => e.UserIde);
-
-            modelBuilder.Entity<User>()
-                .HasMany(e => e.Sys_UserRole)
-                .WithRequired(e => e.User)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<web>()
                 .Property(e => e.webHead)
