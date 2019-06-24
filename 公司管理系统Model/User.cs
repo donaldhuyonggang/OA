@@ -23,7 +23,8 @@ namespace 公司管理系统Model
             web = new HashSet<web>();
             Sys_Role = new HashSet<Sys_Role>();
         }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
 
         public int DepartmentId { get; set; }

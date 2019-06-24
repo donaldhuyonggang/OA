@@ -9,6 +9,8 @@ namespace 公司管理系统Model
     [Table("Replay")]
     public partial class Replay
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ReplayId { get; set; }
 
         public int? webId { get; set; }

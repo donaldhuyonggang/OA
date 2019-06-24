@@ -13,7 +13,8 @@ namespace 公司管理系统Model
         {
             web = new HashSet<web>();
         }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int web_typeID { get; set; }
 
         [StringLength(50)]

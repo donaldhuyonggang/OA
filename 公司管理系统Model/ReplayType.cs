@@ -14,7 +14,8 @@ namespace 公司管理系统Model
         {
             web = new HashSet<web>();
         }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ReplayTypeID { get; set; }
 
         [StringLength(50)]
