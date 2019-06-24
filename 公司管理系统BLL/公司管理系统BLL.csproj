@@ -63,6 +63,7 @@
     <Compile Include="Sys_UserRoleManager.cs" />
     <Compile Include="UserManager.cs" />
     <Compile Include="WebManager.cs" />
+    <Compile Include="web_typeManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\公司管理系统DAL\公司管理系统DAL.csproj">

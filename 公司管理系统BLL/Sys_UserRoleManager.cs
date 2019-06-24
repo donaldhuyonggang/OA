@@ -8,12 +8,8 @@ using 公司管理系统Model;
 
 namespace 公司管理系统BLL
 {
-  public  class Sys_UserRoleManager:BaseBLL<Sys_UserRole>
+  public  class Sys_UserRoleManager
     {
-        public Sys_UserRoleManager():
-            base(new Sys_UserRoleServer())
-        {
-
-        }
+      
     }
 }
