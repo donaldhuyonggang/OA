@@ -7,7 +7,7 @@ using 公司管理系统Model;
 
 namespace 公司管理系统DAL
 {
-   public class Sys_UserRoleServer
+   public class web_typeService:BaseDAL<web_type>
     {
     }
 }

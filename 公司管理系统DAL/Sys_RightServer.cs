@@ -7,7 +7,7 @@ using 公司管理系统Model;
 
 namespace 公司管理系统DAL
 {
-  public  class Sys_RightServer:BaseDAL<Sys_Right>
+  public  class Sys_RightServer
     {
     }
 }
