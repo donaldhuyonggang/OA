@@ -31,6 +31,7 @@
         public virtual DbSet<system> system { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<web> web { get; set; }
+        public virtual DbSet<web_type> web_type { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -235,6 +236,10 @@
 
             modelBuilder.Entity<web>()
                 .Property(e => e.web_Condition)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<web_type>()
+                .Property(e => e.web_typeName)
                 .IsUnicode(false);
         }
     }

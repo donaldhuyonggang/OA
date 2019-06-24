@@ -19,6 +19,8 @@ namespace 公司管理系统Model
 
         public int? UserId { get; set; }
 
+        public int? web_typeID { get; set; }
+
         [StringLength(50)]
         public string webHead { get; set; }
 
@@ -41,5 +43,7 @@ namespace 公司管理系统Model
         public virtual ReplayType ReplayType { get; set; }
 
         public virtual User User { get; set; }
+
+        public virtual web_type web_type { get; set; }
     }
 }
