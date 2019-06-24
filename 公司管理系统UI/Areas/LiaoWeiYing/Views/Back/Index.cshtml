@@ -3,6 +3,8 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Background/BackgroundPage1.cshtml";
 }
+@using 公司管理系统Model
+@model List<web>
 @section style{
    
     <style>
@@ -91,22 +93,26 @@
             <li class="img"><img src="~/imges/用户头像1.jpg" /></li>
             <li>用户名:<span>张三</span></li>
             <li>当前时间:<span>@System.DateTime.Now</span></li>
-            <li>学习</li>
-            <li>体育</li>
-            <li>活动</li>
-            <li>户外</li>
+            @foreach (var item in (List<web_type>)ViewData["t"])
+            {
+                <li>@item.web_typeName</li>
+            }
         </ul>
     </div>
     <div class="fbdiv">
-        <ul class="fb">
-            <li class="img"><img src="~/imges/用户头像1.jpg" /></li>
-            <li>用户名:<span>张三</span></li>
-            <li>发布时间:<span>@System.DateTime.Now</span></li>
-            <li><a href="#">删除</a></li>
-        </ul>
-        <p class="nr"> 这是一个标题</p>
-        <p class="nr"> sahdkjsakdhksadlkajflhkdsjgkdhkajkdsakfhaosdihajlsdhkasjdk</p>
-        <p class="rs"><span class="pl"><img src="~/imges/短信图.jpg" /></span> 点赞人数:<span>3000</span>人</p>
+        @foreach (var i in Model)
+        {
+            <ul class="fb">
+                <li class="img"><img src="~/imges/用户头像1.jpg" /></li>
+                <li>用户名:<span>@i.User.UserName</span></li>
+                <li>发布时间:<span>@i.webtime</span></li>
+                <li><a href="#">删除</a></li>
+            </ul>
+            <p class="nr"> @i.webHead</p>
+            <p class="nr">@i.webResult</p>
+            <p class="rs"><span class="pl"><img src="~/imges/短信图.jpg" /></span> 点赞人数:<span>@i.like</span>人</p>
+        }
+        
         <div class="ltpl">
             <div class="plpl">
                 <ul class="fb">
