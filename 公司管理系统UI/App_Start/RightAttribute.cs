@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using 公司管理系统BLL;
 using 公司管理系统Model;
 
+
 namespace 公司管理系统UI.App_Start
 {
     public class RightAttribute : FilterAttribute, IActionFilter

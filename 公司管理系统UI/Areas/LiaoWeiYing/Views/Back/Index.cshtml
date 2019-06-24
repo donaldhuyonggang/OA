@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@section style{
+   
+    <style>
+        * {
+            list-style:none;
+        }
+        .Tdiv {
+            display:flex;
+            flex-direction:column;
+            width:1000%;
+            border:1px solid red;
+        }
+        .HeadDiv {
+            display:flex;
+            background-image: url('../../../../imges/论坛背景图.png');
+            background-color:red;
+        }
+        .divy {
+            margin-top:0.2%;
+            font-size:30px;
+            color:#ffffff;
+        }
+        .divy>ul {
+            display:flex;
+            align-content:center;
+            background-color:#000000;
+        }
+         .divy>ul>li {
+            margin-right:0.5%;
+            height:50px;
+         }
+        .img {
+            border:1px solid #00ff21;
+            border-radius:20px 20px;
+        }
+        .fbdiv {
+            margin-top:0.5%;
+            margin-left:1%;
+            font-size:20px;
+        }
+        .fb {
+            display:flex;
+            font-size:20px;
+        }
+        .fb >li{
+            margin-right:0.5%;
+        }
+        .nr {
+            margin-top:0.1%;
+            margin-left:1%;
+        }
+        .rs {
+            margin-top:0.3%;
+            margin-left:3.5%;
+        }
+        .ltpl {
+            margin-left:0.5%;
+        }
+        .plpl {
+            margin-top:0.3%;
+        }
+        .pl {
+            
+        }
+    </style>
+}
+@section scripttt{
+    <script>
+        $(function () {
+            $(".ltpl").hide();
+            $(".pl").click(function () {
+                $(".ltpl").show();
+                $(this).click(function () {
+                    $(".ltpl").hide();
+                })
+            })
+        })
+    </script>
+    }
+<div class="Tdiv">
+        <div class="HeadDiv">
+            <img src="~/imges/论坛背景图.png" />
+        </div>
+    <div class="divy">
+        <ul>
+            <li class="img"><img src="~/imges/用户头像1.jpg" /></li>
+            <li>用户名:<span>张三</span></li>
+            <li>当前时间:<span>@System.DateTime.Now</span></li>
+            <li>学习</li>
+            <li>体育</li>
+            <li>活动</li>
+            <li>户外</li>
+        </ul>
+    </div>
+    <div class="fbdiv">
+        <ul class="fb">
+            <li class="img"><img src="~/imges/用户头像1.jpg" /></li>
+            <li>用户名:<span>张三</span></li>
+            <li>发布时间:<span>@System.DateTime.Now</span></li>
+            <li><a href="#">删除</a></li>
+        </ul>
+        <p class="nr"> 这是一个标题</p>
+        <p class="nr"> sahdkjsakdhksadlkajflhkdsjgkdhkajkdsakfhaosdihajlsdhkasjdk</p>
+        <p class="rs"><span class="pl"><img src="~/imges/短信图.jpg" /></span> 点赞人数:<span>3000</span>人</p>
+        <div class="ltpl">
+            <div class="plpl">
+                <ul class="fb">
+                    <li class="img"><img src="~/imges/用户头像1.jpg" /></li>
+                    <li>用户名:<span>张三</span></li>
+                    <li>发布时间:<span>@System.DateTime.Now</span></li>
+                    <li><a href="#">删除</a></li>
+                </ul>
+                <p class="nr"> sahdkjsakdhksadlkajflhkdsjgkdhkajkdsakfhaosdihajlsdhkasjdk</p>
+                <p class="rs">点赞人数:<span>3000</span>人</p>
+            </div>
+        </div>
+    </div>
+   
+</div>
+

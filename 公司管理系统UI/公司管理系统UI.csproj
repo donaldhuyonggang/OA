@@ -139,6 +139,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RightAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\LiaoWeiYing\Controllers\BackController.cs" />
     <Compile Include="Areas\LiaoWeiYing\Controllers\HomeController.cs" />
     <Compile Include="Areas\LiaoWeiYing\LiaoWeiYingAreaRegistration.cs" />
     <Compile Include="Areas\LiuXinPeng\LiuXinPengAreaRegistration.cs" />
@@ -303,6 +304,7 @@
     <Content Include="Areas\ZhengLiang\Views\FinanceQT\Show.cshtml" />
     <Content Include="Areas\ZhengLiang\Views\FinanceHT\Show.cshtml" />
     <Content Include="Areas\LiaoWeiYing\Views\Home\Index.cshtml" />
+    <Content Include="Areas\LiaoWeiYing\Views\Back\Index.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
@@ -320,6 +322,10 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="imges\用户头像1.jpg" />
+    <Content Include="imges\短信图.jpg" />
+    <Content Include="imges\论坛背景图.png" />
+    <Content Include="jq\jquery-1.8.3.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\ZhengLiang\Views\web.config" />
