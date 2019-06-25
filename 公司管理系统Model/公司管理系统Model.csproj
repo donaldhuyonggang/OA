@@ -56,8 +56,8 @@
     <Compile Include="Admin.cs" />
     <Compile Include="ADType.cs" />
     <Compile Include="class.cs" />
+    <Compile Include="consume.cs" />
     <Compile Include="culture.cs" />
-    <Compile Include="detail.cs" />
     <Compile Include="Image.cs" />
     <Compile Include="Leave.cs" />
     <Compile Include="Model1.cs" />

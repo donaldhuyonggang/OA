@@ -15,16 +15,15 @@ namespace 公司管理系统Model
             action = new HashSet<action>();
             _class = new HashSet<_class>();
             class1 = new HashSet<_class>();
+            consume = new HashSet<consume>();
             culture = new HashSet<culture>();
-            detail = new HashSet<detail>();
             Leave = new HashSet<Leave>();
             Replay = new HashSet<Replay>();
             score = new HashSet<score>();
             web = new HashSet<web>();
             Sys_Role = new HashSet<Sys_Role>();
         }
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int UserId { get; set; }
 
         public int DepartmentId { get; set; }
@@ -57,6 +56,8 @@ namespace 公司管理系统Model
         [StringLength(50)]
         public string Email { get; set; }
 
+        public int? Userscore { get; set; }
+
         public DateTime? Birth { get; set; }
 
         [Required]
@@ -73,10 +74,10 @@ namespace 公司管理系统Model
         public virtual ICollection<_class> class1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<culture> culture { get; set; }
+        public virtual ICollection<consume> consume { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<detail> detail { get; set; }
+        public virtual ICollection<culture> culture { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Leave> Leave { get; set; }

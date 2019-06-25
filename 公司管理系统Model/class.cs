@@ -9,8 +9,6 @@ namespace 公司管理系统Model
     [Table("class")]
     public partial class _class
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClassId { get; set; }
 
         [StringLength(20)]

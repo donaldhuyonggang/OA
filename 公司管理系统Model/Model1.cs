@@ -17,8 +17,8 @@
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<ADType> ADType { get; set; }
         public virtual DbSet<_class> _class { get; set; }
+        public virtual DbSet<consume> consume { get; set; }
         public virtual DbSet<culture> culture { get; set; }
-        public virtual DbSet<detail> detail { get; set; }
         public virtual DbSet<Image> Image { get; set; }
         public virtual DbSet<Leave> Leave { get; set; }
         public virtual DbSet<money> money { get; set; }
@@ -79,6 +79,14 @@
                 .Property(e => e.class_Condition)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<consume>()
+                .Property(e => e.consume_cause)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<consume>()
+                .Property(e => e.consume_Condition)
+                .IsUnicode(false);
+
             modelBuilder.Entity<culture>()
                 .Property(e => e.img)
                 .IsUnicode(false);
@@ -93,14 +101,6 @@
 
             modelBuilder.Entity<culture>()
                 .Property(e => e.culture_Condition)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<detail>()
-                .Property(e => e.MonryResult)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<detail>()
-                .Property(e => e.detail_Condition)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Image>()
