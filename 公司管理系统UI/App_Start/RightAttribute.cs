@@ -38,6 +38,7 @@ namespace 公司管理系统UI.App_Start
                     {
                         if (i.MenuPath== Url) {
                             return;
+
                         }
 
                           }

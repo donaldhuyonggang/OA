@@ -146,6 +146,8 @@
     <Compile Include="Areas\LiuXin\LiuXinAreaRegistration.cs" />
     <Compile Include="Areas\LiuYi\LiuYiAreaRegistration.cs" />
     <Compile Include="Areas\LuoWei\LuoWeiAreaRegistration.cs" />
+    <Compile Include="Areas\TangKai\Controllers\HomesController.cs" />
+    <Compile Include="Areas\TangKai\Controllers\LoginController.cs" />
     <Compile Include="Areas\TangKai\Controllers\UpController.cs" />
     <Compile Include="Areas\TangKai\TangKaiAreaRegistration.cs" />
     <Compile Include="Areas\ZhengLiang\Controllers\FinanceHTController.cs" />
@@ -159,6 +161,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\TangKai\Content\css\jigsaw.css" />
+    <Content Include="Areas\TangKai\Content\css\style.css" />
+    <Content Include="Areas\TangKai\Content\image\1.jpg" />
+    <Content Include="Areas\TangKai\Content\image\2.jpg" />
+    <Content Include="Areas\TangKai\Content\image\3.jpg" />
+    <Content Include="Areas\TangKai\Content\image\4-1.jpg" />
+    <Content Include="Areas\TangKai\Content\image\4.jpg" />
+    <Content Include="Areas\TangKai\Content\image\5.jpg" />
+    <Content Include="Areas\TangKai\Content\image\6-1.jpg" />
+    <Content Include="Areas\TangKai\Content\image\6.jpg" />
+    <Content Include="Areas\TangKai\Content\image\7-1.jpg" />
+    <Content Include="Areas\TangKai\Content\image\7.jpg" />
+    <Content Include="Areas\TangKai\Content\image\8.jpg" />
+    <Content Include="Areas\TangKai\Content\image\bbb.jpg" />
+    <Content Include="Areas\TangKai\Content\image\group.png" />
+    <Content Include="Areas\TangKai\Content\image\icon_light.f13cff3.png" />
+    <Content Include="Areas\TangKai\Content\image\l.png" />
+    <Content Include="Areas\TangKai\Content\image\logo.jpg" />
+    <Content Include="Areas\TangKai\Content\image\m.png" />
+    <Content Include="Areas\TangKai\Content\js\jigsaw.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\base.css" />
@@ -305,6 +327,8 @@
     <Content Include="Areas\ZhengLiang\Views\FinanceHT\Show.cshtml" />
     <Content Include="Areas\LiaoWeiYing\Views\Home\Index.cshtml" />
     <Content Include="Areas\LiaoWeiYing\Views\Back\Index.cshtml" />
+    <Content Include="Areas\TangKai\Views\Login\Index.cshtml" />
+    <Content Include="Areas\TangKai\Views\Homes\Index.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
