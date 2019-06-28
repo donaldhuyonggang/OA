@@ -1,0 +1,328 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
+}
+
+@section style{
+
+    <style>
+                /*.gundo{
+                    width:1440px;
+                    height:1080px;
+                    overflow:hidden;
+                    margin: auto;
+                }
+                .lunbo>img{
+                    display:flex;
+                    margin-top:20px;
+                    margin-bottom:50px;
+                    width:100%;
+                    height:100%;
+                }
+                .lunbo{
+                    display:flex;
+                    width:1440px;
+                    height:1080px;
+                    animation:move 15s ease-out infinite;
+                }
+
+        @@keyframes move {
+            0%, 20% {
+                margin-left: 0;
+            }
+            25%, 40% {
+                margin-left: -1440px;
+            }
+            45%,60%{
+                margin-left:-2880px
+            }
+            65%,80% {
+                margin-left: -4320px;
+                }
+            85%,100%{
+                margin-left:-5760px;
+            }
+        }*/
+                * {
+                    margin: 0px;
+                    padding: 0px;
+                }
+
+                .banner {
+                    width: 1440px;
+                    height: 1080px;
+                    background-color: #fed93a;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    margin: 0px auto;
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                    .banner .pic ul li {
+                        list-style: none;
+                    }
+
+                .left {
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    top: 500px;
+                    left: 20px;
+                    background-color: rgba(0,0,0,0.5);
+                    color: #fff;
+                    text-align: center;
+                    line-height: 50px;
+                }
+
+                .right {
+                    width: 30px;
+                    height: 50px;
+                    position: absolute;
+                    top: 500px;
+                    right: 20px;
+                    background-color: rgba(0,0,0,0.5);
+                    color: #fff;
+                    text-align: center;
+                    line-height: 50px;
+                }
+
+                .dot {
+                    position: absolute;
+                    width: 124px;
+                    height: 30px;
+                    bottom: 30px;
+                    left: 700px;
+                    background-color: rgba(0,0,0,0.3);
+                    border-radius: 15px;
+                }
+
+                    .dot ul li {
+                        list-style: none;
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 100%;
+                        background-color: #fff;
+                        float: left;
+                        margin: 7px 8px;
+                    }
+
+                        .dot ul li:hover {
+                            background-color: #cd0b2d;
+                        }
+
+                .son {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                }
+
+                    .son > div {
+                        margin: 8%;
+                        margin-bottom: -8%;
+                    }
+
+                .shen {
+                    background-image: url(/Areas/TangKai/Content/image/7-1.jpg);
+                    width: 300px;
+                    height: 300px;
+                    text-align: center;
+                }
+
+                .shen2 {
+                    background-image: url(/Areas/TangKai/Content/image/4-1.jpg);
+                    width: 300px;
+                    height: 300px;
+                    text-align: center;
+                }
+
+                .shen3 {
+                    background-image: url(/Areas/TangKai/Content/image/4-1.jpg);
+                    width: 300px;
+                    height: 300px;
+                    text-align: center;
+                }
+
+                a:hover {
+                    color: gold;
+                    text-decoration: solid;
+                }
+    </style>
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script>
+        $(function () {
+            var num = 1;
+            var timer;
+            var hasStarted = false;
+            $(".banner .left").click(function () {
+                stop();
+                --num;
+                num = num % $(".pic li").size();
+                showpic(num);
+            });
+            $(".banner .right").click(function () {
+                stop();
+                ++num;
+                num = num % $(".pic li").size();
+                showpic(num);
+            });
+            function showpic(index) {
+                $(".pic li").eq(index).show().siblings().hide();
+                $(".dot li").eq(index).css("background", "Gold").siblings().css("background", "#fff");
+            }
+            $(".dot li").hover(function () {
+                stop();
+                num = $(this).index();
+                $(".pic li").eq(num).show().siblings().hide();
+                $(this).css("background", "Gold").siblings().css("background", "#fff");
+            }, start);
+            $(".pic li").each(function (index) {
+                $(this).hover(function () {
+                    stop();
+                    show(index);
+                    num = index + 1;
+                }, start)
+            });
+            function start() {
+                if (!hasStarted) {
+                    hasStarted = true;
+                    timer = setInterval(function () {
+                        showpic(num);
+                        num++;
+                        if (num == $(".pic li").size()) {
+                            num = 0;
+                        }
+                    }, 2000);
+                }
+            }
+            function stop() {
+                clearInterval(timer);
+                hasStarted = false;
+            }
+            start();
+        });
+    </script>
+
+}
+@section name{
+    @Session["Uname"]
+    }
+<div style="height:200px">
+    <p style="font-size:50px;color:aliceblue;text-align:center; padding-top:110px;">欢迎您来到湖南甲壳虫科技有限公司</p>
+</div>
+@*<div class="gundo">
+        <div class=" lunbo">
+            <img src="~/Areas/唐凯/image/1.jpg" />
+            <img src="~/Areas/唐凯/image/2.jpg" />
+            <img src="~/Areas/唐凯/image/3.jpg" />
+            <img src="~/Areas/唐凯/image/4.jpg" />
+            <img src="~/Areas/唐凯/image/5.jpg" />
+        </div>
+    </div>*@
+<div class="banner">
+    <div class="pic">
+        <div class="left"><</div>
+        <ul>
+            <li>
+                <a>
+                    
+                    <img src="~/Areas/TangKai/Content/image/1.jpg">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="~/Areas/TangKai/Content/image/2.jpg">
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="~/Areas/TangKai/Content/image/5.jpg">
+                </a>
+            </li>
+            <li>
+                <a>
+
+                    <img src="~/Areas/TangKai/Content/image/4.jpg">
+                </a>
+            </li>
+        </ul>
+        <div class="right">></div>
+    </div>
+    <div class="dot">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<div>
+    <p style="font-size:50px;color:aliceblue;text-align:center; padding-top:110px;">以互联网为基础的科技和文化公司</p>
+    <p style="font-size:30px;color:aliceblue;text-align:center; padding-top:50px;">甲壳虫,2019年5月诞生于湖南株洲,是一家以互联网为基础的科技和文化公司。</p>
+    <p style="font-size:30px;color:aliceblue;text-align:center; padding-top:50px;">我们的使命是:"通过互联网服务提升人类生活品质"。</p>
+    <p style="font-size:30px;color:aliceblue;text-align:center; padding-top:50px;">甲壳虫秉承着"为用户提供最优质的服务"的理念,致力于为亿万网民提供优质的互联网综合服务。</p>
+    <p style="font-size:20px;color:aliceblue;text-align:center; padding-top:50px;"><a href="#" style="text-decoration:none;">了解更多></a></p>
+    <div class="son">
+        <div>
+            <div class="shen" style="background-image:url(/Areas/TangKai/Content/image/6-1.jpg);width:300px;height:300px;">
+                <br /><br />
+                @*<img src="~/Areas/唐凯/image/6.jpg"  style="width:400px;height:300px;"/>*@
+                <span style="color:aliceblue;font-size:30px;">生活</span><br /><br /><br />
+                <span style="color:aliceblue;font-size:20px;">丰富精神生活</span><br />
+                <span style="color:aliceblue;font-size:10px;">
+                    <a href="#" style="color:aliceblue;
+            text-decoration:none;">了解更多 ></a>
+                </span>
+            </div>
+            <div style="width:300px;height:300px;">
+
+            </div>
+        </div>
+        <div>
+            <div class="shen2">
+                <br /><br />
+                <span style="color:aliceblue;font-size:30px;">娱乐</span><br /><br /><br />
+                <span style="color:aliceblue;font-size:20px;">享受健康生活</span><br />
+                <span style="color:aliceblue;font-size:10px;">
+                    <a href="#" style="color:aliceblue;
+            text-decoration:none;">了解更多 ></a>
+                </span>
+            </div>
+        </div>
+        <div>
+            <div class="shen3">
+                <br /><br />
+                <span style="color:aliceblue;font-size:30px;">学习</span><br /><br /><br />
+                <span style="color:aliceblue;font-size:20px;">畅游知识海洋</span><br />
+                <span style="color:aliceblue;font-size:10px;">
+                    <a href="#" style="color:aliceblue;
+            text-decoration:none;">了解更多 ></a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+@*<img src="~/Areas/唐凯/image/7.jpg" />*@
+
+@*<img src="~/Areas/唐凯/image/8.jpg" />*@
+
+@*<img src="~/Areas/唐凯/image/3.jpg" />*@
+
+<h1 style="color:aliceblue">此下方请写入课表通知与活动通知</h1>
+
+<div>
+
+</div>
+<div>
+
+</div>
+<div>
+    <p style="font-size:50px;color:aliceblue;text-align:center; padding-top:110px;"></p>
+    <video controls="controls" autoplay="autoplay">
+        <source src="~/Areas/%e5%94%90%e5%87%af/image/2.mp4" type="video/mp4" />
+    </video>
+</div>
+
