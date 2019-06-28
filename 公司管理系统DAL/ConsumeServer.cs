@@ -7,7 +7,7 @@ using 公司管理系统Model;
 
 namespace 公司管理系统DAL
 {
-    public   class DetailService
+  public  class ConsumeServer:BaseDAL<consume>
     {
     }
 }

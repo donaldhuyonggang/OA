@@ -51,6 +51,7 @@
     <Compile Include="AdminService.cs" />
     <Compile Include="BaseDAL.cs" />
     <Compile Include="ClassService.cs" />
+    <Compile Include="ConsumeServer.cs" />
     <Compile Include="CultureService.cs" />
     <Compile Include="DetailService.cs" />
     <Compile Include="ImageService.cs" />
