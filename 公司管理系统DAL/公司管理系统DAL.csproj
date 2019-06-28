@@ -58,6 +58,7 @@
     <Compile Include="LeaveService.cs" />
     <Compile Include="MoneyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="qew.cs" />
     <Compile Include="ReplayService.cs" />
     <Compile Include="ReplayTypeService.cs" />
     <Compile Include="ScoreService.cs" />
