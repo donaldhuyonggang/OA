@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@using 公司管理系统Model
+@model List<Leave>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Content/Scripts/jquery-1.10.2.js"></script>
+<style>
+</style>
+<div class="divtablemore">
+    <table class="table table-bordered">
+      
+        <tr>
+            <th>请假人</th>
+            <th>请假时间</th>
+            <th>返校时间</th>
+            <th>请假原因</th>
+            <th>是否批准</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.User.UserName</td>
+                <td>@item.LeaveTime</td>
+                <td>@item.LeaveResult</td>
+                <td>@item.LeaveType</td>
+                <td>@item.LeaveOver</td>
+                <td><a href="/LiuXin/MangerLeave/JLagree?id=@item.LeaveId">批准</a></td>
+                <td><a href="/LiuXin/MangerLeave/JLdisagree?id=@item.LeaveId">不批准</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/LiuXin/MangerLeave/History" class="btn btn-default btn-sm" role="button">历史记录</a>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+       点我
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">心如止水</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">似水似灰</button>
+                    <button type="button" class="btn btn-primary">心如死灰</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
