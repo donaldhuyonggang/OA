@@ -28,7 +28,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             }
             else
             {
-                return Content("不允许批准");
+                return Content("不允许批");
             }
         }
         public ActionResult JLdisagree(int id) {

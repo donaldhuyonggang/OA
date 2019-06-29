@@ -143,6 +143,8 @@
     <Compile Include="Areas\LiaoWeiYing\Controllers\HomeController.cs" />
     <Compile Include="Areas\LiaoWeiYing\LiaoWeiYingAreaRegistration.cs" />
     <Compile Include="Areas\LiuXinPeng\LiuXinPengAreaRegistration.cs" />
+    <Compile Include="Areas\LiuXin\Controllers\LeaveController.cs" />
+    <Compile Include="Areas\LiuXin\Controllers\MangerLeaveController.cs" />
     <Compile Include="Areas\LiuXin\LiuXinAreaRegistration.cs" />
     <Compile Include="Areas\LiuYi\LiuYiAreaRegistration.cs" />
     <Compile Include="Areas\LuoWei\LuoWeiAreaRegistration.cs" />
@@ -161,6 +163,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\LiuXin\Views\CSS\tail.css" />
     <Content Include="Areas\TangKai\Content\css\jigsaw.css" />
     <Content Include="Areas\TangKai\Content\css\style.css" />
     <Content Include="Areas\TangKai\Content\image\1.jpg" />
@@ -329,6 +332,9 @@
     <Content Include="Areas\LiaoWeiYing\Views\Back\Index.cshtml" />
     <Content Include="Areas\TangKai\Views\Login\Index.cshtml" />
     <Content Include="Areas\TangKai\Views\Homes\Index.cshtml" />
+    <Content Include="Areas\LiuXin\Views\Leave\Index.cshtml" />
+    <Content Include="Areas\LiuXin\Views\MangerLeave\History.cshtml" />
+    <Content Include="Areas\LiuXin\Views\MangerLeave\Index.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
@@ -398,7 +404,6 @@
     <Folder Include="Areas\LiuXinPeng\Controllers\" />
     <Folder Include="Areas\LiuXinPeng\Models\" />
     <Folder Include="Areas\LiuXinPeng\Views\Shared\" />
-    <Folder Include="Areas\LiuXin\Controllers\" />
     <Folder Include="Areas\LiuXin\Models\" />
     <Folder Include="Areas\LiuXin\Views\Shared\" />
     <Folder Include="Areas\LiuYi\Controllers\" />

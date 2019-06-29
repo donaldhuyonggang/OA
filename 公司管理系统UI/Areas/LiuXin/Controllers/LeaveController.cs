@@ -31,7 +31,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             {
                 return Redirect("/LiuXin/Leave/Index"); ;
             }
-            return Content("失败");
+            return Content("失败le");
         }
     
     }
