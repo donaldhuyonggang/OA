@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@Session style{
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+@using 公司管理系统Model
+@model List<score>
+
+<table class="table table-hover">
+    <tr>
+        <th>扣分时间</th>
+        <th>扣分人</th>
+        <th>扣分原因</th>
+        <th>所扣分数</th>
+        <th>状态</th>
+        <th>操作一</th>
+    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PointTime</td>
+                <td>@item.User.UserName</td>
+                <td>@item.system.systemName</td>
+                <td>@item.system.systemPoint</td>
+                <td>@item.score_Condition</td>
+                <td><a href="/LiuYi/Point/update?id=@item.PointId&&PointTime=@item.PointTime&&UserId=@item.UserId&&systemId=@item.systemId">删除</a></td>
+            </tr>
+        }
+</table>
+<nav>
+    <ul class="pager">
+        <li class="previous"><a href="/LiuYi/Point/Index?pageIndex=@(ViewBag.pageIndex-1)">上一页</a></li>
+        <li class="next"><a href="/LiuYi/Point/Index?pageIndex=@(ViewBag.pageIndex+1)">下一页</a></li>
+    </ul>
+</nav>
+<hr />
+<a href="/LiuYi/Point/add">新加入扣分</a>

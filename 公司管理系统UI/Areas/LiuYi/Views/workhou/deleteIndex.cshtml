@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "deleteIndex";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@Session style{
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+
+@using 公司管理系统Model
+@model List<_class>
+
+<table class="table table-hover">
+    <tr>
+        <th>上午</th>
+        <th>下午</th>
+        <th>卫生人员</th>
+        <th>卫生人员</th>
+        <th>时间</th>
+        <th>要求</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Morning</td>
+            <td>@item.Afertnoon</td>
+            <td>@item.User.UserName</td>
+            <td>@item.User1.UserName</td>
+            <td>@item.DataTime</td>
+            <td>@item.require</td>
+            <td><a href="/LiuYi/workhou/deleteAll?class_Condition=@item.class_Condition">删除</a></td>
+        </tr>
+    }
+</table>
+
