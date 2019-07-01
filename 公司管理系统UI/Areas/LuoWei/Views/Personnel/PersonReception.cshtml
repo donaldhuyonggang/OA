@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "员工信息管理";
+    Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
+}
+@using 公司管理系统Model;
+@model List<User>
+@section style{
+    <style type="text/css">
+        .foot {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+            .foot a {
+                margin: 4px;
+            }
+
+        .name {
+            border-radius: 10px;
+            border: none;
+            border: 1px solid #cdcdcd;
+            height: 30px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        table {
+            margin-top: 180px;
+            color:white;
+
+        }
+    </style>
+
+
+
+}
+<section class="section">
+    <table class="table table-hover">
+        <tr>
+            <th>员工名字</th>
+            <th>员工电话</th>
+            <th>性别</th>
+            <th>家庭住址</th>
+            <th>邮箱</th>
+            <th>出生日期</th>
+            <th>员工分数</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.Phone</td>
+                <td>@item.Sex</td>
+                <td>@item.Adderss</td>
+                <td>@item.Email</td>
+                <td>@item.Birth</td>
+                <td>@item.Userscore</td>
+            </tr>
+        }
+
+    </table>
+</section>
+<footer class="foot">
+    <a href="/LuoWei/Personnel/PersonReception?pageIndex=1" class="btn btn-danger">首页</a>
+    <a href="/LuoWei/Personnel/PersonReception?pageIndex=@(ViewBag.pageIndex-1)" class="btn btn-danger">上一页</a>
+    <a href="/LuoWei/Personnel/PersonReception?pageIndex=@(ViewBag.pageIndex+1)" class="btn btn-danger">下一页</a>
+    <a href="/LuoWei/Personnel/PersonReception?pageIndex=@((ViewBag.pageCount)/(ViewBag.pageSize))" class="btn btn-danger">尾页</a>
+</footer>
+

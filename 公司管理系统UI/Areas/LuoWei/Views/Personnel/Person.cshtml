@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "人员信息管理";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@using 公司管理系统Model;
+@model List<User>
+@section title{
+    人员管理
+}
+@section style{
+    <style type="text/css">
+        .foot {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+            .foot a {
+                margin: 4px;
+            }
+
+        .name {
+            border-radius: 10px;
+            border: none;
+            border: 1px solid #cdcdcd;
+            height: 30px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+        }
+
+        .h3 {
+            margin-top: 20px;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+        .flex{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        table{
+            margin-top:30px;
+        }
+    </style>
+
+
+
+}
+<div class="h3">
+    <h1>人员信息管理</h1>
+</div>
+<section class="section">
+    <div class="flex">
+        <form action="/LuoWei/Personnel/Person" method="post" class="form-inline">
+            员工姓名:<input type="text" name="UserName" class="name" />
+            <button type="submit" class="btn btn-danger">提交</button>
+        </form>
+        <a href="/LuoWei/Personnel/PersonAdd" class="btn btn-danger">员工入职</a>
+    </div>
+    <table class="table table-hover">
+        <tr>
+            <th>员工名字</th>
+            <th>员工密码</th>
+            <th>员工电话</th>
+            <th>性别</th>
+            <th>家庭住址</th>
+            <th>邮箱</th>
+            <th>出生日期</th>
+            <th>入职状态</th>
+            <th>员工分数</th>
+            <th>操作</th>
+        </tr>
+        @foreach (var item in Model)
+
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.UserPwd</td>
+                <td>@item.Phone</td>
+                <td>@item.Sex</td>
+                <td>@item.Adderss</td>
+                <td>@item.Email</td>
+                <td>@item.Birth</td>
+                <td>@item.User_Condition</td>
+                <td>@item.Userscore</td>
+                <td><a href="/LuoWei/Personnel/PersonUpdate?id=@item.UserId" class="btn btn-danger">修改</a></td>
+            </tr>
+        }
+
+    </table>
+</section>
+<footer class="foot">
+    <a href="/LuoWei/Personnel/Person?pageIndex=1" class="btn btn-danger">首页</a>
+    <a href="/LuoWei/Personnel/Person?pageIndex=@(ViewBag.pageIndex-1)" class="btn btn-danger">上一页</a>
+    <a href="/LuoWei/Personnel/Person?pageIndex=@(ViewBag.pageIndex+1)" class="btn btn-danger">下一页</a>
+    <a href="/LuoWei/Personnel/Person?pageIndex=@((ViewBag.pageCount)/(ViewBag.pageSize))" class="btn btn-danger">尾页</a>
+</footer>

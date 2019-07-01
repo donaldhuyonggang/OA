@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "员工入职";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@using 公司管理系统Model;
+@model List<Sys_Department>
+@section title{
+    人员管理
+}
+@section style{
+    <style type="text/css">
+        .h3{
+            margin:10px;
+        }
+        .text {
+            border-radius: 5px;
+            border: none;
+            border: 1px solid #cdcdcd;
+            height: 25px;
+        }
+        table{
+            margin-left:150px;
+            font-size:16px;
+        }
+    table tr td{
+           padding-top:15px;
+           padding-left:25px;
+        }
+    form p{
+        margin-top:20px;
+        margin-left:100px;
+    }
+    
+    </style>
+}
+<div class="h3">
+    员工入职
+</div>
+<div>
+    <form method="post" action="/LuoWei/Personnel/PersonAdd">
+        <table>
+            <tr>
+                <td>员工姓名：</td>
+                <td><input type="text" name="UserName" class="form-control" required/></td>
+                
+                <td>性别：</td>
+                <td><input type="radio" value="男" name="Sex" id="inlineRadio1" required />男 <input type="radio" value="女" name="Sex" id="inlineRadio2" required />女</td>
+            </tr>
+            <tr>
+                <td>地址：</td>
+                <td><input type="text" name="Adderss" class="form-control" required/></td>
+                
+                <td>员工密码：</td>
+                <td><input type="text" name="UserPwd" class="form-control" required /></td>
+            </tr>
+            <tr>
+                <td>电话号码：</td>
+                <td><input type="text" name="Phone" class="form-control" required /></td>
+               
+                <td>部门：</td>
+                <td>
+                    <select name="DepartmentId" class="form-control" required>
+                        @foreach (var item in Model)
+                        {
+                            <option value="@item.DepartmentId">@item.DepartmentName</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+   
+            <tr>
+                <td>邮箱：</td>
+                <td><input type="text" name="Email" class="form-control" required/></td>
+                
+                <td>出生日期：</td>
+                <td><input type="date" name="Birth" class="form-control" required /></td>
+            </tr>
+            <tr>
+                <td>员工头像：</td>
+                <td><input type="file" name="Userimg" required/></td>
+                
+                <td>入职状态：</td>
+                <td><input type="text" name="User_Condition" class="form-control" required /></td>
+            </tr>
+            <tr>
+                <td>员工分数：</td>
+                <td><input type="text" name="Userscore" class="form-control" required /></td>
+            </tr>
+        </table>
+        <p class="text-center">
+            <input type="submit" value="提交" class="btn btn-danger" />
+
+            <input type="reset" value="重置" class="btn btn-danger" />
+        </p>
+    </form>
+</div>
+
+
