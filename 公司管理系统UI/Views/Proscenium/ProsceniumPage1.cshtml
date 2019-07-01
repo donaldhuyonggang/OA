@@ -65,9 +65,7 @@
                 .foot > p > a:hover {
                     color: gold;
                 }
-          
     </style>
-    @RenderSection("style", required: false)
 </head>
 <body>
     <div class="head">
@@ -77,9 +75,10 @@
             <li><a href="#">班级人员显示</a></li>
             <li><a href="#">作业完成情况</a></li>
             <li><a href="#">班费使用情况</a></li>
-            <li><a href="#">个人分数情况</a></li>
-            <li><a href="#">班级规章制度</a></li>
-            <li><a href="#">课表</a></li>
+            <li><a href="/LiuYi/Pointqian/select">个人分数情况</a></li>
+            <li><a href="/LiuYi/systemqian/systemIndex">班级规章制度</a></li>
+            <li><a href="#">课表发布</a></li>
+            <li><a href="/LiuYi/work/Index">课表</a></li>
             <li><a href="#">分数公布</a></li>
             <li><a href="#">学习论坛</a></li>
             <li><a href="#">请假情况</a></li>
@@ -91,7 +90,7 @@
                 <li><a href="#">登陆</a></li>
                                 <li><a href="#">注册</a></li>
                 <li style="color:aliceblue">当前时间 @DateTime.Now</li>*@
-            <li style="color:aliceblue">欢迎您:@RenderSection("name",required:false)</li>
+            <li style="color:aliceblue">欢迎您:   唐凯</li>
             <!--活的，根据登陆的ID获取用户的姓名-->
         </ul>
     </div>

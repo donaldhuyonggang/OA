@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "systemzongjian";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+
+@Session style(){
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+
+@using 公司管理系统Model
+@model List<system>
+
+<table class="table table-hover">
+    <tr>
+        <th>公司规定内容</th>
+        <th>违规扣分</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.systemName</td>
+            <td>@item.systemPoint</td>
+            <td><a href="/LiuYi/systemhou/systemzongjianpi?id=@item.systemId&&systemPoint=@item.systemPoint&&systemName=@item.systemName&&status=@item.status&&sys_Condition=@item.sys_Condition">批准</a></td>
+        </tr>
+    }
+</table>
+

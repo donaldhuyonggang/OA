@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "add";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@Session style{
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+
+@using 公司管理系统Model
+@model List<User>
+
+                <form action="/LiuYi/Point/adds" method="post">
+                    <p>扣分日期：<input type="datetime-local" name="PointTime" /></p>
+                    <p>
+                        员工姓名：
+                        <select class="form-control" name="UserId">
+                            @foreach (var item in Model)
+                            {
+                                <option value="@item.UserId">@item.UserName</option>
+                            }
+                        </select>
+                    </p>
+                    <p>
+                        扣分原因：
+                        <select class="form-control" name="systemId">
+                            @foreach (var items in (List<system>)ViewData["syslis"])
+                            {
+                                <option value="@items.systemId">@items.systemName</option>
+                            }
+                        </select>
+                    </p>
+                    <button type="submit" class="btn btn-default btn-danger">扣</button>
+                </form>

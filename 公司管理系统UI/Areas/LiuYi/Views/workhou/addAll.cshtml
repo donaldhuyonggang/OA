@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "addAll";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+
+@Session style(){
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+}
+
+@using 公司管理系统Model
+
+<form action="/LiuYi/workhou/addAll" method="post">
+    <p>上午：<input type="text" class="form-control" name="Morning"/>
+    <p>下午：<input type="text" name="Afertnoon" class="form-control"/></p>
+    <p>搞卫生人员
+        <select name="UserIde" class="form-control">
+            @foreach (var item in (List<User>)ViewData["lis"])
+            {
+                <option value="@item.UserId">@item.UserName</option>
+            }
+        </select>
+    </p>
+    <p>搞卫生人员
+        <select name="UserId" class="form-control">
+            @foreach (var item in (List<User>)ViewData["lis"])
+            {
+                <option value="@item.UserId">@item.UserName</option>
+            }
+        </select>
+    </p>
+    <p>日期：<input type="datetime-local" name="DataTime" class="form-control"/></p>
+    <p>要求：<input type="text" name="require" class="form-control"/></p>
+    <p><button type="submit" class="btn btn-default">提交</button></p>
+</form>
