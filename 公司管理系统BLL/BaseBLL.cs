@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using 公司管理系统DAL;
@@ -36,5 +37,9 @@ namespace 公司管理系统BLL
             {
                 return dal.Update(info);
             }
-        }
+            public virtual List<T> Where(Expression<Func<T, bool>> tj)
+            {
+                return dal.Where(tj);
+            }
+    }
     }

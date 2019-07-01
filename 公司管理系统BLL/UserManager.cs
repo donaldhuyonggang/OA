@@ -8,7 +8,7 @@ using 公司管理系统Model;
 
 namespace 公司管理系统BLL
 {
-    class UserManager:BaseBLL<User>
+   public class UserManager:BaseBLL<User>
     {
         public UserManager():
             base(new UserService())

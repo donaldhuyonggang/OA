@@ -147,6 +147,12 @@
     <Compile Include="Areas\LiuXin\Controllers\LeaveController.cs" />
     <Compile Include="Areas\LiuXin\Controllers\MangerLeaveController.cs" />
     <Compile Include="Areas\LiuXin\LiuXinAreaRegistration.cs" />
+    <Compile Include="Areas\LiuYi\Controllers\PointController.cs" />
+    <Compile Include="Areas\LiuYi\Controllers\PointqianController.cs" />
+    <Compile Include="Areas\LiuYi\Controllers\systemhouController.cs" />
+    <Compile Include="Areas\LiuYi\Controllers\systemqianController.cs" />
+    <Compile Include="Areas\LiuYi\Controllers\workController.cs" />
+    <Compile Include="Areas\LiuYi\Controllers\workhouController.cs" />
     <Compile Include="Areas\LiuYi\LiuYiAreaRegistration.cs" />
     <Compile Include="Areas\LuoWei\Controllers\PersonnelController.cs" />
     <Compile Include="Areas\LuoWei\LuoWeiAreaRegistration.cs" />
@@ -341,6 +347,18 @@
     <Content Include="Areas\LuoWei\Views\Personnel\PersonAdd.cshtml" />
     <Content Include="Areas\LuoWei\Views\Personnel\PersonReception.cshtml" />
     <Content Include="Areas\LuoWei\Views\Personnel\PersonUpdate.cshtml" />
+    <Content Include="Areas\LiuYi\Views\Pointqian\Index.cshtml" />
+    <Content Include="Areas\LiuYi\Views\Pointqian\select.cshtml" />
+    <Content Include="Areas\LiuYi\Views\Point\add.cshtml" />
+    <Content Include="Areas\LiuYi\Views\Point\Index.cshtml" />
+    <Content Include="Areas\LiuYi\Views\Point\select.cshtml" />
+    <Content Include="Areas\LiuYi\Views\systemhou\systemfabu.cshtml" />
+    <Content Include="Areas\LiuYi\Views\systemhou\systemhou.cshtml" />
+    <Content Include="Areas\LiuYi\Views\systemhou\systemzongjian.cshtml" />
+    <Content Include="Areas\LiuYi\Views\systemqian\systemIndex.cshtml" />
+    <Content Include="Areas\LiuYi\Views\workhou\addAll.cshtml" />
+    <Content Include="Areas\LiuYi\Views\workhou\deleteIndex.cshtml" />
+    <Content Include="Areas\LiuYi\Views\work\Index.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
@@ -390,6 +408,25 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Background\framework\area.js" />
+    <Content Include="Views\Background\framework\china.js" />
+    <Content Include="Views\Background\framework\echarts.min.js" />
+    <Content Include="Views\Background\framework\jquery-1.11.3.min.js" />
+    <Content Include="Views\Background\framework\jquery-ui-1.10.4.min.js" />
+    <Content Include="Views\Background\framework\jquery.mCustomScrollbar.min.js" />
+    <Content Include="Views\Background\layui\css\layui.css" />
+    <Content Include="Views\Background\layui\css\layui.mobile.css" />
+    <Content Include="Views\Background\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Views\Background\layui\layui.all.js" />
+    <Content Include="Views\Background\layui\lay\modules\jquery.js" />
+    <Content Include="Views\Background\layui\lay\modules\laydate.js" />
+    <Content Include="Views\Background\layui\lay\modules\layedit.js" />
+    <Content Include="Views\Background\layui\lay\modules\layer.js" />
+    <Content Include="Views\Background\layui\lay\modules\mobile.js" />
+    <Content Include="Views\Background\layui\lay\modules\table.js" />
+    <Content Include="Views\Background\Scripts\bootstrap.min.js" />
+    <Content Include="Views\Background\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Views\Background\Scripts\jquery.validate.min.js" />
     <Content Include="Views\Proscenium\ProsceniumPage1.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -402,6 +439,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Background\BackgroundPage1.cshtml" />
+    <Content Include="Views\Background\Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -412,7 +450,6 @@
     <Folder Include="Areas\LiuXinPeng\Views\Shared\" />
     <Folder Include="Areas\LiuXin\Models\" />
     <Folder Include="Areas\LiuXin\Views\Shared\" />
-    <Folder Include="Areas\LiuYi\Controllers\" />
     <Folder Include="Areas\LiuYi\Models\" />
     <Folder Include="Areas\LiuYi\Views\Shared\" />
     <Folder Include="Areas\LuoWei\Models\" />

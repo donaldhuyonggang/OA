@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -55,8 +56,7 @@ namespace 公司管理系统DAL
         {
             
             db.Entry<T>(info).State = System.Data.Entity.EntityState.Modified;
-            return db.SaveChanges() >0;
+            return db.SaveChanges() > 0;
         }
-
     }
 }
