@@ -18,7 +18,7 @@ namespace 公司管理系统UI.Areas.LuoWei.Controllers
         [HttpGet]
         public ActionResult Person(int pageIndex = 1)
         {
-            int pageSize = 2;
+            int pageSize = 2;   
             var list = user.GetAll();
             var list1 = list.OrderByDescending(x => x.Userscore).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
             ViewBag.pageIndex = pageIndex;
