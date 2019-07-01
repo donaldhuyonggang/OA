@@ -11,9 +11,24 @@ namespace 公司管理系统BLL
    public class LeaveManager:BaseBLL<Leave>
     {
         public LeaveManager():
-            base(new 公司管理系统DAL.ImageBLL())
+            base(new LeaveService())
         {
 
+        }
+        public List<Leave> GetBySome(string tj)
+        {
+            LeaveService ls = new LeaveService();
+            return ls.GetBySome(tj);
+        }
+        public List<Leave> GetByother(string tj)
+        {
+            LeaveService ls = new LeaveService();
+            return ls.GetByother(tj);
+        }
+        public bool UpdateL(int id, string LeaveStatues)
+        {
+            LeaveService ls = new LeaveService();
+            return ls.UpdateL(id, LeaveStatues);
         }
     }
 }

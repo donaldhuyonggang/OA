@@ -55,7 +55,7 @@ namespace 公司管理系统DAL
         {
             
             db.Entry<T>(info).State = System.Data.Entity.EntityState.Modified;
-            return db.SaveChanges() > 0;
+            return db.SaveChanges() >0;
         }
 
     }
