@@ -8,6 +8,9 @@
     @RenderSection("style", required: false)
     <script src="~/jq/jquery-1.8.3.js"></script>
     @RenderSection("scripttt", required: false)
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Content/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Content/Scripts/bootstrap.js"></script>
     <link rel="shortcut icon" href="~/Content/images/Logo.jpg" />
     <link rel="bookmark" href="~/Content/images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="~/Content/css/base.css">
@@ -126,7 +129,7 @@
         <!-- 核心区域 - 开始 -->
         <div class="frameMain">
             <div class="title" id="frameMainTitle">
-                <span>后台首页</span><!--span标签里面的文字是活的，你点击的文字就写在这个里面-->
+                <span>@RenderSection("title", required: false)</span><!--span标签里面的文字是活的，你点击的文字就写在这个里面-->
             </div>
             @*<div class="con">
                     <iframe id="mainIframe" src="~/tgls/qdAPI.html" scrolling="no"></iframe>
