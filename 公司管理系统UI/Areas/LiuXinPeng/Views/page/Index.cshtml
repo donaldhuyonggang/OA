@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
+
+}
+@using 公司管理系统Model
+@model List<culture>
+
+@section style{
+    <style>
+        .b {
+        padding-top:120px;
+        color:white;
+        }   
+        div{
+            display:flex;
+            flex-wrap:wrap;
+        }
+    </style>
+}
+<div class="b">
+    @foreach (var item in Model)
+    {
+        <div>
+            <ul>
+                <li><img src=" ~/imges/@item.img" width="170" height="90" /> </li>
+                <li>公司文化：@item.Curlter</li>
+                <li>组织人员：@item.User.UserName</li>
+                <li>公司活动：@item.CurlterHead</li>
+                <li>活动审批：@item.culture_Condition</li>
+            </ul>
+        </div>
+    }
+    
+</div>
+
+
+
+

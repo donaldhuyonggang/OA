@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@using 公司管理系统Model
+@model culture
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<form method="post">
+    <p class="form-control">公司编号：@Html.TextBoxFor(x => x.CurlterId)</p>
+    <p class="form-control">公司文化：@Html.TextBoxFor(x => x.Curlter)</p>
+    <p class="form-control">公司活动：@Html.TextBoxFor(x => x.CurlterHead)</p>
+    <p class="form-control">
+        组织成员：<select name="userid">
+            @foreach (var item in (List<User>)ViewData["User"])
+            {
+                <option value="@item.UserId">@item.UserName</option>
+            }
+        </select>
+    </p>
+    <p class="form-control">活动图片：@Html.TextBoxFor(x => x.img)</p>
+    <p class="form-control">活动审批：@Html.TextBoxFor(x => x.culture_Condition)</p>
+    <p class="form-control">
+        图片路径：
+        <select name="imgid">
+            @foreach (var item in (List<Image>)ViewData["Image"])
+            {
+                <option value="@item.imgID">@item.img</option>
+            }
+        </select>
+    </p>
+    <button type="submit" class="btn btn-block">保存数据</button>
+</form>
+

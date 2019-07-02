@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Culture";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@using 公司管理系统Model
+@model List<culture>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<style>
+    table{
+        /*display:flex;*/
+    }
+</style>
+
+<h1>公司文化</h1>
+<table class="table table-hover">
+    <tr>
+        <th>公司文化</th>
+        <th>公司活动</th>
+        <th>组织成员</th>
+        <th>活动图片</th>
+        <th>活动审批</th>
+        <th>图片路径</th>
+        <th>删除活动</th>
+        <th>修改活动</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Curlter</td>
+        <td>@item.CurlterHead</td>
+        <td>@item.User.UserName</td>
+        <td><img src=" ~/imges/@item.img" width="90" height="60"/></td>
+        <td>@item.culture_Condition</td>
+        <td>@item.Image.img</td>
+        @*<td><a href="/LiuXinPeng/Culture/Add" class="btn btn-danger">添加</td>*@
+        <td><a href="/LiuXinPeng/Culture/Delete/@item.CurlterId" class="btn btn-danger">删除</a></td>
+        <td><a href="/LiuXinPeng/Culture/Update/@item.CurlterId" class="btn btn-danger">修改</a></td>
+    </tr>
+    }
+</table>
+    <form method="get" action="/LiuXinPeng/Culture/Add">
+        <button type="submit" class="btn btn-block">添加公司活动</button>
+    </form>
+

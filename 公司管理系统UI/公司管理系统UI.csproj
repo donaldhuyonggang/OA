@@ -143,6 +143,8 @@
     <Compile Include="Areas\LiaoWeiYing\Controllers\BackController.cs" />
     <Compile Include="Areas\LiaoWeiYing\Controllers\HomeController.cs" />
     <Compile Include="Areas\LiaoWeiYing\LiaoWeiYingAreaRegistration.cs" />
+    <Compile Include="Areas\LiuXinPeng\Controllers\CultureController.cs" />
+    <Compile Include="Areas\LiuXinPeng\Controllers\pageController.cs" />
     <Compile Include="Areas\LiuXinPeng\LiuXinPengAreaRegistration.cs" />
     <Compile Include="Areas\LiuXin\Controllers\LeaveController.cs" />
     <Compile Include="Areas\LiuXin\Controllers\MangerLeaveController.cs" />
@@ -359,6 +361,14 @@
     <Content Include="Areas\LiuYi\Views\workhou\addAll.cshtml" />
     <Content Include="Areas\LiuYi\Views\workhou\deleteIndex.cshtml" />
     <Content Include="Areas\LiuYi\Views\work\Index.cshtml" />
+    <Content Include="Areas\LiuXinPeng\Views\Culture\Add.cshtml" />
+    <Content Include="Areas\LiuXinPeng\Views\Culture\Culture.cshtml" />
+    <Content Include="Areas\LiuXinPeng\Views\Culture\Update.cshtml" />
+    <Content Include="Areas\LiuXinPeng\Views\page\Index.cshtml" />
+    <Content Include="Areas\LiuXinPeng\Views\Shared\Shared\_Layout.cshtml" />
+    <Content Include="Areas\LiuXinPeng\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\LiuXinPeng\Views\web.config" />
+    <Content Include="Areas\LiuXinPeng\Views\_ViewStart.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />
@@ -387,7 +397,6 @@
     <Content Include="Areas\LiaoWeiYing\Views\web.config" />
     <Content Include="Areas\LiuYi\Views\web.config" />
     <Content Include="Areas\LuoWei\Views\web.config" />
-    <Content Include="Areas\LiuXinPeng\Views\web.config" />
     <Content Include="Areas\TangKai\Views\web.config" />
     <Content Include="Areas\TangKai\Views\Up\Index.cshtml" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
@@ -445,9 +454,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\LiaoWeiYing\Models\" />
     <Folder Include="Areas\LiaoWeiYing\Views\Shared\" />
-    <Folder Include="Areas\LiuXinPeng\Controllers\" />
     <Folder Include="Areas\LiuXinPeng\Models\" />
-    <Folder Include="Areas\LiuXinPeng\Views\Shared\" />
     <Folder Include="Areas\LiuXin\Models\" />
     <Folder Include="Areas\LiuXin\Views\Shared\" />
     <Folder Include="Areas\LiuYi\Models\" />
