@@ -1,0 +1,52 @@
+﻿
+@using 公司管理系统Model
+@model action
+
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">修改活动</h4>
+</div>
+<div class="modal-body">
+    @using (Html.BeginForm("XiuGaiHuoDong", "FinanceHT", FormMethod.Post))
+    {
+       <table>
+           <tr>
+               <td>
+                   <input type="hidden" name="actionId" value="@Model.actionId"/>
+               </td>
+           </tr>
+           <tr>
+               <td>活动标题：</td>
+               <td><input type="text" name="actionhead" value="@Model.actionhead" class="form-control"/></td>
+          
+               <td>活动内容：</td>
+               <td><input type="text" name="actionresult" value="@Model.actionresult"  class="form-control"/></td>
+           </tr>
+           <tr>
+               <td>活动日期：</td>
+               <td><input type="text" name="actiontime" value="@DateTime.Now"  class="form-control"></td>
+          
+               <td>活动所需经费:</td>
+               
+               <td><input type="text" class="form-control"  name="actionneedmoney" value="@Model.actionneedmoney" disabled></td>
+           </tr>
+           <tr>
+               <td>活动实际经费:</td>
+               <td><input type="text" class="form-control"  name="actionfactmoney" value="@Model.actionfactmoney"></td>
+           </tr> 
+           <tr>
+               <td><button type="submit" class="btn btn-primary">保存</button></td>
+            </tr>  
+       </table>
+    }
+</div>
+<div class="modal-footer">
+    
+</div>
+
+
+   
+        
+
+

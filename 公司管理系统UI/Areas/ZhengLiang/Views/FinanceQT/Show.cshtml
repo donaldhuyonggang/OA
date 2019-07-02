@@ -3,6 +3,91 @@
     ViewBag.Title = "Show";
     Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
 }
+@using 公司管理系统Model
+<style>
+    .div {
+        display:flex;
+        justify-content:space-around;
+        background:#ffffff;
+        height:480px;
+        width:100%;
+       padding-top:200px;
+    }
+     .div div h2 {
+            text-align:center;
+        }
+       .count{
+        text-align:center;
+    }
+        .count span {
+         margin-right:20px;
+         color:#000000;
+        }
+    .count_a {
+    margin-right:20px;
+    }
 
-<h2>前台</h2>
+</style>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<div class="div">
+    <div>
+        <h2>活动记录</h2>
+        <table class="table table-hover">
+            <tr class="tr1">
+                <th>活动编号</th>
+                <th>活动标题</th>
+                <th>活动内容</th>
+                <th>活动时间</th>
+                <th>活动经费</th>
+                <th>活动策划人</th>
+            </tr>
+            @foreach (var item in (List<action>)ViewBag.list)
+            {
+            <tr class="tr2">
+                <td>@item.actionId</td>
+                <td>@item.actionhead</td>
+                <td>@item.actionresult</td>
+                <td>@item.actiontime</td>
+                <td>@item.actionneedmoney</td>
+                <td>@item.User.UserName</td>
+            </tr>
+            }
+        </table>
+        <div class="count">
+            <a href="~/ZhengLiang/FinanceQT/Show?index=@(ViewBag.index-1)" class="count_a btn-success btn-sm">上一页</a>
+            <span>@ViewBag.zongshu</span>
+            <a href="~/ZhengLiang/FinanceQT/Show?index=@(ViewBag.index+1)" class="btn-success btn-sm">下一页</a>
+        </div>
+    </div>
+    <div>
+        <h2>消费记录</h2>
+        <table class="table table-hover">
+            <tr class="tr1">
+                <th>消费编号</th>
+                <th>消费原因</th>
+                <th>消费金额</th>
+                <th>消费时间</th>
+                <th>批准人</th>
+                <th>状态</th>
+            </tr>
+            @foreach (var item in (List<consume>)ViewBag.lists)
+            {
+            <tr class="tr2">
+                <td>@item.consumeID</td>
+                <td>@item.consume_cause</td>
+                <td>@item.consume_money</td>
+                <td>@item.consume_Time</td>
+                <td>@item.User.UserName</td>
+                <td>@item.consume_Condition</td>
+            </tr>
+            }
+        </table>
+        <div class="count">
+            <a href="~/ZhengLiang/FinanceQT/Show?indexs=@(ViewBag.indexs-1)" class="count_a btn-success btn-sm">上一页</a>
+            <span>@ViewBag.zongshus</span>
+            <a href="~/ZhengLiang/FinanceQT/Show?indexs=@(ViewBag.indexs+1)" class="btn-success btn-sm">下一页</a>
+        </div>
+    </div>
+</div>
 

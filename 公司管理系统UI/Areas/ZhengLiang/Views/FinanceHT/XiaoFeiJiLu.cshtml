@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "XiaoFeiJiLu";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+
+@using 公司管理系统Model
+@model List<consume>
+
+<style>
+    .div_t {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .div h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0px;
+        font-size: 24px;
+    }
+
+    .div .div_us {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0px;
+    }
+
+    .submit {
+        background: #000000;
+        color: #ffffff;
+        min-width: 100px;
+    }
+
+    .div table tr th {
+        min-width: 80px;
+        text-align: center;
+        margin-top: -10px;
+    }
+
+    .div table tr td {
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .count {
+        text-align: center;
+    }
+    .count span{
+       margin-right: 20px;
+    }
+
+    .count_a {
+        margin-right: 20px;
+    }
+</style>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<div class="div_t">
+    <div class="div">
+        <h1>公司消费记录</h1>
+        <div class="div_us">
+            @using (Html.BeginForm("XiaoFeiJiLu", "FinanceHT", FormMethod.Post))
+            {
+                <p>
+                    员工名称:<input type="text" name="consume_cause" />
+                    状态：<input type="radio" checked name="consume_Condition"  value="全部"/>全部
+                    <input type="radio"  name="consume_Condition"  value="可见"/>可见
+                    <input type="radio"  name="consume_Condition"  value="不可见"/>不可见
+                    <input type="submit" value="查询" class="submit" />
+                </p>
+            }
+        </div>
+        <table class="table table-hover">
+            <tr>
+                <th>消费编号</th>
+                <th>消费原因</th>
+                <th>消费金额</th>
+                <th>消费时间</th>
+                <th>批准人</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.consumeID</td>
+                    <td>@item.consume_cause</td>
+                    <td>@item.consume_money</td>
+                    <td>@item.consume_Time</td>
+                    <td>@item.User.UserName</td>
+                    <td>@item.consume_Condition</td>
+                    <td><a href="~/ZhengLiang/FinanceHT/XiaoFeiDelete?id=@item.consumeID"  class="btn-danger btn-block btn-danger">可见/不可见</a></td>
+                </tr>
+            }
+
+        </table>
+        <div class="count">
+            <a href="~/ZhengLiang/FinanceHT/XiaoFeiJiLu?current=@(ViewBag.current-1)" class="count_a btn-success btn-sm">上一页</a>
+            <span>@ViewBag.zongshu</span>
+            <a href="~/ZhengLiang/FinanceHT/XiaoFeiJiLu?current=@(ViewBag.current+1)" class="btn-success btn-sm">下一页</a>
+        </div>
+    </div>
+</div>
+
+

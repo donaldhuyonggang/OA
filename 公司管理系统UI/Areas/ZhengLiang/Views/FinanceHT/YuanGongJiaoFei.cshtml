@@ -1,0 +1,84 @@
+﻿                                                                                                                                                                                        
+@{
+    ViewBag.Title = "YuanGongJiaoFei";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+@using 公司管理系统Model
+<style>
+    .div {
+        min-height: 400px;
+        margin-left: 10px;
+    }
+
+        .div h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0px;
+            font-size:24px;
+        }
+        .div table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .div table tr {
+            display: block;
+            padding: 8px 0px;
+        }
+         .div table tr td {
+                min-width: 100px;
+                margin: 10px;
+        }
+    .submit input{
+        min-width:100px;
+        margin-left:100px;
+        margin-top:30px;
+    }
+
+</style>
+
+<div class="div">
+    <h1>添加员工缴费</h1>
+    @using (Html.BeginForm("YuanGongJiaoFei", "FinanceHT", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>缴费人:</td>
+                <td>
+                    <select name="UserId" style="width:175px">
+                        @foreach (var item in (List<User>)ViewBag.User)
+                        {
+                            <option value="@item.UserId">@item.UserName</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>来源:</td>      
+                <td><input type="text" class="form-control" placeholder="来源" name="MonryResult" required></td>
+            </tr>
+            <tr>
+                <td>金额:</td>               
+                <td><input type="text" class="form-control" placeholder="金额" name="sum" required></td>
+            </tr>
+            <tr>
+                <td>交钱日期:</td>  
+                <td><input type="text" class="form-control"  name="MoneyTime" required value="@DateTime.Now"></td>
+            </tr>
+            <tr>
+                 <td>状态:</td>
+                   <td>
+                  <select name="detail_Condition" style="width:175px">
+                      <option value="可见">可见</option>
+                  </select>
+                   </td>
+             </tr>
+            <tr>
+                <td class="submit"><input type="submit"  value="添加" class="btn-success btn-sm"/></td>
+            </tr>
+        </table>
+    }
+</div>
+
+

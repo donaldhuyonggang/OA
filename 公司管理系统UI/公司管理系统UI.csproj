@@ -372,6 +372,13 @@
     <Content Include="Areas\LiuXinPeng\Views\_ViewStart.cshtml" />
     <Content Include="Areas\LiuXin\Views\Leave\Query.cshtml" />
     <Content Include="Areas\LiuXin\Views\MangerLeave\TcAgree.cshtml" />
+    <Content Include="Areas\ZhengLiang\Views\FinanceHT\HuoDong.cshtml" />
+    <Content Include="Areas\ZhengLiang\Views\FinanceHT\HuoDongJiLu.cshtml" />
+    <Content Include="Areas\ZhengLiang\Views\FinanceHT\JiaoFeiJiLu.cshtml" />
+    <Content Include="Areas\ZhengLiang\Views\FinanceHT\XiaoFeiAdd.cshtml" />
+    <Content Include="Areas\ZhengLiang\Views\FinanceHT\XiaoFeiJiLu.cshtml" />
+    <Content Include="Areas\ZhengLiang\Views\FinanceHT\XiuGaiHuoDong.cshtml" />
+    <Content Include="Areas\ZhengLiang\Views\FinanceHT\YuanGongJiaoFei.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />

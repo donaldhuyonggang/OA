@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "XiaoFeiAdd";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+
+@using 公司管理系统Model
+
+<style>
+    .div {
+        min-height: 400px;
+        margin-left: 10px;
+    }
+
+        .div h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0px;
+            font-size: 24px;
+        }
+
+        .div table {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000000;
+        }
+
+            .div table tr {
+                display: block;
+                padding: 7px 0px;
+                margin-bottom: 10px;
+            }
+
+                .div table tr td {
+                    min-width: 120px;
+                    margin: 10px;
+                }
+
+    .submit input {
+        min-width: 100px;
+        margin-left: 60px;
+    }
+</style>
+
+
+
+<div class="div">
+    <h1>添加公司消费记录</h1>
+    @using (Html.BeginForm("XiaoFeiAdd", "FinanceHT", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>消费原因:</td>
+                <td><input type="text" class="form-control" placeholder="消费原因" name="consume_cause" required></td>
+            </tr>
+            
+            <tr>
+                <td>消费时间:</td>
+                <td><input type="text" class="form-control" placeholder="消费时间" name="consume_Time" value="@DateTime.Now" required></td>
+            </tr>
+            <tr>
+                <td>消费金额:</td>
+                <td><input type="text" class="form-control" placeholder="消费金额" name="consume_money" required></td>
+            </tr>
+            <tr>
+                <td>活动策划人:</td>
+                <td>
+                    <select name="Userid" style="width:170px">
+                        @foreach (var item in (List<User>)ViewBag.User)
+                        {
+                            <option value="@item.UserId">@item.UserName</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>状态:</td>
+                <td>
+                    <select name="consume_Condition"  style="width:170px">
+                        <option value="可见">可见</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="submit"><input type="submit" value="添加"  class="btn-group-justified btn-success"/></td>
+            </tr>
+        </table>
+    }
+</div>
+
+
