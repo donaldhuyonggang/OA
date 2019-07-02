@@ -29,10 +29,19 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             bool b=lm.Add(le);
             if (b)
             {
-                return Redirect("/LiuXin/Leave/Index"); ;
+                return Redirect("/LiuXin/Leave/Query"); ;
             }
-            return Content("失败le");
+            return Content("失败1");
         }
-    
+        public ActionResult Query() {
+            LeaveManager lm = new LeaveManager();
+            string name = "王五";//Session["User"]
+            List<Leave> listcount = lm.GetByName(name) ;
+            ViewBag.UserCount=listcount.Count();
+            UserManager um = new UserManager();
+            List<User> Userlist = um.GetAll();
+            ViewData["Userlist"] = Userlist;
+            return View(listcount);
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             }
             else
             {
-                return Content("不允许批");
+                return Content("不允许批准");
             }
         }
         public ActionResult JLdisagree(int id) {
@@ -37,11 +37,48 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             bool pdd = lm.UpdateL(id, leaveover);
             if (pdd)
             {
+                string leaveoline = "不可见";
+                lm.UpdateC(id,leaveoline);
                 return Redirect("~/LiuXin/MangerLeave/Index");
             }
             else
             {
-                return Content("否定不批准失败");
+                return Content("否定不批准失败改一下");
+            }
+        }
+        public ActionResult TcAgree()
+        {
+            LeaveManager lm = new LeaveManager();
+            List<Leave> listleave = lm.GetBySomeother("批准","可见");
+            return View(listleave);
+        }
+        public ActionResult RcAgree(int id) {
+            LeaveManager lm = new LeaveManager();
+            string leaveover = "批准";
+            //int id = Convert.ToInt32(Request.QueryString["id"]);
+            bool pd = lm.UpdateG(id, leaveover);
+            if (pd)
+            {
+                return Redirect("~/LiuXin/MangerLeave/TcAgree");
+            }
+            else
+            {
+                return Content("不允许批准");
+            }
+        }
+        public ActionResult RcDisAgree(int id)
+        {
+            LeaveManager lm = new LeaveManager();
+            string leaveover = "不批准";
+            //int id = Convert.ToInt32(Request.QueryString["id"]);
+            bool pd = lm.UpdateG(id, leaveover);
+            if (pd)
+            {
+                return Redirect("~/LiuXin/MangerLeave/TcAgree");
+            }
+            else
+            {
+                return Content("不允许批准");
             }
         }
         public ActionResult History() {

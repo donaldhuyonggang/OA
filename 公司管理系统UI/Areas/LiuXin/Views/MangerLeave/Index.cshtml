@@ -10,7 +10,7 @@
 <style>
 </style>
 <div class="divtablemore">
-    <table class="table table-bordered">
+    <table class="table table-bordered table-striped">
       
         <tr>
             <th>请假人</th>
@@ -27,33 +27,11 @@
                 <td>@item.LeaveResult</td>
                 <td>@item.LeaveType</td>
                 <td>@item.LeaveOver</td>
-                <td><a href="/LiuXin/MangerLeave/JLagree?id=@item.LeaveId">批准</a></td>
-                <td><a href="/LiuXin/MangerLeave/JLdisagree?id=@item.LeaveId">不批准</a></td>
+                <td class="text-center"><a href="/LiuXin/MangerLeave/JLagree?id=@item.LeaveId" class="btn-success btn-sm ">批准</a></td>
+                <td class="text-center"><a href="/LiuXin/MangerLeave/JLdisagree?id=@item.LeaveId" class="btn-danger btn-sm">不批准</a></td>
             </tr>
         }
     </table>
-    <a href="/LiuXin/MangerLeave/History" class="btn btn-default btn-sm" role="button">历史记录</a>
+    <a href="/LiuXin/MangerLeave/History" class="btn btn-success btn-sm" role="button">历史记录</a>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-       点我
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">心如止水</h4>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">似水似灰</button>
-                    <button type="button" class="btn btn-primary">心如死灰</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

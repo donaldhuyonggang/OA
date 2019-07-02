@@ -149,6 +149,7 @@
     <Compile Include="Areas\LiuXin\Controllers\LeaveController.cs" />
     <Compile Include="Areas\LiuXin\Controllers\MangerLeaveController.cs" />
     <Compile Include="Areas\LiuXin\LiuXinAreaRegistration.cs" />
+    <Compile Include="Areas\LiuXin\nomatter.cs" />
     <Compile Include="Areas\LiuYi\Controllers\PointController.cs" />
     <Compile Include="Areas\LiuYi\Controllers\PointqianController.cs" />
     <Compile Include="Areas\LiuYi\Controllers\systemhouController.cs" />
@@ -369,6 +370,8 @@
     <Content Include="Areas\LiuXinPeng\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\LiuXinPeng\Views\web.config" />
     <Content Include="Areas\LiuXinPeng\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\LiuXin\Views\Leave\Query.cshtml" />
+    <Content Include="Areas\LiuXin\Views\MangerLeave\TcAgree.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />

@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Query";
+    Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
+}
+
+
+@using 公司管理系统Model
+@model List<Leave>
+    @section style{
+
+<style>
+    .wor {
+        height: 100px;
+        color: white;
+        padding-top: 20px;
+    }
+       
+    .WCBL {
+        color: white;
+    }
+
+    .table {
+        margin-top: 10PX;
+    }
+    #myModal {
+        color:black;
+        }
+</style>
+        }
+
+<div class="WCBL">
+    <div class="wor">
+        <span>
+        <span style="font-size:20px">您的请假次数：</span><span style="color:greenyellow;font-size:34px">@ViewBag.UserCount</span>
+        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal" style="margin-left:20px">
+            请假
+        </button></span>
+
+    </div>
+    <table border="1" class="table tab-content" >
+        <tr>
+            <th>请假时间</th>
+
+            <th>返校时间</th>
+            <th>请假原因</th>
+            <th>是否批准</th>
+        </tr>
+       
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.LeaveTime</td>
+                    <td>@item.LeaveResult</td>
+                    <td>@item.LeaveType</td>
+                    <td>@item.LeaveOver</td>
+                </tr>
+            }
+               
+    </table>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">请假</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="LeaveSub">
+                        <form class="form-group" method="post" action="/LiuXin/Leave/Index">
+                            <p>
+                                编号ID: <select id="UserId" name="UserId">
+                                    @foreach (var item in   (List<User>)ViewData["Userlist"])
+                                    {
+                                        <option value="@item.UserId">@item.UserId</option>
+                                    }
+                                </select>
+                            </p>
+                            <p>姓名：<input type="text" name="UserName" id="city" value="@ViewBag.id" readonly class="text-info" /></p>
+                            <p>电话：<input type="text" name="Phone" /></p>
+                            <p>请假时间:<input type="datetime" name="LeaveTime" /></p>
+                            <p>回职时间:<input type="datetime" name="LeaveResult" /></p>
+                            <p>请假原因:<input type="text" name="LeaveType" /></p>
+                            <p><input type="submit" value="提交" class="btn-block" /></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

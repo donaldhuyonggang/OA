@@ -1,35 +1,40 @@
 ﻿
 @{
-    ViewBag.Title = "History";
+    ViewBag.Title = "TcAgree";
     Layout = "~/Views/Background/BackgroundPage1.cshtml";
 }
 @using 公司管理系统Model
 @model List<Leave>
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Content/Scripts/jquery-1.10.2.js"></script>
+<style>
+</style>
 <div class="divtablemore">
     <table class="table table-bordered table-striped">
 
         <tr>
             <th>请假人</th>
-            <th>联系方式</th>
             <th>请假时间</th>
             <th>返校时间</th>
             <th>请假原因</th>
-            <th>经理批准</th>
-            <th>老师审查</th>
+            <th>经理是否批准</th>
+            <th>当前状态</th>
         </tr>
-       @foreach (var item in Model)
-       {
-               <tr>
+        @foreach (var item in Model)
+        {
+            <tr>
                 <td>@item.User.UserName</td>
-                <td>@item.User.Adderss</td>
                 <td>@item.LeaveTime</td>
                 <td>@item.LeaveResult</td>
                 <td>@item.LeaveType</td>
                 <td>@item.LeaveOver</td>
                 <td>@item.Leave_Condition</td>
+                <td class="text-center"><a href="/LiuXin/MangerLeave/RcAgree?id=@item.LeaveId" class="btn-success btn-sm ">批准</a></td>
+                <td class="text-center"><a href="/LiuXin/MangerLeave/RcDisAgree?id=@item.LeaveId"class="btn-danger btn-sm">不批准</a></td>
             </tr>
-       }
+        }
     </table>
-    <a href="/LiuXin/MangerLeave/History" class="btn btn-primary btn-sm" role="button" >返回</a>
+    <a href="/LiuXin/MangerLeave/History" class="btn btn-success btn-sm" role="button">历史记录</a>
+    <!-- Button trigger modal -->
 </div>
+

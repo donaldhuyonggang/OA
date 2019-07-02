@@ -39,7 +39,7 @@
 <div class="LeaveSub">
     <form class="form-group" method="post">
         <p>
-            编号ID: <select  id="provinceId" name="UserId">
+            编号ID: <select  id="UserId" name="UserId">
                @foreach (var item in (List<User>)ViewData["Userlist"])
                 {
                     <option value="@item.UserId">@item.UserId</option>
@@ -54,3 +54,21 @@
         <p><input type="submit" value="提交" class="btn-danger"/><input type="reset" value="清空" class="btn-primary"/></p>
     </form>
 </div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    //$(function () {
+    //    $("#UserId").change(function () {
+
+    //        var info = new {
+    //            "UserId": $("#UserId").val()
+    //        }
+    //        $.post("/User/AjaxIdtoName",info,function(data){
+    //            if (data) {
+    //                this.Text.valueOf(info);
+    //            } else {
+    //                alert("失败");
+    //            }
+    //        })
+    //    })
+    //})//窗体
+</script>

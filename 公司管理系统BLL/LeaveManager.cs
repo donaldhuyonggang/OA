@@ -8,9 +8,9 @@ using 公司管理系统Model;
 
 namespace 公司管理系统BLL
 {
-   public class LeaveManager:BaseBLL<Leave>
+    public class LeaveManager : BaseBLL<Leave>
     {
-        public LeaveManager():
+        public LeaveManager() :
             base(new LeaveService())
         {
 
@@ -29,6 +29,27 @@ namespace 公司管理系统BLL
         {
             LeaveService ls = new LeaveService();
             return ls.UpdateL(id, LeaveStatues);
+        }
+        public List<Leave> GetByName(string tj)
+        {
+            LeaveService ls = new LeaveService();
+
+            return ls.GetByName(tj);
+        }
+        public bool UpdateG(int id, string LeaveOnline)
+        {
+            LeaveService ls = new LeaveService();
+            return ls.UpdateG(id, LeaveOnline);
+        }
+        public List<Leave> GetBySomeother(string tj, string tj2)
+        {
+            LeaveService ls = new LeaveService();
+            return ls.GetBySomeother(tj, tj2);
+        }
+        public bool UpdateC(int id, string LeaveOline)
+        {
+            LeaveService ls = new LeaveService();
+            return ls.UpdateC(id, LeaveOline);
         }
     }
 }
