@@ -1,0 +1,322 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@using 公司管理系统Model
+@model List<web >
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bacck</title>
+    <style>
+        #bnts {
+            padding-top: 10px;
+        }
+
+        .modal-body {
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #shang {
+            display: flex;
+            justify-content: center;
+        }
+
+        #touxiang {
+            width: 150px;
+            height: 150px;
+        }
+
+        .yonghutouxiang {
+            width: 65px;
+            height: 65px;
+            border-radius: 35px;
+        }
+
+        .yonghupingluntouxiang {
+            width: 45px;
+            height: 45px;
+            border-radius: 35px;
+        }
+
+        #yonghuname {
+            font-size: 24px;
+            color: #00ffff;
+        }
+
+        #xuanxiang {
+            display: flex;
+            justify-content: center;
+            font-family: YouYuan;
+            font-size: 14px;
+        }
+
+            #xuanxiang li {
+                list-style: none;
+                margin-left: 15px;
+            }
+
+        .neirong {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #zhongjian {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .neirong {
+            display: flex;
+            justify-content: center;
+            height: 500px;
+        }
+
+        #shu {
+            width: 100%;
+            list-style: none;
+        }
+
+        .diyi {
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+            background-image: url('../../../../imges/未标题-1.jpg');
+        }
+
+        #zuoimg {
+            width: 22%;
+            height: 1030px;
+            margin-right: 15px;
+            background-color: lightblue;
+        }
+
+        #youimg {
+            width: 22%;
+            height: 1030px;
+            margin-left: 15px;
+            background-color: lightblue;
+        }
+
+        .fabuul {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+            .fabuul li {
+                list-style: none;
+            }
+
+        .fabushijian {
+            font-family: YouYuan;
+            font-size: 12px;
+        }
+
+        #ppp {
+            background-image: url('../img/iop.jpg');
+        }
+
+        .fb {
+            background-color: white;
+        }
+
+            .fb div {
+                margin-left: 5px;
+            }
+
+        .xm {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .yhpl {
+            width: 90%;
+            height: 40px;
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        #fabu {
+            display: flex;
+            justify-content: center;
+        }
+
+            #fabu li {
+                list-style: none;
+            }
+
+        .pl {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .plul {
+            display: flex;
+            justify-content: center;
+        }
+
+            .plul li {
+                list-style: none;
+            }
+
+        .fabupinlunshijian {
+            font-family: YouYuan;
+            font-size: 12px;
+        }
+
+        .sp {
+            background-image: url('../../../../imges/未标题-1.jpg');
+        }
+
+        .fabiaotupian {
+            display: flex;
+            justify-content: center;
+        }
+
+        body {
+            background-color: #dbd3d3;
+        }
+
+        .fabiaotupian img {
+            width: 350px;
+            height: 250px;
+        }
+
+        .fb {
+            border-radius: 5px;
+        }
+
+        #toubu {
+            margin-bottom: 50px;
+        }
+
+        .datou {
+            padding-top: 120px;
+            height: 2000px;
+            background-color: lightyellow;
+        }
+
+        .ass {
+            width: 60%;
+        }
+        .cebnn {
+            text-align:center;
+                    }
+    </style>
+    
+</head>
+<body>
+    <div class="datou">
+        <h1  class="cebnn">论坛后台</h1>
+        <div class="tou">
+            <div id="zhongjian">
+                <div class="neirong">
+                    <ul id="shu">
+                        <li class="diyi">
+                            <div id="s">
+
+                            </div>
+                        </li>
+                        @*这里开始大循环*@
+
+                        @foreach (var item2 in (List<web>)Model)
+                        {
+                            <li class="fb">
+                                <div class="leirong">
+                                    <ul class="fabuul">
+                                        <li style="margin-right:20px;">
+                                            <div class="yonghutouxiang">
+                                                <img src="@item2.User.Userimg" style="width:65px;     border-radius:35px;        height:65px;" />
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                <li style="margin-bottom:15px;">用户姓名:@item2.User.UserName</li>
+                                                <li class="fabushijian">发布时间:@item2.webtime</li>
+                                            </ul>
+                                        </li>
+                                        <li style="width:70%;">
+
+                                        </li>
+                                        <li>
+                                            <p>
+                                                @*删除*@
+                                                <a id="bnts" href="/LiaoWeiYing/Back/Delete/?webId=@item2.webId&&UserId=@item2.UserId" class="glyphicon glyphicon-trash"></a>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <hr style="margin-bottom:10px;" />
+                                <div>
+                                    <div class="fabiaotupian">
+                                        <h4>
+                                            @item2.webHead
+                                        </h4>
+                                    </div>
+                                    <div class="fabiaotupian" onload="GetDetail(@item2.webId)">
+                                        @item2.webResult
+                                    </div>
+                                </div>
+                                <div class="@item2.webId">
+                                    <span name="sqll">@item2.webId</span>
+                                </div>
+                            </li>
+                           
+                        }
+                        @*这里结束大循环*@
+                        <li>
+                            <nav>
+                                <ul class="pager">
+                                    <li class="previous disabled"><a href="/LiaoWeiYing/Back/Bacck?pageIndex=@( ViewBag.pageIndex-1)">上一页<span aria-hidden="true">&larr;</span> Older</a></li>
+                                    <li class="next"><a href="/LiaoWeiYing/Back/Bacck?pageIndex=@( ViewBag.pageIndex+1)">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                                </ul>
+                            </nav>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-1.8.3.js"></script>
+    <script>
+        $(function () {
+            $("[name='sqll']").each(function (dom, i) {
+                $.post("/LiaoWeiYing/Back/AJ", { webId: $(this).text() }, function (data) {
+
+                        for (var i = 0; i < data.length; i++) {
+                            alert(data[i].UserId)
+                            var PingLun = "<div class='pl'><div><hr /><ul class='plul'><li><div class='yonghupingluntouxiang'>" +
+                                        "<img src='~/imges/iop.jpg' style='width:45px;  height:45px; border-radius:35px;' />" +
+                                        "</div></li><li><ul><li style='margin-bottom:10px; font-size:14px;'>" +
+                                        "<span id='namess'>用户姓名:" + data[i].UserName + "<a id='bnts' href='/LiaoWeiYing/Back/Delete1/?UserId="+data[i].UserId+"&&ReplayId="+data[i].ReplayId+"' class='glyphicon glyphicon-trash'></a></span>" +
+                                        "<div  style='width:600px;'>评论内容:" + data[i].ReplayResult + "" +
+                                                               " </div>" +
+                                                           " </li>" +
+                                                          "  <li class='fabupinlunshijian'>发布时间:" + data[i].ReplayTime + "</li>" +
+                                                        "</ul>" +
+                                                    "</li>" +
+                                               " </ul>" +
+                                           " </div>" +
+                                        "</div>"
+                            $("." + data[i].webId).append(PingLun);
+                        }
+
+                   })
+                })
+            });
+    </script>
+</body>
+</html>

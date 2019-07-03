@@ -379,6 +379,11 @@
     <Content Include="Areas\ZhengLiang\Views\FinanceHT\XiaoFeiJiLu.cshtml" />
     <Content Include="Areas\ZhengLiang\Views\FinanceHT\XiuGaiHuoDong.cshtml" />
     <Content Include="Areas\ZhengLiang\Views\FinanceHT\YuanGongJiaoFei.cshtml" />
+    <Content Include="Areas\LiaoWeiYing\Views\Back\Bacck.cshtml" />
+    <Content Include="Areas\LiaoWeiYing\Views\Back\Back.cshtml" />
+    <Content Include="Areas\LiaoWeiYing\Views\Home\As.cshtml" />
+    <Content Include="Areas\LiaoWeiYing\Views\Home\Diyi.cshtml" />
+    <Content Include="Areas\LiaoWeiYing\Views\Home\Fabu.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />

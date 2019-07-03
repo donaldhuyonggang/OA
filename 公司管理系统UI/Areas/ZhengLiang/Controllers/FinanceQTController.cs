@@ -37,7 +37,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     ViewBag.index = index;
                     ViewBag.list = list;
 
-            consumeManager aa = new consumeManager();
+            ConsumeManager aa = new ConsumeManager();
             List<consume> consume = aa.GetAll();
             var lists = consume.OrderBy(x => x.consume_Time).Skip((indexs - 1) * count).Take(count).ToList();
             int zongshus = consume.Count();

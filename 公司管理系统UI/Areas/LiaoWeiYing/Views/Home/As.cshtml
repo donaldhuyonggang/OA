@@ -1,0 +1,27 @@
+﻿
+@using 公司管理系统Model
+@model web
+
+@using (Html.BeginForm("Add", "Home", FormMethod.Post))
+{
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">发布新文章</h4>
+        </div>
+        <div class="modal-body">
+            <p>ID:@Html.DropDownList("UserId")</p>
+            <p>标题:@Html.DropDownList("web_typeID")</p>
+            <p>网址:@Html.TextBoxFor(x => x.webHead)</p>
+            <p>类型:@Html.TextBoxFor(x => x.webResult)</p>
+            <p>时间:@Html.TextBoxFor(x => x.webtime)</p>
+            <p>内容:@Html.TextBoxFor(x => x.like)</p>
+            <p>内容:@Html.DropDownList("ReplayTypeID")</p>
+            <p>内容:@Html.TextBoxFor(x => x.web_Condition)</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">保存笔记</button>
+        </div>
+    </div>
+}

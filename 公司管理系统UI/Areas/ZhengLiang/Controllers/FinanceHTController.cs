@@ -641,7 +641,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             {
                 current = 1;
             }
-            consumeManager a = new consumeManager();
+            ConsumeManager a = new ConsumeManager();
             int count = 5;
             List<consume> consume = a.GetAll();
             //List<consume> consume = a.Where(x => x.consume_Condition == "可见").ToList();
@@ -671,7 +671,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     current = 1;
                 }
                 int count = 5;
-                consumeManager a = new consumeManager();
+                ConsumeManager a = new ConsumeManager();
 
                 if (info.consume_cause == null)
                 {
@@ -714,7 +714,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     current = 1;
                 }
                 int count = 5;
-                consumeManager a = new consumeManager();
+                ConsumeManager a = new ConsumeManager();
                 //List<action> detail = a.GetAll();
                 if (info.consume_cause == null)
                 {
@@ -757,7 +757,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
         public ActionResult XiaoFeiDelete(int id)
         {
             //根据id,找到这个对象
-            consumeManager aa = new consumeManager();
+            ConsumeManager aa = new ConsumeManager();
             var info = aa.GetByPK(id);
             if (info.consume_Condition == "可见")
             {

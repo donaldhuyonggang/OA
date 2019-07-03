@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Fabu";
+    Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
+}
+@using 公司管理系统Model
+@model web
+@section styless{
+        <style>
+            .qw {
+            padding-top:130px;
+            background-color:lightcyan;
+            }
+        </style>
+        
+       }
+<div class="container-fluid">
+   <div class="qw text-center">
+       <h1>发布新文章</h1>
+       @*webId, UserId, web_typeID, webHead, webResult, webtime, like, ReplayTypeID, web_Condition*@
+       @using (Html.BeginForm("Add", "Home", FormMethod.Post))
+       {
+           <p>ID:@Html.DropDownList("UserId")</p>
+           <p>标题:@Html.DropDownList("web_typeID")</p>
+           <p>网址:@Html.TextBoxFor(x => x.webHead)</p>
+           <p>类型:@Html.TextBoxFor(x => x.webResult)</p>
+           <p>内容:@Html.TextBoxFor(x => x.webtime)</p>
+           <p>内容:@Html.TextBoxFor(x => x.like)</p>
+           <p>内容:@Html.DropDownList("ReplayTypeID")</p>
+           <p>内容:@Html.TextBoxFor(x => x.web_Condition)</p>
+           <button type="submit" class="btn btn-group" >保存笔记</button>
+       }
+   </div>
+</div>
