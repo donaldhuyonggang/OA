@@ -16,8 +16,8 @@ namespace 公司管理系统UI
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-                
+                defaults: new { controller = "Personnel", action = "Person", id = UrlParameter.Optional },
+                namespaces: new string[] { "公司管理系统UI.Areas.LuoWei" }
             );
         }
     }

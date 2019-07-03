@@ -281,15 +281,16 @@
                                
                                    
                             </div>
-                           @using (Html.BeginForm("Plun", "Home", FormMethod.Post))
-                           {
-                                <div class="xm" >
-                                    <div class="yhpl">
-                                        <span  name="sqll">@item2.webId</span>
-                                        <input class="ass form-control" @*value="@item2.webId"*@ name="ReplayResult" cols="50" rows="1"  placeholder="说点儿什么把">@Html.DropDownList("ReplayTypeID")<button type="submit" class="btn btn-default">发布评论</button>
+                            <form action="~/LiaoWeiYing/Home/Plun?webId=@item2.webId" method="post">
+                             
+                                    <div class="xm">
+                                        <div class="yhpl">
+                                            <span name="sqll" hidden>@item2.webId</span>
+                                            <input class="ass form-control" @*value="@item2.webId"*@ name="ReplayResult" cols="50" rows="1" placeholder="说点儿什么把"><button type="submit" class="btn btn-default">发布评论</button>
+                                        </div>
                                     </div>
-                                </div>
-                            }
+                                
+                            </form>
                         </li>
                         }
                     
@@ -311,6 +312,7 @@
     </div>
     </div>
 </div>
+
 <script>
         $(function () {
             $("[name='sqll']").each(function (dom, i) {

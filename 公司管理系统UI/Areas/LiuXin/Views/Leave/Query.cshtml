@@ -17,6 +17,7 @@
     }
        
     .WCBL {
+        padding-top:5%;
         color: white;
     }
 
@@ -72,14 +73,9 @@
                         <form class="form-group" method="post" action="/LiuXin/Leave/Index">
                             <p>
                                 编号ID: <select id="UserId" name="UserId">
-                                    @foreach (var item in   (List<User>)ViewData["Userlist"])
-                                    {
-                                        <option value="@item.UserId">@item.UserId</option>
-                                    }
+                                        <option value="@(((User)(Session["User"])).UserId)">@(((User)(Session["User"])).UserName)</option>
                                 </select>
                             </p>
-                            <p>姓名：<input type="text" name="UserName" id="city" value="@ViewBag.id" readonly class="text-info" /></p>
-                            <p>电话：<input type="text" name="Phone" /></p>
                             <p>请假时间:<input type="datetime" name="LeaveTime" /></p>
                             <p>回职时间:<input type="datetime" name="LeaveResult" /></p>
                             <p>请假原因:<input type="text" name="LeaveType" /></p>

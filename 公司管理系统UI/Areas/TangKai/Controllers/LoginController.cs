@@ -21,8 +21,29 @@ namespace 公司管理系统UI.Areas.TangKai.Controllers
             User info = bll.Where(x => x.UserName == name && x.UserPwd == pwd).FirstOrDefault();
             if (info!=null)
             {
-                Session["Uname"] = info.UserName;
+                Session["Users"] = info.UserName;
+                Session["User"] = info;
                 return Redirect("/TangKai/Homes/Index");
+            }
+            else
+            {
+                return Content("登陆失败！");
+            }
+        }
+        
+        public ActionResult Bck()
+        {
+            return View();
+        }
+        
+        public ActionResult Back(string name , string pwd)
+        {
+            UserManager bll = new UserManager();
+            User info = bll.Where(x => x.UserName == name && x.UserPwd == pwd).FirstOrDefault();
+            if (info != null)
+            {
+                Session["UsHt"] = info;
+                return Redirect("/LuoWei/Personnel/Person");
             }
             else
             {

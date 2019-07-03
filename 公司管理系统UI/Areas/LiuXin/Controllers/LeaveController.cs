@@ -5,9 +5,12 @@ using System.Web;
 using System.Web.Mvc;
 using 公司管理系统BLL;
 using 公司管理系统Model;
+using 公司管理系统UI.App_Start;
 
 namespace 公司管理系统UI.Areas.LiuXin.Controllers
 {
+    
+
     public class LeaveController : Controller
     {
         // GET: LiuXin/Leave
@@ -19,6 +22,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             ViewData["Userlist"] = Userlist;
             return View();
         }
+        [HouTai]
         [HttpPost]
         public ActionResult Index(Leave le) {
             LeaveManager lm = new LeaveManager();
@@ -35,8 +39,8 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
         }
         public ActionResult Query() {
             LeaveManager lm = new LeaveManager();
-            string name = "王五";//Session["User"]
-            List<Leave> listcount = lm.GetByName(name) ;
+            string name = ((User)Session["User"]).UserName;//Session["User"]
+            List<Leave> listcount = lm.GetByName(((User)Session["User"]).UserId) ;
             ViewBag.UserCount=listcount.Count();
             UserManager um = new UserManager();
             List<User> Userlist = um.GetAll();

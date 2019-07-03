@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using 公司管理系统BLL;
 using 公司管理系统Model;
+using 公司管理系统UI.App_Start;
 
 namespace 公司管理系统UI.Areas.LiuXin.Controllers
 {
+    
     public class MangerLeaveController : Controller
     {
         // GET: LiuXin/MangerLeave
@@ -17,6 +19,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             List<Leave> listleave= lm.GetBySome("未批准");
             return View(listleave);
         }
+        [HouTai]
         public ActionResult JLagree(int id) {
             LeaveManager lm = new LeaveManager();
             string leaveover = "批准";
@@ -31,6 +34,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
                 return Content("不允许批准");
             }
         }
+        [HouTai]
         public ActionResult JLdisagree(int id) {
             LeaveManager lm = new LeaveManager();
             string leaveover = "不批准";
@@ -52,6 +56,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             List<Leave> listleave = lm.GetBySomeother("批准","可见");
             return View(listleave);
         }
+        [HouTai]
         public ActionResult RcAgree(int id) {
             LeaveManager lm = new LeaveManager();
             string leaveover = "批准";
@@ -66,6 +71,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
                 return Content("不允许批准");
             }
         }
+        [HouTai]
         public ActionResult RcDisAgree(int id)
         {
             LeaveManager lm = new LeaveManager();

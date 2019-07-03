@@ -7,6 +7,7 @@ using 公司管理系统Model;
 using 公司管理系统BLL;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using 公司管理系统UI.App_Start;
 
 namespace 公司管理系统UI.Areas.LuoWei.Controllers
 {
@@ -26,13 +27,14 @@ namespace 公司管理系统UI.Areas.LuoWei.Controllers
             ViewBag.pageSize = pageSize;
             return View(list1);
         }
+        
         [HttpPost]
         public ActionResult Person(string UserName)
         {
             List<User> list = user.Where(s => s.UserName.Contains(UserName));
             return View(list);
         }
-
+        [HouTai]
         [HttpGet]
         public ActionResult PersonAdd()
         {
@@ -54,6 +56,7 @@ namespace 公司管理系统UI.Areas.LuoWei.Controllers
             }
 
         }
+        [HouTai]
         [HttpGet]
         public ActionResult PersonUpdate(int id)
         {
@@ -88,8 +91,6 @@ namespace 公司管理系统UI.Areas.LuoWei.Controllers
             ViewBag.pageSize = pageSize;
             return View(list1);
         }
-
-
     }
 
 }

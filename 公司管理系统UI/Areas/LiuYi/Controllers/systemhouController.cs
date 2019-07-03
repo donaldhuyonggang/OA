@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using 公司管理系统BLL;
 using 公司管理系统Model;
+using 公司管理系统UI.App_Start;
 
 namespace 公司管理系统UI.Areas.LiuYi.Controllers
 {
@@ -21,6 +22,7 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
             List<system> list = bll.Where(x=>x.status=="未通");
             return View(list);
         }
+        [HouTai]
         /// <summary>
         /// 点击修改为通过状态，只有老胡可以看
         /// </summary>
@@ -52,6 +54,7 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
                 return Redirect("/LiuYi/systemhou/systemhou");
             }
         }
+        [HouTai]
         /// <summary>
         /// 发布公司规章制度
         /// </summary>
@@ -62,6 +65,7 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
             List<system> list = bll.Where(x => x.audat== "批准" && x.sys_Condition=="未发布");
             return View(list);
         }
+        [HouTai]
         /// <summary>
         /// 经理发布
         /// </summary>
@@ -98,6 +102,7 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
             List<system> list = bll.Where(x => x.status == "通过" && x.audat=="没批准");
             return View(list);
         }
+        [HouTai]
         /// <summary>
         /// 批准过后修改
         /// </summary>

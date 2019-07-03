@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using 公司管理系统BLL;
 using 公司管理系统Model;
+using 公司管理系统UI.App_Start;
 
 namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
 {
@@ -24,6 +25,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             ViewBag.actionType = actionType;
             return View();
         }
+        [HouTai]
         //添加活动记录
         [HttpPost]
         public ActionResult HuoDong(action info)
@@ -31,8 +33,6 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             //查询出总经费
             MoneyManager aa = new MoneyManager();
             money mys = aa.GetByPK(1);
-
-            
             if (info.actionneedmoney <= mys.overmoney)
             {
                 ActionManager a = new ActionManager();
@@ -208,6 +208,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                 
             }
         }
+        [HouTai]
         //改变活动可见状态
         public ActionResult HuoDongDelete(int id)
         {
@@ -241,7 +242,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             }
             
         }
-
+        [HouTai]
         //修改活动是否批准
         public ActionResult HuoDongUpdate(int id)
         {
@@ -292,7 +293,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
 
             }
         }
-
+        [HouTai]
         //搞完活动后，修改活动的实际金额
         [HttpGet]
         public ActionResult XiuGaiHuoDong(int id)
@@ -355,7 +356,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
         }
 
 
-
+        [HouTai]
         //添加员工缴费
         [HttpGet]
         public ActionResult YuanGongJiaoFei()
@@ -366,7 +367,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             ViewBag.User = User;
             return View();
         }
-
+        [HouTai]
         //添加员工缴费
         [HttpPost]
         public ActionResult YuanGongJiaoFei(detail info)
@@ -528,7 +529,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
 
             }
         }
-
+        [HouTai]
         //员工缴费状态
         public ActionResult JiaoFeiDelete( int id)
         {
@@ -584,7 +585,7 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             MoneyManager aa = new MoneyManager();
             money mys = aa.GetByPK(1);
             if (info.consume_money<=mys.overmoney) {
-                consumeManager a = new consumeManager();
+                ConsumeManager a = new ConsumeManager();
                 var qq = a.Add(info);
                 if (qq)
                 {

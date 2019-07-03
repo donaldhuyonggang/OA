@@ -9,7 +9,7 @@ using 公司管理系统UI.App_Start;
 
 namespace 公司管理系统UI.Areas.LiuYi.Controllers
 {
-    //[Right]
+    
     public class PointController : Controller
     {
         /// <summary>
@@ -62,6 +62,7 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
             List<score> list = bll.GetAll();
             return View(list);
         }
+        [HouTai]
         /// <summary>
         /// 新增扣分记录
         /// </summary>
@@ -75,6 +76,7 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
             ViewData["syslis"] = lis;
             return View(list);
         }
+        [HouTai]
         /// <summary>
         /// 就是新增
         /// </summary>

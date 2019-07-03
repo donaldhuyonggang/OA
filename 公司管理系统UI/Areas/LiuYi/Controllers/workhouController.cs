@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using 公司管理系统BLL;
 using 公司管理系统Model;
+using 公司管理系统UI.App_Start;
 
 namespace 公司管理系统UI.Areas.LiuYi.Controllers
 {
@@ -21,6 +22,7 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
             List<_class> list = bll.Where(x => x.class_Condition == "可见");
             return View(list);
         }
+
         /// <summary>
         /// 删除表内原本的上周课表
         /// </summary>
@@ -53,6 +55,7 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
             ViewData["lis"] = lis;
             return View();
         }
+        [HouTai]
         [HttpPost]
         public ActionResult addAll(_class info)
         {

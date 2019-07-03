@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Back";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
+}
+
+<div>
+    <table border="1" id="mytable" class="table-condensed">
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>联系方式</th>
+            <th>邮箱地址</th>
+            <th>操作</th>
+        </tr>
+        <tr  v-for="item in User">
+            <td>{{item.UserName}}</td>
+            <td>{{item.Sex}}</td>
+            <td>{{item.Phone}}</td>
+            <td>{{item.Email}}</td>
+            <td>删除</td>
+        </tr>
+    </table>
+    
+</div>
+@section scripttt{
+<script src="~/Scripts/vue.js"></script>
+    <script>
+        $(function () {
+            var app = new Vue({
+                el: '#mytable',
+                data: {
+                    User: []
+                }
+            });
+            $.get("/Homes/Ajax", function (data) {
+                app.User = data;
+                
+                //for (var i = 0 ; i < data.length; i++) {
+
+                //    var $tr = $("<tr>" +
+                //            "<td>" + data[i].UserName + "</td>" +
+                //            "<td>" + data[i].Sex + "</td>" +
+                //            "<td>" + data[i].Phone + "</td>" +
+                //            "<td>" + data[i].Email + "</td>" +
+                //            "<td><a href='#' class='btn btn-success'>删除</a></td>" +
+                //            "</tr>");
+                //    $("#mytable").append($tr);
+                //}
+            });
+        });//窗体加载事件
+
+    </script>
+    }
+ 

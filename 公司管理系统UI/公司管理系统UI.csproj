@@ -138,6 +138,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\HouTaiAttribute.cs" />
     <Compile Include="App_Start\RightAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\LiaoWeiYing\Controllers\BackController.cs" />
@@ -226,8 +227,29 @@
     <Content Include="Content\framework\printThis.js" />
     <Content Include="Content\framework\province.js" />
     <Content Include="Content\framework\respond.min.js" />
+    <Content Include="Content\images\1.jpg" />
+    <Content Include="Content\images\2.jpg" />
+    <Content Include="Content\images\3.jpg" />
+    <Content Include="Content\images\4-1.jpg" />
+    <Content Include="Content\images\4.jpg" />
+    <Content Include="Content\images\5.jpg" />
+    <Content Include="Content\images\6-1.jpg" />
+    <Content Include="Content\images\6.jpg" />
+    <Content Include="Content\images\7-1.jpg" />
+    <Content Include="Content\images\7.jpg" />
+    <Content Include="Content\images\8.jpg" />
+    <Content Include="Content\images\bbb.jpg" />
+    <Content Include="Content\images\enter.png" />
+    <Content Include="Content\images\grass.jpg" />
+    <Content Include="Content\images\group.png" />
+    <Content Include="Content\images\icon_light.f13cff3.png" />
+    <Content Include="Content\images\l.png" />
+    <Content Include="Content\images\login_bg1.png" />
     <Content Include="Content\images\Logo.jpg" />
+    <Content Include="Content\images\m.png" />
+    <Content Include="Content\images\password.png" />
     <Content Include="Content\images\top_jt.png" />
+    <Content Include="Content\images\user.png" />
     <Content Include="Content\js\base.js" />
     <Content Include="Content\js\jigsaw.js" />
     <Content Include="Content\js\login.js" />
@@ -384,6 +406,8 @@
     <Content Include="Areas\LiaoWeiYing\Views\Home\As.cshtml" />
     <Content Include="Areas\LiaoWeiYing\Views\Home\Diyi.cshtml" />
     <Content Include="Areas\LiaoWeiYing\Views\Home\Fabu.cshtml" />
+    <Content Include="Areas\TangKai\Views\Login\Bck.cshtml" />
+    <Content Include="Areas\TangKai\Views\Homes\Back.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
     <Content Include="Content\Scripts\bootstrap.min.js" />

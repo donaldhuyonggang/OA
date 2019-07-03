@@ -6,19 +6,19 @@ using System.Web.Mvc;
 using 公司管理系统BLL;
 using 公司管理系统Model;
 
-
 namespace 公司管理系统UI.App_Start
 {
-    public class RightAttribute : FilterAttribute, IActionFilter
+    public class HouTaiAttribute : FilterAttribute, IActionFilter
     {
-        /*执行前*/
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
             UserManager user = new UserManager();
-            User Users = filterContext.HttpContext.Session["User"] as User;
-            /*User Users= */;
-            if (Users==null) {
-                filterContext.HttpContext.Response.Redirect("~/TangKai/Login/Index");
+            User Users = filterContext.HttpContext.Session["UsHt"] as User;
+            /*User Users= */
+            ;
+            if (Users == null)
+            {
+                filterContext.HttpContext.Response.Redirect("~/TangKai/Login/Bck");
             }
             else
             {
@@ -28,7 +28,6 @@ namespace 公司管理系统UI.App_Start
                 }
                 else
                 {
-
                     /*如果不是超级管理员，就获取判断是否有权限访问，*/
                     string controller = filterContext.RouteData.Values["controller"].ToString();
                     string action = filterContext.RouteData.Values["action"].ToString();
@@ -43,16 +42,14 @@ namespace 公司管理系统UI.App_Start
                             if (i.MenuPath == Url)
                             {
                                 return;
-
                             }
-
                         }
                     }
+                     filterContext.HttpContext.Response.Redirect("~/LuoWei/Personnel/Person");
                 }
-                }
-            
+            }
         }
-        /*执行后*/
+
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
             return;

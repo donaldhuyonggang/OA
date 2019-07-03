@@ -11,11 +11,10 @@ namespace 公司管理系统UI.Areas.LiaoWeiYing.Controllers
     public class HomeController : Controller
     {
         // GET: LiaoWeiYing/Home
-        public ActionResult Index(int pageIndex = 1,int userID = 3, int id=1)
+        public ActionResult Index(int pageIndex = 1,int userID = 0 , int id=1)
         {
             //var idd=Session["name"] as User;
-            
-
+            userID = ((User)(Session["User"])).UserId;
             WebManager dal1 = new WebManager();
             List<web> list1 = dal1.Where(x => x.web_typeID == id && x.web_Condition=="可见");
 
@@ -99,13 +98,13 @@ namespace 公司管理系统UI.Areas.LiaoWeiYing.Controllers
                      }
             }
         }
-        public ActionResult Plun(int userID = 3,string ReplayResult=null,int webId=35) {
-
+        public ActionResult Plun(int webId) {
+            int userID = ((User)(Session["User"])).UserId;
             ReplayManager dal2 = new ReplayManager();
             DateTime ss = System.DateTime.Now;
             Replay re = new Replay() {
                  UserId= userID,
-                 ReplayResult=ReplayResult,
+                 ReplayResult=Request.Form["ReplayResult"],
                  ReplayTime=ss,
                  webId= webId,
                  Replay_Condition="可见"

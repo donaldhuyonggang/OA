@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @RenderSection("style", required: false)
+    @RenderSection("styles", required: false)
     <script src="~/jq/jquery-1.8.3.js"></script>
     @RenderSection("scripttt", required: false)
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
@@ -58,7 +59,7 @@
                     <a class="menuFA" href="#">员工请假管理</a>
                     <dl>
                         <!--onclick请不要修改!-->
-                        <dt><a href="#" onclick="menuCAClick('', this)">查看请假员工</a></dt>
+                        <dt><a href="~/LiuXin/MangerLeave/Index" onclick="menuCAClick('', this)">查看请假员工</a></dt>
                         <dt><a href="#" onclick="menuCAClick('', this)">审通请假要求</a></dt>
                         <dt><a href="#" onclick="menuCAClick('', this)">批准请假要求</a></dt>
                     </dl>
@@ -67,13 +68,13 @@
                     <a class="menuFA" href="#">公司规章制度</a>
                     <dl>
                         <!--onclick请不要修改!-->
-                        <dt><a href="/LiuYi/systemhou/systemfabu" onclick="menuCAClick('/Home/cancas', this)">发布规章制度</a></dt>
-                        <dt><a href="/LiuYi/systemhou/systemhou" onclick="menuCAClick('', this)">总监批阅规章制度</a></dt>
-                        <dt><a href="/LiuYi/systemhou/systemzongjian" onclick="menuCAClick('', this)">批阅规章制度</a></dt>
-                        <dt><a href="/LiuYi/Point/Index" onclick="menuCAClick('', this)">扣分管理</a></dt>
-                        <dt><a href="/LiuYi/Point/select" onclick="menuCAClick('', this)">扣分记录</a></dt>
-                        <dt><a href="/LiuYi/workhou/deleteIndex" onclick="menuCAClick('', this)">课表管理</a></dt>
-                        <dt><a href="/LiuYi/workhou/addAll" onclick="menuCAClick('', this)">发布课表</a></dt>
+                        <dt><a href="~/LiuYi/systemhou/systemfabu" onclick="menuCAClick('/Home/cancas', this)">发布规章制度</a></dt>
+                        <dt><a href="~/LiuYi/systemhou/systemhou" onclick="menuCAClick('', this)">总监批阅规章制度</a></dt>
+                        <dt><a href="~/LiuYi/systemhou/systemzongjian" onclick="menuCAClick('', this)">批阅规章制度</a></dt>
+                        <dt><a href="~/LiuYi/Point/Index" onclick="menuCAClick('', this)">扣分管理</a></dt>
+                        <dt><a href="~/LiuYi/Point/select" onclick="menuCAClick('', this)">扣分记录</a></dt>
+                        <dt><a href="~/LiuYi/workhou/deleteIndex" onclick="menuCAClick('', this)">课表管理</a></dt>
+                        <dt><a href="~/LiuYi/workhou/addAll" onclick="menuCAClick('', this)">发布课表</a></dt>
                         @*<dt><a href="#" onclick="menuCAClick('', this)">页签切换Table</a></dt>
                             <dt><a href="#" onclick="menuCAClick('', this)">维护中页面</a></dt>*@
                     </dl>
@@ -82,7 +83,7 @@
                     <a class="menuFA" href="#">公司文化管理</a>
                     <dl>
                         <!--onclick请不要修改!-->
-                        <dt><a href="#" onclick="menuCAClick('', this)">添加公司文化</a></dt>
+                        <dt><a href="/LiuXinPeng/Culture/Add" onclick="menuCAClick('', this)">添加公司文化</a></dt>
                         <dt><a href="#" onclick="menuCAClick('', this)">批准公司文化</a></dt>
                     </dl>
                 </li>
@@ -93,11 +94,12 @@
                     <a class="menuFA" href="#">财务管理</a>
                     <dl>
                         <!--onclick请不要修改!-->
-                        <dt><a href="#" onclick="menuCAClick('', this)">策划公司活动</a></dt>
-                        <dt><a href="#" onclick="menuCAClick('', this)">添加员工缴费</a></dt>
-                        <dt><a href="#" onclick="menuCAClick('', this)">修改员工缴费</a></dt>
-                        <dt><a href="#" onclick="menuCAClick('', this)">管理消费记录</a></dt>
-                        <dt><a href="#" onclick="menuCAClick('', this)">新增消费记录</a></dt>
+                        <dt><a href="~/ZhengLiang/FinanceHT/HuoDong" onclick="menuCAClick('', this)">策划公司活动</a></dt>
+                        <dt><a href="~/ZhengLiang/FinanceHT/HuoDongJiLu" onclick="menuCAClick('', this)">公司活动记录</a></dt>
+                        <dt><a href="~/ZhengLiang/FinanceHT/YuanGongJiaoFei" onclick="menuCAClick('', this)">添加员工缴费</a></dt>
+                        <dt><a href="~/ZhengLiang/FinanceHT/JiaoFeiJiLu" onclick="menuCAClick('', this)">员工缴费记录</a></dt>
+                        <dt><a href="~/ZhengLiang/FinanceHT/XiaoFeiJiLu" onclick="menuCAClick('', this)">管理消费记录</a></dt>
+                        <dt><a href="~/ZhengLiang/FinanceHT/XiaoFeiAdd" onclick="menuCAClick('', this)">新增消费</a></dt>
                     </dl>
                 </li>
                 <li>
