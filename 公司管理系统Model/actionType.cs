@@ -14,7 +14,7 @@ namespace 公司管理系统Model
         {
             action = new HashSet<action>();
         }
-
+        [Key]
         public int actionTypeID { get; set; }
 
         [StringLength(50)]

@@ -9,6 +9,7 @@ namespace 公司管理系统Model
     [Table("Leave")]
     public partial class Leave
     {
+        [Key]
         public int LeaveId { get; set; }
 
         public DateTime? LeaveTime { get; set; }

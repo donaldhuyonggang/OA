@@ -9,6 +9,7 @@ namespace 公司管理系统Model
     [Table("consume")]
     public partial class consume
     {
+        [Key]
         public int consumeID { get; set; }
 
         [StringLength(50)]

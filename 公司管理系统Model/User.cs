@@ -17,6 +17,7 @@ namespace 公司管理系统Model
             class1 = new HashSet<_class>();
             consume = new HashSet<consume>();
             culture = new HashSet<culture>();
+            detail = new HashSet<detail>();
             Leave = new HashSet<Leave>();
             Replay = new HashSet<Replay>();
             score = new HashSet<score>();
@@ -78,6 +79,9 @@ namespace 公司管理系统Model
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<culture> culture { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<detail> detail { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Leave> Leave { get; set; }

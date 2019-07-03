@@ -9,6 +9,7 @@ namespace 公司管理系统Model
     [Table("Admin")]
     public partial class Admin
     {
+        [Key]
         public int AdminId { get; set; }
 
         [StringLength(50)]

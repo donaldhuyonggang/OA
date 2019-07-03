@@ -15,7 +15,7 @@ namespace 公司管理系统Model
             Leave = new HashSet<Leave>();
             score = new HashSet<score>();
         }
-
+        [Key]
         public int systemId { get; set; }
 
         [StringLength(50)]

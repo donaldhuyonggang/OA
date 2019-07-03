@@ -13,7 +13,7 @@ namespace 公司管理系统Model
         {
             web = new HashSet<web>();
         }
-
+        [Key]
         public int web_typeID { get; set; }
 
         [StringLength(50)]

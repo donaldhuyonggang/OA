@@ -19,6 +19,7 @@
         public virtual DbSet<_class> _class { get; set; }
         public virtual DbSet<consume> consume { get; set; }
         public virtual DbSet<culture> culture { get; set; }
+        public virtual DbSet<detail> detail { get; set; }
         public virtual DbSet<Image> Image { get; set; }
         public virtual DbSet<Leave> Leave { get; set; }
         public virtual DbSet<money> money { get; set; }
@@ -101,6 +102,14 @@
 
             modelBuilder.Entity<culture>()
                 .Property(e => e.culture_Condition)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<detail>()
+                .Property(e => e.MonryResult)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<detail>()
+                .Property(e => e.detail_Condition)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Image>()

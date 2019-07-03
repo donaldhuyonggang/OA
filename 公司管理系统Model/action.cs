@@ -9,6 +9,7 @@ namespace 公司管理系统Model
     [Table("action")]
     public partial class action
     {
+        [Key]
         public int actionId { get; set; }
 
         public int? actionTypeID { get; set; }
