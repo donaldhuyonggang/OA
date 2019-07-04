@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
 }
-
+@using 公司管理系统Model
 @section style{
 
     <style>
@@ -267,15 +267,88 @@
         </div>
     </div>
 </div>
-
-
-<h1 style="color:aliceblue">此下方请写入课表通知与活动通知</h1>
-
 <div>
+    <div class="i">
+        <table class="ai table table-responsive " border="1" style="color:white">
 
-</div>
-<div>
 
+            <text style="text-align:center"><a href="#" class=" btn btn-danger">本周课表</a></text>
+            <tr>
+                <th class="text-center">日期</th>
+                <th class="text-center">上午课表</th>
+                <th class="text-center">上午课表</th>
+                <th class="text-center">卫生人员</th>
+                <th class="text-center">卫生人员</th>
+                <th class="text-center">注意事件</th>
+            </tr>
+            @foreach (var item in ViewBag.Use1)
+            {
+                <tr class="text-center">
+                    <td>@item.DataTime</td>
+                    <td>@item.Morning</td>
+                    <td>@item.Afertnoon</td>
+                    <td>@item.User.UserName</td>
+                    <td>@item.User1.UserName</td>
+                    <td>@item.require</td>
+                </tr>
+            }
+
+
+        </table>
+    </div>
+    <div class="container-fluid" id="o">
+        <div class="row">
+            <div class="col-sm-6">
+
+                <table border="1" class="table table-responsive" style="color:white">
+                    <text style="text-align:center"><a href="#" class="btn btn-warning">最热讨论</a></text>
+                    <tr>
+                        <th>标题</th>
+                        <th>文章类型</th>
+                        <th>发布人</th>
+                        <th>发布时间</th>
+                        <th>点赞量</th>
+                    </tr>
+                    @foreach (var item in (List<web>)ViewBag.Use3)
+                    {
+                        <tr>
+                            <td><a>@item.webHead</a></td>
+                            <td>@item.web_type.web_typeName</td>
+                            <td>@item.User.UserName</td>
+                            <td>@item.webtime</td>
+                            <td>@item.like</td>
+                        </tr>
+                    }
+
+                </table>
+
+            </div>
+            <div class="col-sm-6">
+                <table border="1" class="table table-responsive" style="color:white;a">
+                    <text style="text-align:center"><a href="#" class="btn btn-primary">最新活动</a></text>
+                    <tr>
+                        <th>标题</th>
+                        <th>策划人</th>
+                        <th>活动时间</th>
+                        <th>所需金额</th>
+                        <th>实际金额</th>
+                    </tr>
+                    @foreach (var item in (List<action>)ViewBag.Use2)
+                    {
+                        <tr>
+                            <td><a>@item.actionhead</a></td>
+                            <td>@item.User.UserName</td>
+                            <td>@item.actiontime</td>
+                            <td>@item.actionneedmoney</td>
+                            <td>@item.actionfactmoney</td>
+                        </tr>
+                    }
+
+                </table>
+
+            </div>
+        </div>
+    </div>
 </div>
 <div>
     <p style="font-size:50px;color:aliceblue;text-align:center; padding-top:110px;"></p>

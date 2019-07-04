@@ -15,6 +15,18 @@ namespace 公司管理系统UI.Areas.TangKai.Controllers
         // GET: TangKai/Homes
         public ActionResult Index()
         {
+            ClassManager blll = new ClassManager();
+            List<_class> cla = blll.GetAll();
+            var list2 = cla.OrderByDescending(x => x.DataTime).Take(5).ToList();
+            ViewBag.Use1 = list2;
+            ActionManager a = new ActionManager();
+            List<action> detail = a.GetAll();
+            var list = detail.OrderByDescending(x => x.actiontime).Take(5).ToList();
+            ViewBag.Use2 = list;
+            WebManager web = new WebManager();
+            List<web> detail1 = web.GetAll();
+            var list1 = detail1.OrderByDescending(x => x.like).Take(5).ToList();
+            ViewBag.Use3 = list1;
             return View();
         }
         public ActionResult Back()

@@ -261,7 +261,6 @@
     <Content Include="Content\layui\css\modules\laydate\default\laydate.css" />
     <Content Include="Content\layui\css\modules\layer\default\icon-ext.png" />
     <Content Include="Content\layui\css\modules\layer\default\icon.png" />
-    <Content Include="Content\layui\css\modules\layer\default\layer.css" />
     <Content Include="Content\layui\css\modules\layer\default\loading-0.gif" />
     <Content Include="Content\layui\css\modules\layer\default\loading-1.gif" />
     <Content Include="Content\layui\css\modules\layer\default\loading-2.gif" />
@@ -344,18 +343,11 @@
     <Content Include="Content\layui\lay\modules\element.js" />
     <Content Include="Content\layui\lay\modules\flow.js" />
     <Content Include="Content\layui\lay\modules\form.js" />
-    <Content Include="Content\layui\lay\modules\jquery.js" />
-    <Content Include="Content\layui\lay\modules\laydate.js" />
-    <Content Include="Content\layui\lay\modules\layedit.js" />
-    <Content Include="Content\layui\lay\modules\layer.js" />
     <Content Include="Content\layui\lay\modules\laypage.js" />
     <Content Include="Content\layui\lay\modules\laytpl.js" />
-    <Content Include="Content\layui\lay\modules\mobile.js" />
-    <Content Include="Content\layui\lay\modules\table.js" />
     <Content Include="Content\layui\lay\modules\tree.js" />
     <Content Include="Content\layui\lay\modules\upload.js" />
     <Content Include="Content\layui\lay\modules\util.js" />
-    <Content Include="Content\Scripts\jquery-1.10.2.min.map" />
     <Content Include="Areas\ZhengLiang\Views\FinanceQT\Show.cshtml" />
     <Content Include="Areas\ZhengLiang\Views\FinanceHT\Show.cshtml" />
     <Content Include="Areas\LiaoWeiYing\Views\Home\Index.cshtml" />
@@ -407,10 +399,8 @@
     <Content Include="Areas\TangKai\Views\Homes\Back.cshtml" />
     <None Include="Content\Scripts\_references.js" />
     <Content Include="Content\Scripts\bootstrap.js" />
-    <Content Include="Content\Scripts\bootstrap.min.js" />
     <None Include="Content\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Content\Scripts\jquery-1.10.2.js" />
-    <Content Include="Content\Scripts\jquery-1.10.2.min.js" />
     <None Include="Content\Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Content\Scripts\jquery.validate.js" />
     <Content Include="Content\Scripts\jquery.validate.min.js" />

@@ -43,7 +43,7 @@ namespace 公司管理系统UI.Areas.TangKai.Controllers
             if (info != null)
             {
                 Session["UsHt"] = info;
-                return Redirect("/LuoWei/Personnel/Person");
+                return Redirect("/TangKai/Homes/Back");
             }
             else
             {
