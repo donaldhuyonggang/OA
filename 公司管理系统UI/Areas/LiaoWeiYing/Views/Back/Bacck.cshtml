@@ -295,9 +295,7 @@
         $(function () {
             $("[name='sqll']").each(function (dom, i) {
                 $.post("/LiaoWeiYing/Back/AJ", { webId: $(this).text() }, function (data) {
-
                         for (var i = 0; i < data.length; i++) {
-                            alert(data[i].UserId)
                             var PingLun = "<div class='pl'><div><hr /><ul class='plul'><li><div class='yonghupingluntouxiang'>" +
                                         "<img src='~/imges/iop.jpg' style='width:45px;  height:45px; border-radius:35px;' />" +
                                         "</div></li><li><ul><li style='margin-bottom:10px; font-size:14px;'>" +
