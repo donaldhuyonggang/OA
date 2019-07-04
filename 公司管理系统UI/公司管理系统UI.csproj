@@ -257,7 +257,6 @@
     <Content Include="Content\js\out_intoData.js" />
     <Content Include="Content\js\timePage.js" />
     <Content Include="Content\js\treetable.js" />
-    <Content Include="Content\layui\css\layui.mobile.css" />
     <Content Include="Content\layui\css\modules\code.css" />
     <Content Include="Content\layui\css\modules\laydate\default\laydate.css" />
     <Content Include="Content\layui\css\modules\layer\default\icon-ext.png" />
@@ -339,7 +338,6 @@
     <Content Include="Content\layui\images\face\71.gif" />
     <Content Include="Content\layui\images\face\8.gif" />
     <Content Include="Content\layui\images\face\9.gif" />
-    <Content Include="Content\layui\layui.all.js" />
     <Content Include="Content\layui\layui.js" />
     <Content Include="Content\layui\lay\modules\carousel.js" />
     <Content Include="Content\layui\lay\modules\code.js" />
