@@ -70,6 +70,7 @@
     <Compile Include="Sys_UserRoleServer.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="WebService.cs" />
+    <Compile Include="WebService2.cs" />
     <Compile Include="web_typeService.cs" />
   </ItemGroup>
   <ItemGroup>
