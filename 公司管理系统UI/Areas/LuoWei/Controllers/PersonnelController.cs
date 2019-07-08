@@ -79,6 +79,7 @@ namespace 公司管理系统UI.Areas.LuoWei.Controllers
             string name = DateTime.Now.ToString("YYYY-MM-dd-hh-ss-ms") + ext;
             Userimg.SaveAs(path + name);//另存为
             info.Userimg = name;
+            info.AdminId = "false";
             var result = user.Add(info);
             if (result)
             {

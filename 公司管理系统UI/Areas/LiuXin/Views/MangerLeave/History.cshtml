@@ -10,6 +10,7 @@
     <table class="table table-bordered table-striped">
 
         <tr>
+            <th> </th>
             <th>请假人</th>
             <th>联系方式</th>
             <th>请假时间</th>
@@ -21,6 +22,7 @@
        @foreach (var item in Model)
        {
                <tr>
+                <td><img src="~/Content/images/@item.User.Userimg" style="width:40px; height:40px;" /></td>
                 <td>@item.User.UserName</td>
                 <td>@item.User.Adderss</td>
                 <td>@item.LeaveTime</td>
@@ -31,5 +33,4 @@
             </tr>
        }
     </table>
-    <a href="/LiuXin/MangerLeave/History" class="btn btn-primary btn-sm" role="button" >返回</a>
 </div>

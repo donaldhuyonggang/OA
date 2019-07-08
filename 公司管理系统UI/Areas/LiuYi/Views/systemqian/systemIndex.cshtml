@@ -3,23 +3,26 @@
     ViewBag.Title = "systemIndex";
     Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
 }
-@Session style{
+@section style{
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 }
 
 @using 公司管理系统Model
 @model List<system>
 
-<table style="margin-top:100px" class="table table-hover">
-    <tr>
-        <th>公司规章制度</th>
-        <th>所扣分数</th>
-    </tr>
-    @foreach (var item in Model)
-    {
+
+<div style="padding-top:120px">
+    <table  class="table table-hover">
         <tr>
-            <td>@item.systemName</td>
-            <td>@item.systemPoint</td>
+            <th>公司规章制度</th>
+            <th>所扣分数</th>
         </tr>
-    }
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.systemName</td>
+                <td>@item.systemPoint</td>
+            </tr>
+        }
+    </table>
+</div>

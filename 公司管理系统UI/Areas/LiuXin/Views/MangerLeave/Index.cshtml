@@ -12,6 +12,7 @@
     <table class="table table-bordered table-striped">
       
         <tr>
+            <td> </td>
             <th>请假人</th>
             <th>请假时间</th>
             <th>返校时间</th>
@@ -21,6 +22,7 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td><img src="~/Content/images/@item.User.Userimg"style="width:40px; height:40px;" /></td>
                 <td>@item.User.UserName</td>
                 <td>@item.LeaveTime</td>
                 <td>@item.LeaveResult</td>

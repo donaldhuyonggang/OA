@@ -10,6 +10,7 @@ namespace 公司管理系统UI.Areas.TangKai.Controllers
 {
     public class LoginController : Controller
     {
+       
         // GET: TangKai/Login
         public ActionResult Index()
         {
@@ -43,7 +44,7 @@ namespace 公司管理系统UI.Areas.TangKai.Controllers
             if (info != null)
             {
                 Session["UsHt"] = info;
-                return Content("<script>alert('登录成功!');window.location.href='/TangKai/Homes/Back'</script>");
+                return Redirect("/TangKai/Homes/Back");
             }
             else
             {

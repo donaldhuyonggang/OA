@@ -105,11 +105,12 @@ namespace 公司管理系统UI.Areas.LiaoWeiYing.Controllers
                 return Content("发布失败");
             }
         }
-        public ActionResult Delete(int webId,int UserId, int userID = 3)
+        public ActionResult Delete(int webId,int UserId)
         {
+            int userID = (((User)(Session["User"])).UserId);
             if (UserId != userID)
             {
-                return Content("对不起您不能删除别人的评论");
+                return Content("<script>alert('对比起您没有权限删除别人的评论！！');window.location.href='/LiaoWeiYing/Home/Index';</script>");
             }
             else
             {

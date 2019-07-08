@@ -19,7 +19,7 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
         // GET: LiuYi/Point
         public ActionResult Index(int pageIndex=1)
         {
-            int pageSize = 2;
+            int pageSize = 5;
             ScoreManager bll = new ScoreManager();
             List<score> list = bll.Where(x=>x.score_Condition=="可见");
             var list1 = list.OrderBy(x=>x.PointId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
@@ -56,11 +56,14 @@ namespace 公司管理系统UI.Areas.LiuYi.Controllers
         /// 扣分记录查询
         /// </summary>
         /// <returns></returns>
-        public ActionResult select()
+        public ActionResult select(int pageIndex = 1)
         {
+            int pageSize = 10;
             ScoreManager bll = new ScoreManager();
             List<score> list = bll.GetAll();
-            return View(list);
+            var list1 = list.OrderBy(x => x.PointId).Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
+            ViewBag.pageIndex = pageIndex;
+            return View(list1);
         }
         [HouTai]
         /// <summary>

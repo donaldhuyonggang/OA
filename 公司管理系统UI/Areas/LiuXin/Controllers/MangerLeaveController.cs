@@ -17,7 +17,8 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
         {
             LeaveManager lm = new LeaveManager();
             List<Leave> listleave= lm.GetBySome("未批准");
-            return View(listleave);
+            List<Leave> lists = listleave.OrderByDescending(x => x.LeaveTime).ToList();
+            return View(lists);
         }
         [HouTai]
         public ActionResult JLagree(int id) {
@@ -31,7 +32,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             }
             else
             {
-                return Content("不允许批准");
+                return Content("<script>alert('不允许批准');window.location.href='~/LiuXin/MangerLeave/Index';</script>");
             }
         }
         [HouTai]
@@ -47,7 +48,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             }
             else
             {
-                return Content("否定不批准失败改一下");
+                return Content("<script>alert('不允许批准');window.location.href='~/LiuXin/MangerLeave/Index';</script>");
             }
         }
         public ActionResult TcAgree()
@@ -68,7 +69,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             }
             else
             {
-                return Content("不允许批准");
+                return Content("<script>alert('不允许批准');window.location.href='~/LiuXin/MangerLeave/TcAgree';</script>");
             }
         }
         [HouTai]
@@ -84,13 +85,14 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
             }
             else
             {
-                return Content("不允许批准");
+                return Content("<script>alert('不允许批准');window.location.href='~/LiuXin/MangerLeave/TcAgree';</script>");
             }
         }
         public ActionResult History() {
             LeaveManager lm = new LeaveManager();
             List<Leave> listhistory = lm.GetByother("未批准");
-            return View(listhistory);
+            List<Leave> lists = listhistory.OrderByDescending(x => x.LeaveTime).ToList(); ;
+            return View(lists);
         }
     }
 }

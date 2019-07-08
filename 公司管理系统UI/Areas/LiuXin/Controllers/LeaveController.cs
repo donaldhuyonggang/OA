@@ -40,7 +40,7 @@ namespace 公司管理系统UI.Areas.LiuXin.Controllers
                     {
                         return Redirect("/LiuXin/Leave/Query"); ;
                     }
-                    return Content("失败1");
+                    return Content("<script>alert('批准失败');window.location.href='/LiuXin/Leave/Query';</script>");
                 }
                 else {
                     return Content("<script>alert('请输入合理的返校时间');window.location.href='/LiuXin/Leave/Query';</script>");

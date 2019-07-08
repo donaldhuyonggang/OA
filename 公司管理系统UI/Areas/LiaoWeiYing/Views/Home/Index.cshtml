@@ -159,7 +159,7 @@
         .datou {
         padding-top:120px;
         
-        background-color:black ;
+        background-color:lightgoldenrodyellow ;
         }
         .ass {
         width:60%;
@@ -183,7 +183,7 @@
                                 <tr>
                                     <td>
                                         <div id="touxiang">
-                                            <img src="~/Content/images/@item.Userimg"  style="width:65px;     border-radius:35px;        height:65px;" />
+                                            <img src="~/Content/images/@item.Userimg"  style="width:65px;   border-radius:45px;   height:65px;" />
                                         </div>
                                     </td>
                                     <td>
@@ -249,7 +249,7 @@
                                                 <p>
                                                     @*删除*@
                                                     <a href="/LiaoWeiYing/Home/Zan?webId=@item2.webId&&like=@item2.like"   class="glyphicon glyphicon-thumbs-up"></a>
-                                                    <a id="bnts" href="/LiaoWeiYing/Home/Delete?webId=@item2.webId&&UserId*@item2.UserId" class="glyphicon glyphicon-trash"></a>
+                                                    <a id="bnts" href="/LiaoWeiYing/Home/Delete?webId=@item2.webId&&UserId=@item2.UserId" class="glyphicon glyphicon-trash"></a>
                                                 </p>
                                             </li>
                                         </ul>
@@ -283,8 +283,8 @@
                             <li>
                                 <nav>
                                     <ul class="pager">
-                                        <li class="previous disabled"><a href="/LiaoWeiYing/Back/Index?pageIndex=@( ViewBag.pageIndex-1)">上一页<span aria-hidden="true">&larr;</span> Older</a></li>
-                                        <li class="next"><a href="/LiaoWeiYing/Back/Index?pageIndex=@( ViewBag.pageIndex+1)">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                                        <li class="previous disabled"><a href="~/LiaoWeiYing/Home/Index?pageIndex=@( ViewBag.pageIndex-1)">上一页<span aria-hidden="true">&larr;</span> Older</a></li>
+                                        <li class="next"><a href="~/LiaoWeiYing/Home/Index?pageIndex=@( ViewBag.pageIndex+1)">下一页 <span aria-hidden="true">&rarr;</span></a></li>
                                     </ul>
                                 </nav>
                             </li>
@@ -320,7 +320,6 @@
                                            " </div>" +
                                         "</div>"
                             $("." + data[i].webId).append(PingLun);
-                            alert("~/Content/images/" + data[i].Userimg + "")
                         }
                     
                    })//post提交结束

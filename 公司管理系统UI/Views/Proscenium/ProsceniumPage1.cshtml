@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-
+@using 公司管理系统Model
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -47,7 +47,7 @@
             }
 
         body {
-            background-color: black;
+            background-color: white;
         }
 
         .head > ul > li > a:hover {
@@ -60,7 +60,7 @@
         }
 
             .foot > p > a {
-                color: aliceblue;
+                color: black;
                 text-decoration: none;
                 margin-left: 25px;
                 margin-right: 15px;
@@ -76,32 +76,28 @@
     <div class="head">
         <a href="#"><img src="~/Content/images/Logo.jpg" /></a>
         <ul class="bit">
-            <li><a href="#">首页</a></li>
-            <li><a href="/LuoWei/Personnel/PersonReception">班级人员显示</a></li>
-            
+            <li><a href="~/TangKai/Homes/Index">首页</a></li>
+            <li><a href="~/LuoWei/Personnel/PersonReception">班级人员显示</a></li>
             <li><a href="~/ZhengLiang/FinanceQT/Show">班费使用情况</a></li>
             <li><a href="~/LiuYi/Pointqian/select">个人分数情况</a></li>
             <li><a href="~/LiuYi/systemqian/systemIndex">班级规章制度</a></li>
             <li><a href="~/LiuYi/work/Index">课表</a></li>
             <li><a href="~/LiaoWeiYing/Home/Index">学习论坛</a></li>
             <li><a href="~/LiuXin/Leave/Query">请假情况</a></li>
-
+            <li><a href="~/TangKai/Login/Bck">后台登陆</a></li>
         </ul>
-        <ul>
-            @*<li><input type="text" name="name" placeholder="请输入要搜索的内容" /></li>
-                <li><input type="submit" name="name" value="搜索" style="border-radius:2px;background:#ffffff;border:1px solid #ffffff;vertical-align:middle" /></li>
-                <li><a href="#">登陆</a></li>
-                                <li><a href="#">注册</a></li>
-                <li style="color:aliceblue">当前时间 @DateTime.Now</li>*@
-            <li style="color:aliceblue">欢迎您:@Session["Users"]</li>
-            <!--活的，根据登陆的ID获取用户的姓名-->
+        <ul >
+            
+            <li style="color:aliceblue;margin-top:15px;margin-right:20px">欢迎您:@(((User)(Session["User"])).UserName)</li>
+            <li style="">
+                <img style="border-radius:50px 50px;padding-bottom:-50px;width:50px;height:50px;" src="~/Content/images/@(((User)(Session["User"])).Userimg)" /></li>
         </ul>
     </div>
     <div>
         @RenderBody()
     </div>
     <div class="foot">
-        <p style="border-top:solid aliceblue;">
+        <p style="border-top:solid black;">
             <a href="#">联系我们</a> 
             <a href="#">支持我们</a>
             <a href="#">新手帮助</a>
@@ -110,8 +106,8 @@
             <a href="#">意见反馈</a>
 
         </p>
-        <p style=" color:aliceblue; text-align:center;">&copy;2018-2019保留所有权利。</p>
-        <p style="text-align:center; color:aliceblue">设计与开发/北大青鸟-.NET30</p>
+        <p style=" color:black; text-align:center;">&copy;2018-2019保留所有权利。</p>
+        <p style="text-align:center; color:black">设计与开发/北大青鸟-.NET30</p>
     </div>
 </body>
 </html>

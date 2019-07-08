@@ -45,8 +45,7 @@ namespace 公司管理系统UI.App_Start
                             }
                         }
                     }
-                    
-                     filterContext.HttpContext.Response.Redirect("~/LuoWei/Personnel/Person");
+                     filterContext.HttpContext.Response.Redirect("~/TangKai/Homes/Back");
                 }
             }
         }

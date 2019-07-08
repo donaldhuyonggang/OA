@@ -29,6 +29,7 @@ namespace 公司管理系统UI.Areas.TangKai.Controllers
             ViewBag.Use3 = list1;
             return View();
         }
+        [HouTai]
         public ActionResult Back()
         {
             UserManager bll = new UserManager();

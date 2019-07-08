@@ -4,22 +4,22 @@
     Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
 }
 
-@Session style{
+@section style{
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 }
 
 @using 公司管理系统Model
 @model List<_class>
-
-<table style="margin-top:100px" class="table table-hover">
-    <tr>
-        <th>上午</th>
-        <th>下午</th>
-        <th>学员名字</th>
-        <th>学员名字</th>
-        <th>日期</th>
-        <th>要求</th>
-    </tr>
+<div style="padding-top:120px">
+    <table class="table table-hover">
+        <tr>
+            <th>上午</th>
+            <th>下午</th>
+            <th>学员名字</th>
+            <th>学员名字</th>
+            <th>日期</th>
+            <th>要求</th>
+        </tr>
         @foreach (var item in Model)
         {
             <tr>
@@ -31,5 +31,5 @@
                 <td>@item.require</td>
             </tr>
         }
-</table>
-
+    </table>
+</div>

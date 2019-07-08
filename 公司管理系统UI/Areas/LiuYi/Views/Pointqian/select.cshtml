@@ -3,14 +3,14 @@
     ViewBag.Title = "select";
     Layout = "~/Views/Proscenium/ProsceniumPage1.cshtml";
 }
-@Session style{
+@section style{
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 }
 
 @using 公司管理系统Model
 @model List<score>
 
-<form style="margin-top:100px" action="/LiuYi/Pointqian/select" method="post">
+<form style="padding-top:120px" action="/LiuYi/Pointqian/select" method="post">
     请输入日期：<input type="text" name="PointTime" />
     请输入名字：<input type="text" name="UserName"/>
     <button type="submit" class="btn btn-danger">查询</button>
@@ -32,3 +32,9 @@
         </tr>
     }
 </table>
+<nav>
+    <ul class="pager">
+        <li class="previous"><a href="/LiuYi/Pointqian/select?pageIndex=@(ViewBag.pageIndex-1)">上一页</a></li>
+        <li class="next"><a href="/LiuYi/Pointqian/select?pageIndex=@(ViewBag.pageIndex+1)">下一页</a></li>
+    </ul>
+</nav>

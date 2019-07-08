@@ -4,7 +4,7 @@
     Layout = "~/Views/Background/BackgroundPage1.cshtml";
 }
 
-@Session style{
+@section style{
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 }
 
@@ -30,3 +30,9 @@
         </tr>
     }
 </table>
+<nav>
+    <ul class="pager">
+        <li class="previous"><a href="/LiuYi/Point/select?pageIndex=@(ViewBag.pageIndex-1)">上一页</a></li>
+        <li class="next"><a href="/LiuYi/Point/select?pageIndex=@(ViewBag.pageIndex+1)">下一页</a></li>
+    </ul>
+</nav>

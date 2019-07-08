@@ -94,9 +94,12 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
         [HttpGet]
         public ActionResult HuoDongJiLu(int current = 1)
         {
-            if (current < 1)
+            if (current> 1)
             {
-                current = 1;
+                ViewBag.currents = current - 1;
+            }
+            else {
+                ViewBag.currents = 1;
             }
             int count = 5;
             ActionManager a = new ActionManager();
@@ -106,11 +109,14 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             int zongshu = detail.Count();
             int zongye = zongshu / count;
             zongye = zongshu % count == 0 ? zongye : zongye + 1;
-            if (current > zongye)
+            if (current < zongye)
             {
-                current = zongye;
+                ViewBag.currentc = current+1;
             }
-            ViewBag.zongshu = zongshu;
+            else {
+                ViewBag.currentc = zongye;
+            }
+            ViewBag.zongye = zongye;
             ViewBag.current = current;
             ViewBag.list = list;
             return View();
@@ -121,9 +127,13 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
         {
             if (info.action_Condition.Equals("全部")) {
                 int current = 1;
-                if (current < 1)
+                if (current > 1)
                 {
-                    current = 1;
+                    ViewBag.currents = current - 1;
+                }
+                else
+                {
+                    ViewBag.currents = 1;
                 }
                 int count = 5;
                 ActionManager a = new ActionManager();
@@ -134,11 +144,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     ViewBag.list = list;
                     return View();
@@ -151,11 +165,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     ViewBag.list = list;
                     return View();
@@ -164,9 +182,13 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             }
             else {
                 int current = 1;
-                if (current < 1)
+                if (current > 1)
                 {
-                    current = 1;
+                    ViewBag.currents = current - 1;
+                }
+                else
+                {
+                    ViewBag.currents = 1;
                 }
                 int count = 5;
                 ActionManager a = new ActionManager();
@@ -178,11 +200,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     ViewBag.list = list;
                     return View();
@@ -196,11 +222,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     ViewBag.list = list;
                     return View();
@@ -420,22 +450,30 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
         [HttpGet]
         public ActionResult JiaoFeiJiLu(int current=1)
         {
-            if (current < 1)
+            if (current > 1)
             {
-                current = 1;
+                ViewBag.currents = current - 1;
             }
-                 int count = 5;
+            else
+            {
+                ViewBag.currents = 1;
+            }
+            int count = 5;
                  DetailManager a = new DetailManager();
                 List<detail> detail = a.GetAll();
                 var list = detail.OrderByDescending(x => x.MoneyTime).Skip((current - 1) * count).Take(count).ToList();
                 int zongshu = detail.Count();
                 int zongye = zongshu / count;
                 zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                if (current > zongye)
-                {
-                    current = zongye;
-                }
-                ViewBag.zongshu = zongshu;
+            if (current < zongye)
+            {
+                ViewBag.currentc = current + 1;
+            }
+            else
+            {
+                ViewBag.currentc = zongye;
+            }
+            ViewBag.zongye = zongye;
                 ViewBag.current = current;
                 return View(list);
             
@@ -448,9 +486,13 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             if (info.detail_Condition.Equals("全部"))
             {
                 int current = 1;
-                if (current < 1)
+                if (current > 1)
                 {
-                    current = 1;
+                    ViewBag.currents = current - 1;
+                }
+                else
+                {
+                    ViewBag.currents = 1;
                 }
                 int count = 5;
                 DetailManager a = new DetailManager();
@@ -462,11 +504,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     return View(list);
                 }
@@ -477,11 +523,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     return View(list);
                 }
@@ -489,9 +539,13 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             }
             else {
                 int current = 1;
-                if (current < 1)
+                if (current > 1)
                 {
-                    current = 1;
+                    ViewBag.currents = current - 1;
+                }
+                else
+                {
+                    ViewBag.currents = 1;
                 }
                 int count = 5;
                 DetailManager a = new DetailManager();
@@ -502,11 +556,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     return View(list);
                 }
@@ -518,11 +576,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     return View(list);
                 }
@@ -638,9 +700,13 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
         [HttpGet]
         public ActionResult XiaoFeiJiLu(int current=1)
         {
-            if (current < 1)
+            if (current > 1)
             {
-                current = 1;
+                ViewBag.currents = current - 1;
+            }
+            else
+            {
+                ViewBag.currents = 1;
             }
             ConsumeManager a = new ConsumeManager();
             int count = 5;
@@ -651,11 +717,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             int zongshu = consume.Count();
             int zongye = zongshu / count;
             zongye = zongshu % count == 0 ? zongye : zongye + 1;
-            if (current > zongye)
+            if (current < zongye)
             {
-                current = zongye;
+                ViewBag.currentc = current + 1;
             }
-            ViewBag.zongshu = zongshu;
+            else
+            {
+                ViewBag.currentc = zongye;
+            }
+            ViewBag.zongye = zongye;
             ViewBag.current = current;
             return View(list);
         }
@@ -667,9 +737,13 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             if (info.consume_Condition.Equals("全部"))
             {
                 int current = 1;
-                if (current < 1)
+                if (current > 1)
                 {
-                    current = 1;
+                    ViewBag.currents = current - 1;
+                }
+                else
+                {
+                    ViewBag.currents = 1;
                 }
                 int count = 5;
                 ConsumeManager a = new ConsumeManager();
@@ -681,11 +755,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     return View(list);
                 }
@@ -697,11 +775,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     return View(list);
                 }
@@ -710,9 +792,13 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
             else
             {
                 int current = 1;
-                if (current < 1)
+                if (current > 1)
                 {
-                    current = 1;
+                    ViewBag.currents = current - 1;
+                }
+                else
+                {
+                    ViewBag.currents = 1;
                 }
                 int count = 5;
                 ConsumeManager a = new ConsumeManager();
@@ -724,11 +810,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     return View(list);
                 }
@@ -741,11 +831,15 @@ namespace 公司管理系统UI.Areas.ZhengLiang.Controllers
                     int zongshu = detail.Count();
                     int zongye = zongshu / count;
                     zongye = zongshu % count == 0 ? zongye : zongye + 1;
-                    if (current > zongye)
+                    if (current < zongye)
                     {
-                        current = zongye;
+                        ViewBag.currentc = current + 1;
                     }
-                    ViewBag.zongshu = zongshu;
+                    else
+                    {
+                        ViewBag.currentc = zongye;
+                    }
+                    ViewBag.zongye = zongye;
                     ViewBag.current = current;
                     return View(list);
                 }

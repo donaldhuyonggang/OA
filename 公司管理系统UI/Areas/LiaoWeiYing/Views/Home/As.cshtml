@@ -15,7 +15,7 @@
                             <tbody class="fd_body1">
                                 <tr>
                                     <th>用户ID:</th>
-                                    <th>@Html.DropDownList("UserId")</th>
+                                    <th>@(((User)(Session["User"])).UserName)</th>
                                 </tr>
                                 <tr>
                                     <th>类型名称:</th>

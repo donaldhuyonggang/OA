@@ -168,6 +168,7 @@
     <Compile Include="Areas\ZhengLiang\Controllers\FinanceQTController.cs" />
     <Compile Include="Areas\ZhengLiang\ZhengLiangAreaRegistration.cs" />
     <Compile Include="Content\Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -501,6 +502,7 @@
     <Folder Include="Areas\ZhengLiang\Views\Shared\" />
     <Folder Include="LiuXin\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Default\" />
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>

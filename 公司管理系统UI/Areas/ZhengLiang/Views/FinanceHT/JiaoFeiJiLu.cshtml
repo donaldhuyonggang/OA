@@ -94,9 +94,11 @@
         
     </table>
         <div class="count">
-            <a href="~/ZhengLiang/FinanceHT/JiaoFeiJiLu?current=@(ViewBag.current-1)" class="count_a btn-success btn-sm">上一页</a>
-            <span>@ViewBag.zongshu</span>
-            <a href="~/ZhengLiang/FinanceHT/JiaoFeiJiLu?current=@(ViewBag.current+1)" class="btn-success btn-sm">下一页</a>
+            <a href="~/ZhengLiang/FinanceHT/JiaoFeiJiLu?current=1" class="btn-primary btn-xs">首页</a>
+            <a href="~/ZhengLiang/FinanceHT/JiaoFeiJiLu?current=@(ViewBag.currents)" class="count_a btn-success btn-sm">上一页</a>
+            <span>@ViewBag.current/@ViewBag.zongye</span>
+            <a href="~/ZhengLiang/FinanceHT/JiaoFeiJiLu?current=@(ViewBag.currentc)" class="btn-success btn-sm">下一页</a>
+            <a href="~/ZhengLiang/FinanceHT/JiaoFeiJiLu?current=@ViewBag.zongye" class="btn-primary btn-xs">尾页</a>
         </div>
 </div>
 </div>
