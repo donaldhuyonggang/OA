@@ -88,7 +88,8 @@
 
         {
             <tr>
-                <td><img src="@item.Userimg" /></td>
+               
+                <td><img src="~/Content/images/@item.Userimg" /></td>
                 <td>@item.UserName</td>
                 <td>@item.UserPwd</td>
                 <td>@item.Phone</td>
@@ -107,7 +108,7 @@
 </section>
 <footer class="foot">
     <a href="/LuoWei/Personnel/Person?pageIndex=1" class="btn btn-danger">首页</a>
-    <a href="/LuoWei/Personnel/Person?pageIndex=@(ViewBag.pageIndex-1)" class="btn btn-danger">上一页</a>
-    <a href="/LuoWei/Personnel/Person?pageIndex=@(ViewBag.pageIndex+1)" class="btn btn-danger">下一页</a>
-    <a href="/LuoWei/Personnel/Person?pageIndex=@((ViewBag.pageCount)/(ViewBag.pageSize))" class="btn btn-danger">尾页</a>
+    <a href="/LuoWei/Personnel/Person?pageIndex=@(ViewBag.page)" class="btn btn-danger">上一页</a>
+    <a href="/LuoWei/Personnel/Person?pageIndex=@(ViewBag.row)" class="btn btn-danger">下一页</a>
+    <a href="/LuoWei/Personnel/Person?pageIndex=@(ViewBag.TrailerPage)" class="btn btn-danger">尾页</a>
 </footer>

@@ -209,6 +209,7 @@
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\login1.css" />
     <Content Include="Content\css\reportForm.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\css\timePage.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\framework\area.js" />
@@ -232,6 +233,7 @@
     <Content Include="Content\images\3.jpg" />
     <Content Include="Content\images\4-1.jpg" />
     <Content Include="Content\images\4.jpg" />
+    <Content Include="Content\images\404_daylight.png" />
     <Content Include="Content\images\5.jpg" />
     <Content Include="Content\images\6-1.jpg" />
     <Content Include="Content\images\6.jpg" />
@@ -248,8 +250,12 @@
     <Content Include="Content\images\Logo.jpg" />
     <Content Include="Content\images\m.png" />
     <Content Include="Content\images\password.png" />
+    <Content Include="Content\images\timg.jpg" />
     <Content Include="Content\images\top_jt.png" />
+    <Content Include="Content\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
     <Content Include="Content\images\user.png" />
+    <Content Include="Content\images\北大青鸟官方2017最新宣传片-国语流畅.mp4" />
+    <Content Include="Content\images\摄图网_500843318.jpg" />
     <Content Include="Content\js\base.js" />
     <Content Include="Content\js\jigsaw.js" />
     <Content Include="Content\js\login.js" />

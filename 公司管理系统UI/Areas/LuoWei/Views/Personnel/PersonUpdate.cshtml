@@ -27,6 +27,11 @@
                 padding-top: 15px;
                  padding-left:25px;
             }
+
+            table tr td img{
+               width:60px;
+               height:60px;
+            }
               form p{
         margin-top:20px;
         margin-left:100px;
@@ -37,7 +42,7 @@
     员工信息修改
 </div>
 <div>
-    <form method="post" action="/LuoWei/Personnel/PersonUpdate">
+    <form method="post" action="/LuoWei/Personnel/PersonUpdate" enctype="multipart/form-data">
         <input type="hidden" name="UserId" value="@Model.UserId" />
         <table>
             <tr>
@@ -95,9 +100,39 @@
             </tr>
             <tr>
                 <td>员工头像：</td>
-                <td><input type="file" name="Userimg" required value="@Model.Userimg" /></td>
+                <td><input type="file" name="Userimg" required/>
+                <img src="~/Content/images/@ViewBag.FileName"/>
+                </td>
                 <td>入职状态：</td>
-                <td><input type="text" name="User_Condition" class="form-control" required value="@Model.User_Condition" /></td>
+                <td>
+                    <input name="User_Condition" class="form-control" value="@Model.User_Condition" required/>
+                    @*<select name="User_Condition" class="form-control" required>
+
+                        if(@((Model.User_Condition).Equals("在职")){
+
+                        <option value="@Model.User_Condition" selected="selected">在职</option>
+
+                        }else{
+                        <option value="@Model.User_Condition" >在职</option>
+                        }
+                        
+                        if(@((Model.User_Condition).Equals("试用")){
+                        
+                        <option value="@Model.User_Condition" selected="selected">试用</option>
+
+                        }else{
+                        <option value="@Model.User_Condition"  >试用</option>
+                        }
+
+                         if(@((Model.User_Condition).Equals("离职")){
+
+                        <option value="@Model.User_Condition" selected="selected">离职</option>
+                        }else{
+                        <option value="@Model.User_Condition" >离职</option>
+                        }
+
+                    </select>*@
+                </td>
             </tr>
             <tr>
                 <td>员工分数：</td>

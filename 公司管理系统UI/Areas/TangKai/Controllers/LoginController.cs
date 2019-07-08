@@ -27,7 +27,7 @@ namespace 公司管理系统UI.Areas.TangKai.Controllers
             }
             else
             {
-                return Content("登陆失败！");
+                return Content("<script>alert('登录失败!');window.location.href='/TangKai/Login/Index'</script>");
             }
         }
         
@@ -43,11 +43,11 @@ namespace 公司管理系统UI.Areas.TangKai.Controllers
             if (info != null)
             {
                 Session["UsHt"] = info;
-                return Redirect("/TangKai/Homes/Back");
+                return Content("<script>alert('登录成功!');window.location.href='/TangKai/Homes/Back'</script>");
             }
             else
             {
-                return Content("登陆失败！");
+                return Content("<script>alert('登录失败!');window.location.href='/TangKai/Login/Bck'</script>");
             }
         }
     }

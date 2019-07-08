@@ -1,17 +1,13 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Back";
+    Layout = "~/Views/Background/BackgroundPage1.cshtml";
 }
-
-<!DOCTYPE html>
 @using 公司管理系统Model
 @model List<web >
 
 <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Bacck</title>
+@section stylesss{
     <style>
         #bnts {
             padding-top: 10px;
@@ -65,7 +61,7 @@
             }
 
         .neirong {
-            width: 50%;
+          width:80%;
             display: flex;
             justify-content: center;
         }
@@ -77,9 +73,11 @@
         }
 
         .neirong {
+            
             display: flex;
             justify-content: center;
             height: 500px;
+
         }
 
         #shu {
@@ -204,9 +202,9 @@
         }
 
         .datou {
-            padding-top: 120px;
+            padding-top: 5px;
             height: 2000px;
-            background-color: lightyellow;
+            background-image: url('../../../../Content/images/timg.jpg');
         }
 
         .ass {
@@ -215,10 +213,12 @@
         .cebnn {
             text-align:center;
                     }
+        .fb {
+            
+        background-color:lightcyan;
+        }
     </style>
-    
-</head>
-<body>
+}
     <div class="datou">
         <h1  class="cebnn">论坛后台</h1>
         <div class="tou">
@@ -239,7 +239,7 @@
                                     <ul class="fabuul">
                                         <li style="margin-right:20px;">
                                             <div class="yonghutouxiang">
-                                                <img src="@item2.User.Userimg" style="width:65px;     border-radius:35px;        height:65px;" />
+                                                <img src="~/Content/images/@item2.User.Userimg" style="width:65px;     border-radius:35px;        height:65px;" />
                                             </div>
                                         </li>
                                         <li>
@@ -316,5 +316,3 @@
                 })
             });
     </script>
-</body>
-</html>

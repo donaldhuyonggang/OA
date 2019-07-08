@@ -16,7 +16,7 @@ namespace 公司管理系统UI.Areas.LiaoWeiYing.Controllers
             //var idd=Session["name"] as User;
             userID = ((User)(Session["User"])).UserId;
             WebManager dal1 = new WebManager();
-            List<web> list1 = dal1.Where(x => x.web_typeID == id && x.web_Condition=="可见");
+            List<web> list1 = dal1.Where(x => x.web_typeID == id && x.web_Condition=="可见").OrderByDescending(x => x.webtime).ToList();
 
             web_typeManager dal2 = new web_typeManager();
             List<web_type> list2 = dal2.GetAll();
@@ -41,6 +41,24 @@ namespace 公司管理系统UI.Areas.LiaoWeiYing.Controllers
 
             return View(list4);
         }
+        public ActionResult Delete1(int ReplayId = 0)
+        {
+            ReplayManager list1 = new ReplayManager();
+            Replay sdd = new Replay()
+            {
+                ReplayId = ReplayId,
+                Replay_Condition = "不可见"
+            };
+            bool list2 = list1.Update(sdd);
+            if (list2)
+            {
+                return Redirect("/LiaoWeiYing/Home/Index");
+            }
+            else
+            {
+                return Content("失败");
+            }
+        }
         public ActionResult As() {
             UserManager dal = new UserManager();
             List<User> list = dal.GetAll();
@@ -59,12 +77,25 @@ namespace 公司管理系统UI.Areas.LiaoWeiYing.Controllers
 
         public ActionResult AJ(int webId = 33) {
             ReplayManager dal4 = new ReplayManager();
-            var list5 = dal4.Where(x => x.webId == webId).Select(x=>new {x.webId, x.ReplayTime,x.User.UserName,x.ReplayResult }).ToList();
+            var list5 = dal4.Where(x => x.webId == webId).Select(x=>new {x.webId, x.ReplayTime,x.User.UserName,x.ReplayResult,x.ReplayId,x.User.Userimg }).ToList();
             return Json(list5, JsonRequestBehavior.AllowGet);
         }
         public ActionResult Add(web info) {
             WebManager list1 = new WebManager();
-            bool list = list1.Add(info);
+            int userID = ((User)(Session["User"])).UserId;
+            DateTime ss = System.DateTime.Now;
+            //webId, UserId, web_typeID, webHead, webResult, webtime, like, ReplayTypeID, web_Condition
+            web ds = new web() {
+                UserId = userID,
+                web_typeID=info.web_typeID,
+                webHead=info.webHead,
+                webResult=info.webResult,
+                webtime=ss,
+                like=0,
+                ReplayTypeID=info.ReplayTypeID,
+                web_Condition=info.web_Condition
+            };
+            bool list = list1.Add(ds);
             if (list)
             {
                 return Redirect("/LiaoWeiYing/Home/Index");

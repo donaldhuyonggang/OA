@@ -7,14 +7,14 @@
 @model List<User>
 @section style{
     <style type="text/css">
-        .foot {
+        .foots {
             display: flex;
             justify-content: center;
             margin-top: 50px;
 
         }
 
-            .foot a {
+            .foots a {
                 margin: 4px;
             }
 
@@ -72,7 +72,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td><img src="~/Content/images/4.jpg" /></td>
+                <td><img src="~/Content/images/@item.Userimg" /></td>
                 <td>@item.UserName</td>
                 <td>@item.Phone</td>
                 <td>@item.Sex</td>
@@ -85,10 +85,11 @@
 
     </table>
 </section>
-<footer class="foot">
+<footer class="foots">
     <a href="/LuoWei/Personnel/PersonReception?pageIndex=1" class="btn btn-danger">首页</a>
-    <a href="/LuoWei/Personnel/PersonReception?pageIndex=@(ViewBag.pageIndex-1)" class="btn btn-danger">上一页</a>
-    <a href="/LuoWei/Personnel/PersonReception?pageIndex=@(ViewBag.pageIndex+1)" class="btn btn-danger">下一页</a>
-    <a href="/LuoWei/Personnel/PersonReception?pageIndex=@((ViewBag.pageCount)/(ViewBag.pageSize))" class="btn btn-danger">尾页</a>
+    <a href="/LuoWei/Personnel/PersonReception?pageIndex=@(ViewBag.page)" class="btn btn-danger">上一页</a>
+    <a href="/LuoWei/Personnel/PersonReception?pageIndex=@(ViewBag.row)" class="btn btn-danger">下一页</a>
+    <a href="/LuoWei/Personnel/PersonReception?pageIndex=@(ViewBag.TrailerPage)" class="btn btn-danger">尾页</a>
 </footer>
+
 

@@ -7,115 +7,104 @@
 @section style{
 
     <style>
-               
-                * {
-                    margin: 0px;
-                    padding: 0px;
-                }
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
 
-                .banner {
-                    width: 1440px;
-                    height: 1080px;
-                    background-color: #fed93a;
-                    margin-top: 20px;
-                    margin-left: 20px;
-                    margin: 0px auto;
-                    overflow: hidden;
-                    position: relative;
-                }
+    .banner {
+        width: 1320px;
+        height: 700px;
+        background-color: #fed93a;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin: 0px auto;
+        overflow: hidden;
+        position: relative;
+    }
 
-                    .banner .pic ul li {
-                        list-style: none;
-                    }
+        .banner .pic ul li {
+            list-style: none;
+        }
 
-                .left {
-                    width: 50px;
-                    height: 50px;
-                    position: absolute;
-                    top: 500px;
-                    left: 20px;
-                    background-color: rgba(0,0,0,0.5);
-                    color: #fff;
-                    text-align: center;
-                    line-height: 50px;
-                }
+    .left {
+        width: 30px;
+        height: 50px;
+        position: absolute;
+        top: 300px;
+        left: 20px;
+        background-color: rgba(0,0,0,0.5);
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+    }
 
-                .right {
-                    width: 30px;
-                    height: 50px;
-                    position: absolute;
-                    top: 500px;
-                    right: 20px;
-                    background-color: rgba(0,0,0,0.5);
-                    color: #fff;
-                    text-align: center;
-                    line-height: 50px;
-                }
+    .right {
+        width: 30px;
+        height: 50px;
+        position: absolute;
+        top: 300px;
+        right: 20px;
+        background-color: rgba(0,0,0,0.5);
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+    }
 
-                .dot {
-                    position: absolute;
-                    width: 124px;
-                    height: 30px;
-                    bottom: 30px;
-                    left: 700px;
-                    background-color: rgba(0,0,0,0.3);
-                    border-radius: 15px;
-                }
+    .dot {
+        position: absolute;
+        width: 124px;
+        height: 30px;
+        bottom: 30px;
+        left: 700px;
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 15px;
+    }
 
-                    .dot ul li {
-                        list-style: none;
-                        width: 15px;
-                        height: 15px;
-                        border-radius: 100%;
-                        background-color: #fff;
-                        float: left;
-                        margin: 7px 8px;
-                    }
+        .dot ul li {
+            list-style: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            background-color: #fff;
+            float: left;
+            margin: 7px 8px;
+        }
 
-                        .dot ul li:hover {
-                            background-color: #cd0b2d;
-                        }
+            .dot ul li:hover {
+                background-color: #cd0b2d;
+            }
 
-                .son {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: flex-start;
-                }
 
-                    .son > div {
-                        margin: 8%;
-                        margin-bottom: -8%;
-                    }
+    .shen {
+        background-image: url(/Content/images/7-1.jpg);
+        width: 300px;
+        height: 300px;
+        text-align: center;
+    }
 
-                .shen {
-                    background-image: url(/Content/images/7-1.jpg);
-                    width: 300px;
-                    height: 300px;
-                    text-align: center;
-                }
+    .shen2 {
+        background-image: url(/Content/images/4-1.jpg);
+        width: 300px;
+        height: 300px;
+        text-align: center;
+    }
 
-                .shen2 {
-                    background-image: url(/Content/images/4-1.jpg);
-                    width: 300px;
-                    height: 300px;
-                    text-align: center;
-                }
+    .shen3 {
+        background-image: url(/Content/images/4-1.jpg);
+        width: 300px;
+        height: 300px;
+        text-align: center;
+    }
 
-                .shen3 {
-                    background-image: url(/Content/images/4-1.jpg);
-                    width: 300px;
-                    height: 300px;
-                    text-align: center;
-                }
+    a:hover {
+        color: gold;
+        text-decoration: solid;
+    }
+</style>
 
-                a:hover {
-                    color: gold;
-                    text-decoration: solid;
-                }
-    </style>
-
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
         $(function () {
             var num = 1;
             var timer;
@@ -167,29 +156,22 @@
             }
             start();
         });
-    </script>
+</script>
+
 
 }
+
+
 <div style="height:200px">
     <p style="font-size:50px;color:aliceblue;text-align:center; padding-top:110px;">欢迎您来到湖南甲壳虫科技有限公司</p>
 </div>
-@*<div class="gundo">
-        <div class=" lunbo">
-            <img src="~/Areas/唐凯/image/1.jpg" />
-            <img src="~/Areas/唐凯/image/2.jpg" />
-            <img src="~/Areas/唐凯/image/3.jpg" />
-            <img src="~/Areas/唐凯/image/4.jpg" />
-            <img src="~/Areas/唐凯/image/5.jpg" />
-        </div>
-    </div>*@
+
 <div class="banner">
     <div class="pic">
         <div class="left"><</div>
         <ul>
             <li>
                 <a>
-
-                    
                     <img src="~/Content/images/1.jpg">
                 </a>
             </li>
@@ -227,46 +209,47 @@
     <p style="font-size:30px;color:aliceblue;text-align:center; padding-top:50px;">我们的使命是:"通过互联网服务提升人类生活品质"。</p>
     <p style="font-size:30px;color:aliceblue;text-align:center; padding-top:50px;">甲壳虫秉承着"为用户提供最优质的服务"的理念,致力于为亿万网民提供优质的互联网综合服务。</p>
     <p style="font-size:20px;color:aliceblue;text-align:center; padding-top:50px;"><a href="#" style="text-decoration:none;">了解更多></a></p>
-    <div class="son">
-        <div>
-            <div class="shen" style="background-image:url(/Content/images/6-1.jpg);width:300px;height:300px;">
-                <br /><br />
-                @*<img src="~/Areas/唐凯/image/6.jpg"  style="width:400px;height:300px;"/>*@
-                <span style="color:aliceblue;font-size:30px;">生活</span><br /><br /><br />
-                <span style="color:aliceblue;font-size:20px;">丰富精神生活</span><br />
-                <span style="color:aliceblue;font-size:10px;">
-                    <a href="#" style="color:aliceblue;
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 ">
+                <div class="shen">
+                    <br /><br />
+
+                    <span style="color:aliceblue;font-size:30px;">生活</span><br /><br /><br />
+                    <span style="color:aliceblue;font-size:20px;">丰富精神生活</span><br />
+                    <span style="color:aliceblue;font-size:10px;">
+                        <a href="#" style="color:aliceblue;
             text-decoration:none;">了解更多 ></a>
-                </span>
-            </div>
-            <div style="width:300px;height:300px;">
+                    </span>
+                </div>
 
             </div>
-        </div>
-        <div>
-            <div class="shen2">
-                <br /><br />
-                <span style="color:aliceblue;font-size:30px;">娱乐</span><br /><br /><br />
-                <span style="color:aliceblue;font-size:20px;">享受健康生活</span><br />
-                <span style="color:aliceblue;font-size:10px;">
-                    <a href="#" style="color:aliceblue;
+            <div class="col-lg-4 col-md-4 ">
+                <div class="shen2">
+                    <br /><br />
+                    <span style="color:aliceblue;font-size:30px;">娱乐</span><br /><br /><br />
+                    <span style="color:aliceblue;font-size:20px;">享受健康生活</span><br />
+                    <span style="color:aliceblue;font-size:10px;">
+                        <a href="#" style="color:aliceblue;
             text-decoration:none;">了解更多 ></a>
-                </span>
+                    </span>
+                </div>
             </div>
-        </div>
-        <div>
-            <div class="shen3">
-                <br /><br />
-                <span style="color:aliceblue;font-size:30px;">学习</span><br /><br /><br />
-                <span style="color:aliceblue;font-size:20px;">畅游知识海洋</span><br />
-                <span style="color:aliceblue;font-size:10px;">
-                    <a href="#" style="color:aliceblue;
+            <div class="col-lg-4 col-md-4 ">
+                <div class="shen3">
+                    <br /><br />
+                    <span style="color:aliceblue;font-size:30px;">学习</span><br /><br /><br />
+                    <span style="color:aliceblue;font-size:20px;">畅游知识海洋</span><br />
+                    <span style="color:aliceblue;font-size:10px;">
+                        <a href="#" style="color:aliceblue;
             text-decoration:none;">了解更多 ></a>
-                </span>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <div>
     <div class="i">
         <table class="ai table table-responsive " border="1" style="color:white">
@@ -324,7 +307,7 @@
 
             </div>
             <div class="col-sm-6">
-                <table border="1" class="table table-responsive" style="color:white;a">
+                <table border="1" class="table table-responsive" style="color:white;">
                     <text style="text-align:center"><a href="#" class="btn btn-primary">最新活动</a></text>
                     <tr>
                         <th>标题</th>
@@ -350,10 +333,19 @@
         </div>
     </div>
 </div>
-<div>
-    <p style="font-size:50px;color:aliceblue;text-align:center; padding-top:110px;"></p>
-    <video controls="controls" autoplay="autoplay">
-        <source src="~/Areas/%e5%94%90%e5%87%af/image/2.mp4" type="video/mp4" />
-    </video>
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-lg-10 col-sm-10 col-md-10 col-xs-10 ">
+            <p style="font-size:50px;color:aliceblue;text-align:center; padding-top:110px;"></p>
+            <video controls="controls" autoplay="autoplay" style="text-align:center; width:1300px">
+
+                <source src="~/Content/images/%e5%8c%97%e5%a4%a7%e9%9d%92%e9%b8%9f%e5%ae%98%e6%96%b92017%e6%9c%80%e6%96%b0%e5%ae%a3%e4%bc%a0%e7%89%87-%e5%9b%bd%e8%af%ad%e6%b5%81%e7%95%85.mp4" type="video/mp4" />
+
+            </video>
+        </div>
+
+    </div>
 </div>
 

@@ -10,14 +10,36 @@
             <h4 class="modal-title">发布新文章</h4>
         </div>
         <div class="modal-body">
-            <p>ID:@Html.DropDownList("UserId")</p>
-            <p>标题:@Html.DropDownList("web_typeID")</p>
-            <p>网址:@Html.TextBoxFor(x => x.webHead)</p>
-            <p>类型:@Html.TextBoxFor(x => x.webResult)</p>
-            <p>时间:@Html.TextBoxFor(x => x.webtime)</p>
-            <p>内容:@Html.TextBoxFor(x => x.like)</p>
-            <p>内容:@Html.DropDownList("ReplayTypeID")</p>
-            <p>内容:@Html.TextBoxFor(x => x.web_Condition)</p>
+                    <div class="lui-table-body1" style="overflow:hidden;">
+                        <table class="fd_table table table-striped">
+                            <tbody class="fd_body1">
+                                <tr>
+                                    <th>用户ID:</th>
+                                    <th>@Html.DropDownList("UserId")</th>
+                                </tr>
+                                <tr>
+                                    <th>类型名称:</th>
+                                    <th>@Html.DropDownList("web_typeID")</th>
+                                </tr>
+                                <tr>
+                                    <th>标题:</th>
+                                    <th>@Html.TextBoxFor(x => x.webHead) </th>
+                                </tr>
+                                <tr>
+                                    <th>内容:</th>
+                                    <th>@Html.TextAreaFor(x => x.webResult) (请输入您要发布的内容)</th>
+                                </tr>
+                                <tr>
+                                    <th>评论类型:</th>
+                                    <th>@Html.DropDownList("ReplayTypeID")</th>
+                                </tr>
+                                <tr>
+                                    <th>可见:</th>
+                                    <th>@Html.TextBoxFor(x => x.web_Condition) 只能是(可见/不可见)</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

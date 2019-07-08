@@ -18,10 +18,7 @@
             margin:0px;
             padding:0px;
         }
-        #shang{
-            display:flex;
-            justify-content:center;
-        }
+      
         #touxiang {
             width: 150px;
             height: 150px;
@@ -46,14 +43,11 @@
             font-size:14px;
         }
         #xuanxiang li{
+            width:80px;
             list-style:none;
             margin-left:15px;
         }
-        .neirong{
-             width:50%;
-             display:flex;
-             justify-content:center;
-        }
+        
         #zhongjian{
             margin-top:15px;
             display:flex;
@@ -78,13 +72,13 @@
             width: 22%;
             height: 1030px;
             margin-right: 15px;
-            background-color:lightblue;
+            background-color:lightcyan;
         }
         #youimg {
             width: 22%;
             height: 1030px;
             margin-left: 15px;
-            background-color:lightblue;
+            background-color:lightcyan;
         }
         .fabuul{
             display:flex;
@@ -103,7 +97,7 @@
             background-image: url('../img/iop.jpg');
         }
         .fb{
-            background-color:white;
+            background-color:lightgoldenrodyellow;
         }
         .fb div{
             margin-left:5px;
@@ -164,8 +158,8 @@
         }
         .datou {
         padding-top:120px;
-        height:1800px;
-        background-color:lightcyan ;
+        
+        background-color:black ;
         }
         .ass {
         width:60%;
@@ -175,141 +169,135 @@
 <script src="~/Scripts/jquery-1.8.3.js"></script>
    
 <div class="datou">
-    <div class="tou">
-        <div id="shang">
-            <div style="width:80%;" class="sp">
-                <a href="/LiaoWeiYing/Back/Bacck">后台</a>
-                @foreach (var item in (List<User>)ViewBag.list3)
-                {
-                <table>
-                    <tr>
-                        <td>
-                            <div id="touxiang">
-                                   @item.Userimg
-                            </div>
-                        </td>
-                        <td>
-                            <table style="height:150px">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-10">
+                <div class="row">
+                    <div class="col-lg-1">
+                        @foreach (var item in (List<User>)ViewBag.list3)
+                        {
+                            <table>
                                 <tr>
                                     <td>
-                                        <p id="yonghuname">用户名:@item.UserName</p>
+                                        <div id="touxiang">
+                                            <img src="~/Content/images/@item.Userimg"  style="width:65px;     border-radius:35px;        height:65px;" />
+                                        </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                   <td>
-                                       <a href="/LiaoWeiYing/Home/As"  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                                           我要发布
-                                       </a>
-                                       
-                                       <div id="myModal" class="modal fade">
-                                           <div class="modal-dialog">
-                                               
-                                           </div>
-                                       </div>
-                                    </td>
-                                </tr>
-                                <tr>
                                     <td>
-                                        <ul id="xuanxiang" class="nav nav-pills">
-                                            @foreach (var item1 in (List<web_type>)ViewBag.list2)
-                                            {
-                                                <li role="presentation"><a href="/LiaoWeiYing/Home/Index/@item1.web_typeID">@item1.web_typeName</a></li>
-                                            }
-                                        </ul>
+                                        <table style="height:150px">
+                                            <tr>
+                                                <td>
+                                                    <p id="yonghuname">用户名:@item.UserName</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="/LiaoWeiYing/Home/As" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                                        我要发布
+                                                    </a>
+
+                                                    <div id="myModal" class="modal fade">
+                                                        <div class="modal-dialog">
+
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <ul id="xuanxiang" class="nav nav-pills">
+                                                        @foreach (var item1 in (List<web_type>)ViewBag.list2)
+                                                        {
+                                                            <li role="presentation"><a href="/LiaoWeiYing/Home/Index/@item1.web_typeID">@item1.web_typeName</a></li>
+                                                        }
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </td>
                                 </tr>
                             </table>
-                        </td>
-                    </tr>
-                </table>
-                }
-            </div>
-        </div>
-        <div id="zhongjian">
-            @*<div id="zuoimg">
-            </div>*@
-            <div class="neirong">
-                <ul id="shu">
-                    <li class="diyi">
-                        <div id="s">
-                           
-                        </div>
-                    </li>
-                    @*这里开始大循环*@
-                    
-                        @foreach (var item2 in (List<web>)Model)
-                        {
-                        <li class="fb">
-                            <div class="leirong">
-                                <ul class="fabuul">
-                                    <li style="margin-right:20px;">
-                                        <div class="yonghutouxiang">
-                                            <img src="@item2.User.Userimg" style="width:65px;     border-radius:35px;        height:65px;" />
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <ul>
-                                            <li style="margin-bottom:15px;">用户姓名:@item2.User.UserName</li>
-                                            <li class="fabushijian">发布时间:@item2.webtime</li>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10">
+                        <ul>
+                            @foreach (var item2 in (List<web>)Model)
+                            {
+                                <li class="fb">
+                                    <div class="leirong">
+                                        <ul class="fabuul">
+                                            <li style="margin-right:20px;">
+                                                <div class="yonghutouxiang">
+                                                    <img src="~/Content/images/@item2.User.Userimg" style="width:65px;     border-radius:35px;        height:65px;" />
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li style="margin-bottom:15px;">用户姓名:@item2.User.UserName</li>
+                                                    <li class="fabushijian">发布时间:@item2.webtime</li>
+                                                </ul>
+                                            </li>
+                                            <li style="width:70%;">
+
+                                            </li>
+                                            <li>
+                                                <p>
+                                                    @*删除*@
+                                                    <a href="/LiaoWeiYing/Home/Zan?webId=@item2.webId&&like=@item2.like"   class="glyphicon glyphicon-thumbs-up"></a>
+                                                    <a id="bnts" href="/LiaoWeiYing/Home/Delete?webId=@item2.webId&&UserId*@item2.UserId" class="glyphicon glyphicon-trash"></a>
+                                                </p>
+                                            </li>
                                         </ul>
-                                    </li>
-                                    <li style="width:70%;">
-                                        
-                                    </li>
-                                    <li>
-                                        <p>
-                                            @*删除*@
-                                            <a id="bnts" href="/LiaoWeiYing/Home/Zan?webId=@item2.webId&&like=@item2.like" class="glyphicon glyphicon-thumbs-up"></a>
-                                            <a id="bnts" href="/LiaoWeiYing/Home/Delete?webId=@item2.webId&&UserId=@item2.UserId" class="glyphicon glyphicon-trash"></a>
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <hr style="margin-bottom:10px;" />
-                            <div>
-                                <div class="fabiaotupian">
-                                    <h4>
-                                        @item2.webHead
-                                    </h4>
-                                </div>
-                                <div class="fabiaotupian" onload="GetDetail(@item2.webId)" >
-                                    @item2.webResult
-                                </div>
-                            </div>
-                            <div class="@item2.webId" >
-                                @*Ajax局部刷新查询webId在追加回来*@
-                               
-                                   
-                            </div>
-                            <form action="~/LiaoWeiYing/Home/Plun?webId=@item2.webId" method="post">
-                             
-                                    <div class="xm">
-                                        <div class="yhpl">
-                                            <span name="sqll" hidden>@item2.webId</span>
-                                            <input class="ass form-control" @*value="@item2.webId"*@ name="ReplayResult" cols="50" rows="1" placeholder="说点儿什么把"><button type="submit" class="btn btn-default">发布评论</button>
+                                    </div>
+                                    <hr style="margin-bottom:10px;" />
+                                    <div>
+                                        <div class="fabiaotupian">
+                                            <h4>
+                                                @item2.webHead
+                                            </h4>
+                                        </div>
+                                        <div class="fabiaotupian">
+                                            @item2.webResult
                                         </div>
                                     </div>
-                                
-                            </form>
-                        </li>
-                        }
-                    
-                    @*这里结束大循环*@
-                    <li>
-                        <nav>
-                            <ul class="pager">
-                                <li class="previous disabled"><a href="/LiaoWeiYing/Home/Index?pageIndex=@( ViewBag.pageIndex-1)"><span aria-hidden="true">&larr;</span> 上一页</a></li>
-                                <li class="next"><a href="/LiaoWeiYing/Home/Index?pageIndex=@(ViewBag.pageIndex+1)">下一页 <span aria-hidden="true">&rarr;</span></a></li>
-                            </ul>
-                        </nav>
-                    </li>
-             
-            </ul>
-                
+                                    <div class="@item2.webId">
+                                        @*Ajax局部刷新查询webId在追加回来*@
+                                    </div>
+                                    <form action="~/LiaoWeiYing/Home/Plun?webId=@item2.webId" method="post">
+
+                                        <div class="xm">
+                                            <div class="yhpl">
+                                                <span name="sqll" hidden>@item2.webId</span>
+                                                <input class="ass form-control"  name="ReplayResult" cols="50" rows="1" placeholder="说点儿什么把"><button type="submit" class="btn btn-default">发布评论</button>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </li>
+                            }
+                            <li>
+                                <nav>
+                                    <ul class="pager">
+                                        <li class="previous disabled"><a href="/LiaoWeiYing/Back/Index?pageIndex=@( ViewBag.pageIndex-1)">上一页<span aria-hidden="true">&larr;</span> Older</a></li>
+                                        <li class="next"><a href="/LiaoWeiYing/Back/Index?pageIndex=@( ViewBag.pageIndex+1)">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                                    </ul>
+                                </nav>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1">
+
+                    </div>
+                </div>
+            </div>
         </div>
-        @*<div id="youimg">
-        </div>*@
-    </div>
     </div>
 </div>
 
@@ -319,7 +307,7 @@
                 $.post("/LiaoWeiYing/Home/AJ", { webId: $(this).text() }, function (data) {
                         for (var i = 0; i < data.length; i++) {
                             var PingLun = "<div class='pl'><div><hr /><ul class='plul'><li><div class='yonghupingluntouxiang'>" +
-                                        "<img src='~/imges/iop.jpg' style='width:45px;  height:45px; border-radius:35px;' />" +
+                                        "<img name='imgggg' src='~/Content/images/"+data[i].Userimg+"' style='width:45px;  height:45px; border-radius:35px;' />" +
                                         "</div></li><li><ul><li style='margin-bottom:10px; font-size:14px;'>" +
                                         "<span id='namess'>用户姓名:" + data[i].UserName + "</span>" +
                                         "<div  style='width:600px;'>评论内容:" + data[i].ReplayResult + "" +
@@ -332,9 +320,15 @@
                                            " </div>" +
                                         "</div>"
                             $("." + data[i].webId).append(PingLun);
+                            alert("~/Content/images/" + data[i].Userimg + "")
                         }
                     
-                   })
-                })
-            });
+                   })//post提交结束
+                })//each循环
+        });//加载页面结束
+        $("[name='zan']").toggle(function(){
+        
+        },function(){
+        
+        })
 </script>
